@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio 1 - calculadora de colores en HEX</title>
+	<style type="text/css">
+		h1{
+			text-decoration: underline;
+			text-transform: uppercase;
+			font-family: verdana;
+		}
+	</style>
+</head>
+<body>
+	<h1>Colores</h1>
+
+	<input type="color" name="color" value="#000000" onchange="hex.innerHTML = this.value;"/>
+
+	<div id="hex"> Código en hexadecimal:  #000000</div>
+</body>
+</html>

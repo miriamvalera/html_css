@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Modelos de Cajas</title>
+	<style type="text/css">
+		body{
+			border: 1px solid #000;
+		}
+
+		/*elemento de bloque*/
+		figure{
+			border: 1px solid #000;
+			width: 200px;
+			margin: 10px;
+			padding: 10px;
+		}
+
+		/*elemento en línea*/
+		figure img{
+			width: 50%;
+		}
+
+		figure:first-of-type{
+			/*centrar la primera figura*/
+			margin: 10px auto;
+
+			/*centrar contenido la figura*/
+			text-align: center;
+		}
+
+		/*centrar la segunda imagen figura*/
+		/*sin text-align, con margin*/
+		figure:nth-of-type(2) img{
+			display: block;
+			margin: auto; 
+		}
+
+		figcaption {
+			font-family: helvetica;
+			font-size: 3vw;
+		}
+		
+		figcaption::selection{
+			background-color: #FF8000;
+		}
+	
+	</style>
+</head>
+<body>
+	<article>
+		<figure>
+			<img src="img/homer.png" alt="homer" title="Homer Simpson" />
+			<figcaption>Homer Simpson</figcaption>
+		</figure>
+		<figure>
+			<img src="img/homer.png" alt="homer" title="Homer Simpson" />
+			<figcaption>Homer Simpson</figcaption>
+		</figure>
+	</article>
+</body>
+</html>

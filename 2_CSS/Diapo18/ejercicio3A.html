@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio 3A - Cubo 3D </title>
+	<style type="text/css">
+		body{
+			margin: 10%;
+			padding-left: 10%;	
+		}
+		.cubo{
+			position: relative;
+			transform-style: preserve-3d;
+			height: 200px;
+			width: 200px;
+			transform: rotateX(45deg) rotateY(45deg);
+		}
+		.cara{
+			position: absolute;
+			border: 1px solid #000;
+			height: 200px;
+			width: 200px;
+			text-align: center;
+		}
+		.front{
+			background-color: rgba(255,0,0,0.5);
+			transform: translateZ(100px);
+		}
+		.back{
+			background-color: rgba(0,255,0,0.5);
+			transform: rotateY(180deg) translateZ(100px);
+		}
+		.left{
+			background-color: rgba(0,0,255,0.5);
+			transform: rotateY(90deg) translateZ(100px);
+		}
+		.right{
+			background-color: rgba(255,255,0,0.5);
+			transform: rotateY(-90deg) translateZ(100px);
+		}
+		.top{
+			background-color: rgba(255,0,255,0.5);
+			transform: rotateX(90deg) translateZ(100px);
+		}
+		.bottom{
+			background-color: rgba(0,255,255,0.5);
+			transform: rotateX(-90deg) translateZ(100px);
+		}
+
+
+	</style>
+</head>
+<body>
+	<div class="cubo">
+		<div class="cara front"></div>
+		<div class="cara back"></div>
+		<div class="cara left"></div>
+		<div class="cara right"></div>
+		<div class="cara top"></div>
+		<div class="cara bottom"></div>	
+	</div>
+</body>
+</html>

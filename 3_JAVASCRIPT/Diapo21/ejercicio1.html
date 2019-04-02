@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 1 - Probando BOM</title>
+</head>
+<body>
+	<h2>User-Agent</h2>
+	<p>La solicitud de cabecera del Agente de Usuario contiene una cadena característica que permite identificar el protocolo de red  que ayuda a descubrir  el tipo de aplicación, sistema operativo, provedor del software o laversió del software de la petición del agente de usuario.</p>
+	<p>Esto es un texto en el interior de la web, no tiene mayor importancia. Para comprobar si esta práctica ha funcionado, si estás en Firefox o Chrome, el fondo deberá verse en rojo, si estás en Explorer (caca) el fonde deberá verse en azul, si estás en cualquier otra cosa que no sea de appName "Netscape" deberías verlo gris.</p>
+
+	<script type="text/javascript">
+		var navegador = navigator.userAgent;
+		//document.body.innerHTML = "El appName actual es: "+navegador;
+		var parrafo = document.createElement('p');
+
+		if(navegador.indexOf("Safari")!=-1 && navegador.indexOf("Chrome") ==-1 ){
+			parrafo.textContent = "El navegador es Safari";
+			document.body.style.backgroundColor = "#9F9D9D";
+		}
+		if(navegador.indexOf("Chrome")!=-1 ){
+			parrafo.textContent = "El navegador es Chrome";
+			//document.write("El navegador es Chrome");
+			document.body.style.backgroundColor = "#FE1A1A";
+		}
+		if(navegador.indexOf("Firefox")!=-1){
+			parrafo.textContent = "El navegador es Firefox";
+			document.body.style.backgroundColor = "#2929FC";
+		}
+		if(navegador.indexOf("IE")!=-1){
+			parrafo.textContent = "El navegador es IE";
+			document.body.style.backgroundColor = "#82F9DE";
+		}
+		if(navegador.indexOf("OPR")!=-1){
+			parrafo.textContent = "El navegador es Opera";
+			document.body.style.backgroundColor = "#F76C18";
+		}
+		
+		document.body.appendChild(parrafo); 
+
+	</script>
+	<script type="text/javascript">
+		if(navigator.userAgent.match("Firefox")){
+			document.body.style.backgroundColor = "#F00";
+		}else if(navigator.userAgent.match("Edge")){
+			document.body.style.backgroundColor = "#0F0";
+		}else if(navigator.userAgent.match("rv")){
+			document.body.style.backgroundColor = "#F69638";
+		}else(navigator.userAgent.match("Chrome")){
+			document.body.style.backgroundColor = "#F68ECB";	
+	</script>
+</body>
+</html>

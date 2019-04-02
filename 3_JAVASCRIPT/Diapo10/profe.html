@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Probando Strings</title>
+	<script>
+		function nombre(nombre, apellido1, apellido2){
+			
+			//Solucionamos el posible error de tener espacio antes o después del nombre
+			nombre = nombre.trim();
+
+			//Posibilidad de que nos hagan más de un espacio entre el nombre compuesto. Debemos comenzar desde la opción com más espacios
+			nombre = nombre.replace('    ',' ');
+			nombre = nombre.replace('   ',' ');
+			nombre = nombre.replace('  ',' ');		
+			
+
+			//Comprobamos si hay algun espacio entre los nombre y por tanto, es nombre compuesto
+			if(nombre.indexOf(' ')>-1){
+				//Buscamos la posición del espacio
+				let espacio = nombre.search(' ');
+
+				//Generamos el nombre y Apellidos tal y como nos lo piden
+				nombre= nombre[0].toUpperCase()+nombre.slice(1,espacio)+' '+nombre[espacio+1].toUpperCase()+nombre.slice(espacio+2);
+			}else{
+				nombre= nombre[0].toUpperCase()+nombre.slice(1);
+			}
+			
+
+			//Imprimimos en pantalla
+			alert(apellido1+' '+apellido2+', '+nombre);
+		}
+	</script>
+</head>
+<body>
+	<h3>Escribe tu nombre y Apellidos: </h3>
+	<label>Nombre <input type="text" id="nom" /><br />
+	<label>Apellido 1 <input type="text" id="apellido1" /><br />
+	<label>Apellido 2 <input type="text" id="apellido2" /><br /><br />
+	<button onclick="nombre(nom.value.toLowerCase(), apellido1.value.toUpperCase(), apellido2.value.toUpperCase());">¿Como me llamo?</button>
+</body>
+</html>

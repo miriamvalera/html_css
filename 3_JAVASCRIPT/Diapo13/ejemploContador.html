@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejemplo - Contador</title>
+	<style type="text/css">
+		body{
+			margin: auto;
+			width: 90%;
+		}
+		div{
+			border: 1px solid #000;
+			margin: 20%;
+			width: 30%;
+			height: 50%;
+			text-align: center;
+		}
+		span{
+			font-size: 2vw;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<span id="horas">00</span>:
+		<span id="minutos">00</span>:
+		<span id="segundos">00</span>
+	</div>
+	<script type="text/javascript">
+		var fin = new Date();
+		fin.setHours(17,30,0,0);
+
+		function calcular(){
+			var ahora = new Date();
+			var seg = parseInt((fin-ahora)/1000);
+
+			var segundos = seg%60; //calcula segundos
+			var minutos = parseInt(seg/60)%60; //calcula minutos
+			var horas = parseInt(seg/3600)%24; //calcula horas
+
+			if(segundos<10){
+				segundos = '0'+segundos;
+			}
+			if(minutos<10){
+				minutos = '0'+minutos;
+			}
+			if(horas<10){
+				horas = '0'+horas; 
+			}
+			document.getElementById('segundos').innerHTML = segundos;
+			document.getElementById('minutos').innerHTML = minutos;
+			document.getElementById('horas').innerHTML = horas;
+		}
+		setInterval(calcular, 500);
+	</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 4B</title>
+</head>
+<body>
+	<h2>El div aparece solamente una vez y se mantiene</h2>
+	<div>
+		<p onmouseenter="divNuevo()">Este es un texto, pasa el ratón por encima.</p>
+	</div>
+
+	<script type="text/javascript">
+		var i = 0;
+		function divNuevo(){
+			if(i<1){	
+				//creamos un nuevo div
+				var nuevoDiv = document.createElement("div");
+				
+				//creamos un nuevo párrafo
+				var nuevoP = document.createElement("p");
+
+				//creamos el texto del párrafo                  
+				var t = document.createTextNode("Pasaste el ratón por encima");    
+				 
+				//colocamos el nuevo párrafo en el nuevo div
+				nuevoDiv.appendChild(nuevoP);
+
+				//colocamos el texto en el párrafo
+				nuevoP.appendChild(t);
+				
+				//colocar el div en el body
+				document.body.appendChild(nuevoDiv); 
+				
+				i++
+			}
+		
+		}
+	</script>
+
+<!-- 	<script type="text/javascript">
+		var i = 0;
+		function divNuevo(){
+			if (i<1) {
+				document.body.appendChild(document.createElement('div')).textContent="has pasado el ratón por encima";
+				i++;
+			}
+		}
+	</script> -->
+</body>
+</html>
+

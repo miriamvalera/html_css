@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contador</title>
+	<meta charset="UTF-8" />
+		<style>
+			#horas, #minutos, #segundos{
+				display: inline-block;
+				padding: 20px 10px 20px 10px;
+				color: white;
+				padding: 5px;
+				background-color: black;
+				border-radius: 5px;
+				border: solid 2px grey;
+			}
+			#reloj{
+				display: inline-block;
+				border: solid 2px black;
+				padding: 5px;
+				border-radius: 5px;
+			}
+			body>span{
+				display: inline-block;
+				width: 100px;
+			}
+		</style>
+		<script type="text/javascript">
+			var fin;
+			var intervalo;
+
+			function cuenta(){
+				var dia = parseInt(document.getElementById('dia').value);
+				var mes = parseInt(document.getElementById('mes').value);
+				var any = parseInt(document.getElementById('any').value);
+				var hora = parseInt(document.getElementById('hora').value);
+				var min = parseInt(document.getElementById('min').value);
+				var seg = parseInt(document.getElementById('seg').value);
+
+				var fechaActual = new Date();
+				fin = new Date(any, mes, dia, hora, min, seg, 0);
+				intervalo = setInterval(reloj, 500);
+			}
+
+			function reloj(){
+				var ahora = new Date();
+
+				if(ahora>fin){
+					alert('Ya has alcanzado la fecha prevista');
+					clearInterval(intervalo);
+				}else{
+					//Calculo los segundos que quedan para el FIN
+					var seg = parseInt((fin-ahora)/1000);
+
+					//Calcular los segundos, minutos y horas para el reloj
+					var segundos = seg%60;
+					var minutos = parseInt(seg/60)%60;
+					var horas = parseInt(seg/3600)%24;
+					var dias = parseInt(seg/86400);
+
+					//Poner 0 delante de los números menores de 10
+					if(segundos<10) segundos='0'+segundos;
+					if(minutos<10) minutos='0'+minutos;
+					if(horas<10) horas='0'+horas;
+
+					document.getElementById('dias').innerHTML = dias;
+					document.getElementById('horas').innerHTML = horas;
+					document.getElementById('minutos').innerHTML = minutos;
+					document.getElementById('segundos').innerHTML = segundos;
+				}
+			}
+
+		</script>
+</head>
+<body>
+	<span>Dia:</span><input type="text" id="dia" size='9' /><br/>
+		<span>Mes:</span>
+			<select name="mes" id="mes" >
+			  <option value="0">Enero</option>
+			  <option value="1">Febrero</option>
+			  <option value="2">Marzo</option>
+			  <option value="3">Abril</option>
+			  <option value="4">Mayo</option>
+			  <option value="5">Junio</option>
+			  <option value="6">Julio</option>
+			  <option value="7">Agosto</option>
+			  <option value="8">Septiembre</option>
+			  <option value="9">Octubre</option>
+			  <option value="10">Novembre</option>
+			  <option value="11">Diciembre</option>
+			</select><br/>
+		<span>Año:</span><input type="text" id="any" size='9'/>
+		<br/>
+		<span>Hora:</span><input type="text" id="hora" size='9'/><br/>
+		<span>Min:</span><input type="text" id="min" size='9'/><br/>
+		<span>Seg:</span><input type="text" id="seg" size='9'/>
+		<br/>
+		<input type="button" value="GO!" onclick="cuenta();">
+		<hr/>
+		
+		
+		Dias:<span id='dias'></span><br/>
+		Tiempo:
+		<div id="reloj">
+			<span id='horas'>00</span>:		
+			<span id='minutos'>00</span>:
+			<span id='segundos'>00</span>
+		</div>
+</body>
+</html>

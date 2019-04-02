@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio 5 - Nueva versión del 4 pero con el checkbox</title>
+	<style type="text/css"></style>
+</head>
+<body>
+	<h1>Calcular perímetro, área y díametro circunferencia</h1>
+
+	<label>Radio:</label>
+	<input type="number" id="radio" /><br />
+
+	<label>¿Que quieres calcular?</label>
+	<form>
+		<!-- los checkbox son independientes por eso cada uno tiene su ID -->
+		<input type="checkbox" name="calculo" value="p" id="P">Perímetro</input>
+		<input type="checkbox" name="calculo" value="a" id="A">Área</input>
+		<input type="checkbox" name="calculo" value="d" id="D">Diámetro</input>
+	</form>
+	<br />
+
+	<button onclick="calcular();">Calcular</button>
+	<br />
+
+	<output id="resultado"></output>
+
+	<script type="text/javascript">
+
+		function calcular(){
+            //Función para checkbox
+            var perimetro = document.getElementById('P').checked;
+            var area = document.getElementById('A').checked;
+            var diametro = document.getElementById('D').checked;
+     		const PI = 3.141592653;
+
+			//obtener el valor del radio
+			var r = document.getElementById('radio').value;	
+
+			//creamos la variable que apunta al resultado
+			var res = document.getElementById('resultado');
+			res.innerHTML = ""; //esto lo hacemos para borrar lo que había antes en el cajón de resultado
+
+			//si ponemos esto así el if se cumplirá si el valor de perímetro es true, si es true es que nos han chekeado la casiila cuando han pulsado la tecla de la función, es decir, cuando han pulsado al botón
+			if(perimetro){
+				var calculo = 2*PI*r; 
+				res.innerHTML = "El perímetro es: " + calculo; //por lo tanto habrá que devolver el perímetro
+
+				}
+				if(area){
+					var calculo = PI*r*r;
+					res.innerHTML += "<br>El área es: " + calculo;
+
+				}
+				if(diametro){
+					var calculo = 2*r;	
+					res.innerHTML += "<br>El diámetro es: " + calculo;
+				}
+				if(!perimetro && !area && !diametro){
+					alert("Marca algún checkbox");
+				}
+		}
+	</script>
+</body>
+</html>

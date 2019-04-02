@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Calculadora MRU</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			border: 1px solid #000;
+			width: 90%;
+			margin: auto;
+			font-family: helvetica;
+			background-color: #F9F1DD;
+			padding-left: 35%;
+			font-weight: bold;
+		}
+		input, output, button{
+			margin-top: 1%;
+
+		}
+		button{
+			margin-bottom: 1%;
+			width: 5%;
+		}
+
+	</style>
+	<script type="text/javascript">
+		function calcular(){
+			//recuperar los valores que necesitamos
+			var i=parseFloat(inicial.value);
+			var v=parseFloat(velocidad.value);
+			var t=parseFloat(tiempo.value);
+
+			//realizar el cálculo
+			var calculo=i+v*t;
+
+			//mostrar el resultado
+			document.getElementById('resultado').innerHTML=calculo;	
+		}
+	</script>
+</head>
+<body>
+	<h1>Calculadora MRU</h1>
+	<label>Posición inicial:</label>
+	<input type="number" id="inicial" value="0"/>
+	<span>(m)</span><br />
+
+	<label>Velocidad:</label>
+	<input type="number" id="velocidad" value="0"/>
+	<span>(m/s)</span><br />
+
+	<label>Tiempo:</label>
+	<input type="number" id="tiempo" value="0"/>
+	<span>(s)</span><br />
+
+	<button onclick="calcular();">Calcular</button><br />
+
+	<label>RESULTADO:</label>
+	<output id="resultado">0</output><span>(m)</span>
+</body>
+</html>

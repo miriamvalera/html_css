@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio 1 Largo</title>
+	<script type="text/javascript">
+		function divisores(){
+			var numero = parseInt(document.getElementById('n').value); 
+			var resultado = "1, ";
+
+			for(let i=2; i<=numero/2; i++){
+				if(numero%i==0){
+					resultado+=i+', ';
+				}
+			}
+			resultado+=numero+'.';
+			
+			alert(resultado);
+		}
+
+	</script>
+</head>
+<body>
+	<h1>Dime los divisores del número</h1>
+	<label>Dime un número: </label>
+	<input type="number" id="n" />
+	<button onclick="divisores();">DIME LOS DIVISORES</button>
+</body>
+</html>

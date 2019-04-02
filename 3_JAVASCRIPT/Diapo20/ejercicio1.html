@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 1 - Ventana a modo de popUp con propaganda</title>
+	
+</head>
+<body>
+
+	<h2>Página con publicidad</h2>
+
+	<button onclick="cerrar();">PAUSAR</button>
+
+	<script type="text/javascript">
+		var intervalo = setInterval(publi, 15000);
+		var publicidad;
+
+		function publi(){
+			pubicidad = window.open('http://www.creacionesabm.com', '', 'width=500, height=500');
+		}
+
+		function cerrar(){
+			clearInterval(intervalo);
+			publicidad.close();
+		}
+	</script>
+
+<!--Segunda opción -->
+
+	<!-- <script type="text/javascript">
+		var intervalo = setInterval(publi, 15000);
+		var publicidad= [];
+
+		function publi(){
+			pubicidad.push(window.open('http://www.google.com', '', 'width=500, height=500')); // push: meter las ventanas que se van creando dentro del array vacío
+		}
+
+		function cerrar(){
+			clearInterval(intervalo);
+			for(let i=0; i<publicidad.length; i++){
+				publicidad[i].close();
+		}
+	</script> -->
+</body>
+</html>

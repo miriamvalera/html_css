@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio 3</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			margin: auto;
+			width: 90%;
+			font-family: helvetica;
+			background-color: #F9F1DD;
+			margin-left: 15%;
+			font-weight: bold;
+		}
+		h1{
+			padding-top: 5%;
+		}
+		h4{
+			padding-top: 3%;
+		}
+		input, output, button{
+			margin-top: 3%;
+		}	
+	</style>
+	
+	<script type="text/javascript">
+		function fahrenheit(){
+			var degreesF = document.getElementById('degreesF').value;
+			var res = (degreesF-32)*5/9;
+			document.getElementById('resultado1').innerHTML=res;
+		}
+
+		function celsius(){
+			var degreesC = document.getElementById('degreesC').value; 
+			var res = (degreesC*9/5)+32;
+			document.getElementById('resultado2').innerHTML=res;
+		}
+	</script>
+</head>
+<body>
+	<h1>Convertir grados Fahrenheit a grados Celsius y viceversa</h1>
+
+	<label>Fahrenheit:</label>
+	<input type="number" id="degreesF" />
+	<br />
+	<h4>Celsius: <span id="resultado1"></span></h4>
+
+	<label>Celsius:</label>
+	<input type="number" id="degreesC" />
+	<br />
+	<h4>Fahrenheit: <span id="resultado2"></span></h4>
+
+	<button onclick="fahrenheit();"> FAHREINHEIT</button>
+	<button onclick="celsius();"> CELSIUS</button>
+		
+</body>
+</html>

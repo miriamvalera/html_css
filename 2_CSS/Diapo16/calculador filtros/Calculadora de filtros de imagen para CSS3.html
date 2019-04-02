@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html data-lt-installed="true"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Calculadora de filtros de imagen para CSS3">
+		<meta name="keywords" content="HTML5, CSS3, transform, 3D, 2D, filter, filtros">
+		<title>Calculadora de filtros de imagen para CSS3</title>
+		<link rel="stylesheet" type="text/css" href="ejemplo.css">
+		<link rel="stylesheet" type="text/css" href="estilo.css">
+	</head>
+	<body>
+		
+		
+		<h1>Calculadora de filtros de imagen en CSS</h1>
+		
+		<section id="descripcion">
+				<h2>Descripción</h2>
+				<p>Con este ejemplo se pueden probar los diferentes filtros de imagen que ofrece CSS,
+				 así como calcular los valores deseados para nuestras imágenes.</p>
+		</section>
+		
+		<div class="interactivo">					
+			<figure>
+				<img id="img_blur" src="homer.png" alt="homer" style="filter: blur(0px);">
+				<figcaption>filtro blur()</figcaption>
+				<script>
+					function b(){
+						var modif='blur('+input_blur.value+'px)';
+						img_blur.style.filter=modif;
+						output_blur.innerHTML='filter: '+modif+';';
+					}
+				</script>
+
+				<label>Longitud (px):</label>
+				<input onchange="b();" id="input_blur" type="range" min="-0" max="20" step="1" value="0">
+				<br>
+				<output id="output_blur">filter: blur(0px);</output>
+			</figure>
+
+			<figure>
+				<img id="img_brightness" src="marge.png" alt="marge">
+				<figcaption>filtro brightness()</figcaption>
+				<script>
+					function br(){
+						var modif='brightness('+input_brightness.value+'%)';
+						img_brightness.style.filter=modif;
+						output_brightness.innerHTML='filter: '+modif+';';
+					}
+				</script>
+
+				<label>Brillo (%):</label>
+				<input onchange="br();" id="input_brightness" type="range" min="0" max="200" step="5" value="100">
+				<br>
+				<output id="output_brightness">filter: brightness(0px);</output>
+			</figure>
+
+			<figure>
+				<img id="img_contrast" src="bart.png" alt="bart">
+				<figcaption>filtro contrast()</figcaption>
+				<script>
+					function co(){
+						var modif='contrast('+input_contrast.value+'%)';
+						img_contrast.style.filter=modif;
+						output_contrast.innerHTML='filter: '+modif+';';
+					}
+				</script>
+
+				<label>Contraste (%):</label>
+				<input onchange="co();" id="input_contrast" type="range" min="0" max="200" step="5" value="100">
+				<br>
+				<output id="output_contrast">filter: contrast(0px);</output>
+			</figure>
+			
+			<figure>
+				<img id="img_shadow" src="lisa.png" alt="lisa">
+				<figcaption>filtro drop-shadow()</figcaption>
+				<script>
+					function sh(){
+						var modif='drop-shadow('+input_shadow_h.value+'px '+input_shadow_v.value+'px '+input_shadow_b.value+'px '+input_shadow_c.value+')';
+						img_shadow.style.filter=modif;
+						output_shadow.innerHTML='filter: '+modif+';';
+					}
+				</script>
+
+				<label>Horizontal:</label>
+				<input onchange="sh();" id="input_shadow_h" type="range" min="-50" max="50" step="5" value="0">
+				<br>
+				<label>Vertical:</label>
+				<input onchange="sh();" id="input_shadow_v" type="range" min="-50" max="50" step="5" value="0">
+				<br>
+				<label>Blur:</label>
+				<input onchange="sh();" id="input_shadow_b" type="range" min="0" max="50" step="5" value="0">
+				<br>
+				<label>Color:</label>
+				<input onchange="sh();" id="input_shadow_c" type="color" value="#CCCCCC">
+				<br>
+				<output id="output_shadow">filter: drop-shadow(0px);</output>
+			</figure>
+	
+			<figure>
+				<img id="img_grayscale" src="maggie.png" alt="maggie">
+				<figcaption>filtro grayscale()</figcaption>
+				<script>
+					function gr(){
+						var modif='grayscale('+input_grayscale.value+'%)';
+						img_grayscale.style.filter=modif;
+						output_grayscale.innerHTML='filter: '+modif+';';
+					}
+				</script>
+
+				<label>Escala de grises (%):</label>
+				<input onchange="gr();" id="input_grayscale" type="range" min="0" max="100" step="1" value="0">
+				<br>
+				<output id="output_grayscale">filter: grayscale(0%);</output>
+			</figure>
+
+			<figure>
+				<img id="img_rotate" src="abe.png" alt="abe">
+				<figcaption>filtro hue-rotate()</figcaption>
+				<script>
+					function hu(){
+						var modif='hue-rotate('+input_rotate.value+'deg)';
+						img_rotate.style.filter=modif;
+						output_rotate.innerHTML='filter: '+modif+';';
+					}
+				</script>
+
+				<label>Hue rotate (deg):</label>
+				<input onchange="hu();" id="input_rotate" type="range" min="0" max="360" step="1" value="0">
+				<br>
+				<output id="output_rotate">filter: hue-rotate(0deg);</output>
+			</figure>
+
+			<figure>
+				<img id="img_invert" src="moe.png" alt="moe">
+				<figcaption>filtro invert()</figcaption>
+				<script>
+					function inv(){
+						var modif='invert('+input_invert.value+'%)';
+						img_invert.style.filter=modif;
+						output_invert.innerHTML='filter: '+modif+';';
+					}
+				</script>
+
+				<label>Invert (%):</label>
+				<input onchange="inv();" id="input_invert" type="range" min="0" max="100" step="1" value="0">
+				<br>
+				<output id="output_invert">filter: invert(0%);</output>
+			</figure>
+
+			<figure>
+				<img id="img_opacity" src="clancy.png" alt="clancy">
+				<figcaption>filtro opacity()</figcaption>
+				<script>
+					function opa(){
+						var modif='opacity('+input_opacity.value+'%)';
+						img_opacity.style.filter=modif;
+						output_opacity.innerHTML='filter: '+modif+';';
+					}
+				</script>
+
+				<label>Opacidad (%):</label>
+				<input onchange="opa();" id="input_opacity" type="range" min="0" max="100" step="1" value="100">
+				<br>
+				<output id="output_opacity">filter: opacity(100%);</output>
+			</figure>
+
+			<figure>
+				<img id="img_saturate" src="kodos.png" alt="kodos">
+				<figcaption>filtro saturate()</figcaption>
+				<script>
+					function satu(){
+						var modif='saturate('+input_saturate.value+'%)';
+						img_saturate.style.filter=modif;
+						output_saturate.innerHTML='filter: '+modif+';';
+					}
+				</script>
+
+				<label>Saturación (%):</label>
+				<input onchange="satu();" id="input_saturate" type="range" min="0" max="300" step="1" value="100">
+				<br>
+				<output id="output_saturate">filter: saturate(0%);</output>
+			</figure>
+
+			<figure>
+				<img id="img_sepia" src="otto.png" alt="otto">
+				<figcaption>filtro sepia()</figcaption>
+				<script>
+					function sep(){
+						var modif='sepia('+input_sepia.value+'%)';
+						img_sepia.style.filter=modif;
+						output_sepia.innerHTML='filter: '+modif+';';
+					}
+				</script>
+
+				<label>Sepia (%):</label>
+				<input onchange="sep();" id="input_sepia" type="range" min="0" max="100" step="1" value="0">
+				<br>
+				<output id="output_sepia">filter: sepia(0%);</output>
+			</figure>
+		</div>
+       
+	
+
+
+
+
+
+</body></html>

@@ -1,0 +1,86 @@
+body main>div{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px auto 10px auto;
+}
+
+body main>div>div{
+   min-width: 200px; 
+   margin: 5px;
+}
+
+main legend{
+  font-style: italic; 
+}
+button{
+	padding: 5px 15px;
+	display: block;
+	margin: 10px auto;
+}
+main output{
+	display: inline-block;
+	margin: 10px 0px 10px 20px;
+	font-family: verdana;
+	color: darkblue;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+main label{
+	display: inline-block;
+	min-width: 150px;
+	margin: 10px;
+}
+
+
+#salida{
+	text-align: center;
+	font-size: 3em;
+	width: 100%;
+}
+
+.tapete{
+	display: flex;
+	margin: 10px auto;
+	padding: 0;
+	background-color: #090;
+	min-height: 300px;
+	min-width: 300px;
+	border-radius: 10px;
+	box-shadow: 2px 2px 5px rgba(60,60,60,0.6);
+}
+
+.wrap{
+	position: relative;
+	width: 200px;
+	height: 200px;
+  margin: auto;	
+}
+.dado{
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	transform-style: preserve-3d;
+  transition-timing-function: cubic-bezier(.21,1.41,.99,.78);	
+}
+
+.cara{
+	position: absolute;
+	height: 200px;
+	width: 200px;
+}
+
+.front{transform: translateZ(100px);}
+.back{transform: rotateY(180deg) translateZ(100px);}
+.top{transform: rotateX(-90deg) translateZ(100px);}
+.bottom{transform: rotateX(90deg) translateZ(100px);}
+.left{transform: rotateY(-90deg) translateZ(100px);}
+.right{transform: rotateY(90deg) translateZ(100px);}
+
+
+
+
+
+
+

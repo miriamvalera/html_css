@@ -1,0 +1,117 @@
+*{
+	margin: 0;
+	padding: 0;
+	color: none;
+}
+body{
+	margin: auto;
+}
+/* 	HEADER 	*/
+header{
+	display: flex;
+	background-image: url(../images/azul.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 30%;
+	background-attachment: fixed;
+}
+header>div:first-child{
+	width: 42%;
+	justify-content: flex-start;
+}
+header img{
+	box-shadow: 10px 0px 14px -8px rgba(0,0,0,0.75);
+	width: 42.9%;
+	height: 100%;
+}
+h1{
+	font-size: 5vw;
+	padding-top: 10%;
+	padding-bottom: 5%;
+	display: inline-block;
+	flex: 1;
+	font-family: 'Bangers', cursive;
+}
+
+/* 	NAV 	*/
+nav{
+	box-shadow: 10px 0px 14px -8px rgba(0,0,0,0.75);
+	position: fixed;
+	font-family: 'Bangers', cursive;
+	font-size: 2vw;
+	text-align: center;
+	height: 100%;
+	width: 18%;
+	background-image: linear-gradient(to bottom right, red, yellow);
+}
+nav li{
+	text-decoration: none;
+	padding: 10%;
+}
+nav li:hover{
+	font-size: 3vw;
+	background-image: url(../images/boom.png);
+	background-size: 80%;
+    background-position-y: 203px;
+}
+nav a{
+	text-decoration: none;
+	color: #FFF;
+}
+nav li:hover a{
+	text-decoration: none;
+	color: #0e33bb;
+}
+nav a:visited{
+	color: #522063;
+}
+/* 	SECTION 	*/
+section{
+	background-color: #cecece;
+	width: 18%;
+	height: 100%;
+	position: fixed;
+	right: 0;
+}
+section h2{
+	font-family: 'Bangers', cursive;
+	font-size: 2vw;
+	position: absolute;
+    margin-top: 116%;
+    z-index: 12;
+    text-align: center;
+}
+section img{
+	margin-top: 96%;
+    width: 129%;
+    z-index: 0;
+    position: absolute;
+    left: -12%;
+}
+
+/* 	FOOTER 	*/
+footer{
+	background-color: #000;
+	color: #FFF;
+	width: 100%;
+	height: 6%;
+	position: fixed;
+	bottom: 0;
+	display: flex;
+}
+footer div{
+	flex: 1;
+	text-align: center;
+}
+footer div:first-child{
+	padding: 1.5%;
+}
+footer div:last-child{
+	box-sizing: border-box;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	font-size: 2vw;
+}
+footer div:last-child a{
+	color: #FFF;
+} 
+

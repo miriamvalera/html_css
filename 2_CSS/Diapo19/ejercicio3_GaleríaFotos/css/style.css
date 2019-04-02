@@ -1,0 +1,212 @@
+body{
+	width: 90%;
+	margin: auto;
+}
+header{
+	grid-area: he;
+	background-color: #C45474;
+}
+header h1{
+	font-family: 'Varela Round', sans-serif;
+	text-align: center;
+	text-transform: uppercase;
+	color: #F1BBCD;
+}
+nav{
+	grid-area: na;
+	background-color: #F1BBCD; 
+	text-align: center;
+	font-family: 'Acme', sans-serif;
+}
+nav a{
+	text-decoration: none;
+	color: #C45474;
+	text-transform: capitalize;
+}
+nav div:hover{
+	color: #6F0F2A;
+	transform: scale(1.5);
+	text-shadow: 1px 0px 1px #CCCCCC, 
+				 0px 1px 1px #EEEEEE, 
+				 2px 1px 1px #CCCCCC, 
+				 1px 2px 1px #EEEEEE, 
+				 3px 2px 1px #CCCCCC, 
+				 2px 3px 1px #EEEEEE, 
+				 4px 3px 1px #CCCCCC;
+	margin-left: 10px;
+	margin-right: 10px;     
+
+}
+nav div{
+	display: inline-block;	
+	padding: 10px;
+}
+main{
+	grid-area: ma;
+	justify-content: center;
+}
+main figure{
+	box-shadow: 0px 0px 20px -4px #9e3a5c;
+	border: 1px solid #9e3a5c;
+	border-radius: 5px;
+}
+figure img{
+	width: 100%;
+}
+figcaption{
+	text-align: center;
+	font-size: 1em;
+	font-family: 'Acme', sans-serif;
+	text-transform: bold;
+	padding: 15px;
+}
+figure:nth-of-type(1){
+	grid-area: fi1;
+}
+figure:nth-of-type(2){
+	grid-area: fi2;
+}
+figure:nth-of-type(3){
+	grid-area: fi3;
+}
+figure:nth-of-type(4){
+	grid-area: fi4;
+}
+figure:nth-of-type(5){
+	grid-area: fi5;
+}
+figure:nth-of-type(6){
+	grid-area: fi6;
+}
+figure:nth-of-type(7){
+	grid-area: fi7;
+}
+figure:nth-of-type(8){
+	grid-area: fi8;
+}
+figure:nth-of-type(9){
+	grid-area: fi9;
+}
+figure:nth-of-type(1):hover{
+	filter: blur(2px);
+	z-index: 5;
+	transform: rotateY(10deg) scale(1.2);
+	box-shadow: 4px 4px 8px rgba(20,20,20,0.8);
+}
+figure:nth-of-type(2):hover{
+	filter: brightness(165%);
+	transition-duration: 5s;
+	transition-timing-function: ease-out;
+}
+figure:nth-of-type(3):hover{
+	filter: contrast(60%);
+	transition: 5s;
+	box-shadow: 4px 4px 8px rgba(20,20,20,0.8);
+}
+figure:nth-of-type(4):hover{
+	filter: drop-shadow(-20px 15px 5px #afa3f5);
+	transition-duration: 5s;
+	transition-timing-function: ease-out;
+}
+figure:nth-of-type(5):hover{
+	filter: grayscale(100%);
+	box-shadow: 4px 4px 8px rgba(20,20,20,0.8);
+}
+figure:nth-of-type(6):hover{
+	filter: hue-rotate(282deg);
+	transition: 0.3s;
+	transition-delay: 0.7s;
+}
+figure:nth-of-type(7):hover{
+	filter: invert(100%);
+	transition-duration: 5s;
+	transition-timing-function: linear;
+}
+figure:nth-of-type(8):hover{
+	filter: saturate(280%);
+	transition-duration: 0.3s;
+	transition-delay: 0.7s;
+}
+figure:nth-of-type(9):hover{
+	filter: sepia(100%);
+	z-index: 3;
+	transform: rotateY(10deg) scale(1.2);
+	box-shadow: 4px 4px 8px rgba(20,20,20,0.8);
+}
+footer{
+	grid-area: fo;
+	background-color: #C45474;
+	text-align: center;
+	color: #F1BBCD;
+	font-family: verdana;
+	font-size: 0.8em;
+}
+.grid-container{
+	display: grid;
+	grid-template-columns: 30% auto 30%;
+	grid-template-areas:
+		'he he he'
+		'na na na'
+		'ma ma ma'
+		'ma ma ma'
+		'ma ma ma'
+		'fo fo fo';
+}
+.grid-main{
+	display: grid;
+	grid-template-columns: 30% 30% 30%;
+	grid-template-areas:
+		'fi1 fi2 fi3'
+		'fi4 fi5 fi6'
+		'fi7 fi8 fi9';
+	}
+@media screen and (max-width: 720px){
+	.grid-main{
+	grid-template-columns: 50% auto;
+	grid-template-areas:
+		'fi1 fi2' 
+		'fi3 fi4'
+		'fi5 fi6'
+		'fi7 fi8'
+		'fi9 .';
+	}
+}
+
+figure:nth-of-type(1):hover img{
+	transform: rotate(15deg);
+
+}
+figure:nth-of-type(2):hover img{
+	transform: skew(25deg);
+}
+figure:nth-of-type(3):hover img{
+	transform: scale(1.2, 0.8) rotateZ(7deg);
+}
+figure:nth-of-type(4):hover img{
+	transform: translate(50px, -20px);
+}
+figure:nth-of-type(5):hover img{
+	transform: scale(1.5);
+	transition: 0.5s;
+}
+figure:nth-of-type(6):hover img{
+	transform: skewY(20deg);
+}
+figure:nth-of-type(7):hover img{
+	transform: scale(1.5, 1.0);
+}
+figure:nth-of-type(8):hover img{
+	transform: rotate(-15deg);
+}
+figure:nth-of-type(9):hover img{
+	transform: translate(50px, 20px);
+}
+.cerrar{
+	position: absolute;
+	width: 20px;
+	height: 20px;
+
+}
+.grid-main figure img:not(.cerrar){
+	width: 80%;
+}

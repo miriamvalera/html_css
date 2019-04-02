@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 4 - Juego de dos Dados</title>
+	<style type="text/css">
+
+		header{
+			background-image: url(juegoDados.png);
+			background-size: 30%;
+			background-repeat: no-repeat;
+			background-position: 50% 50%;
+			width: 100%;
+			height: 300px;
+			border: solid 2px red;
+			background-color: #088A4B;
+		}
+		h1{
+			text-align: center;
+			font-family: Verdana;
+			font-size: 70px;
+
+		}
+		#boton{
+			margin-left: 20%;
+
+		}
+		#dado2D{
+			float: left;
+			border: solid 1px black;
+			border-radius: 5px;
+			width: 400px;
+			height:300px;
+			margin: 20px;
+			padding: 10px;
+			
+		}
+		img{
+			width: 150px;
+		}
+		#panel{
+			margin: 20px;
+			width: 350px;
+			height: 100px;
+			border: solid 1px black;
+			border-radius: 5px;
+			padding: 10px;
+			float: left;
+		}
+
+		#panel2{
+			margin: 20px;
+			width: 170px;
+			height: 230px;
+			border: solid 1px black;
+			border-radius: 5px;
+			padding: 10px;
+			float: left;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Juego de dados</h1>
+	</header>
+	
+	<div id="panel">
+		<form>
+			<label>Monedas Iniciales:</label>
+			<span id="monedas">10</span>
+			<br />
+			<label>Apuesta por tirada:</label>
+				<select>
+					
+				</select>
+			<br />
+			<input type="radio" name="mOm" value="mayor" class="mOm" checked />Más de 7
+			<input type="radio" name="mOm" value="menor" class="mOm" checked />Menos de 7
+			<br />
+		</form>
+	</div>
+	<div id="panel2">
+		<h2>Estadísticas</h2>
+			<div>Partidas jugadas: <span id="partidas">0</span></div>
+			<div>Ganadas: <span id="ganadas">0</span></div>
+			<div>Perdidas: <span id="perdidas">0</span></div>
+			<div>Record monedas: <span id="record">0</span></div>
+	</div>
+	<div id="dado2D">
+		<img src="" name="dadoUno" />
+		<img src="" name="dadoDos" />
+		<br />
+		<form>
+			<input id="boton" type="button" value="Lanza dados" onClick="lanzar()">
+		</form>
+		<br />
+		<label>Resultado: </label><output id="solucion"></output>
+		<h4 id="resultado"></h4>
+	</div>
+
+	<script type="text/javascript">
+		var partidas = 0;
+		var ganadas = 0;
+		var perdidas = 0;
+		var records = 10;
+
+		//Genero cuantas monedas tengo para apostar
+		var monedasApuesta = document.getElementsByTagName('select')[0];
+
+		for(let i=0; i<monedas; i++){
+			monedasApuesta.appendChild(document.createElement('option'));
+			monedasApuesta.children[i].value = i+1;
+			monedasApuesta.children[i].innerHTML = i+1;
+		}
+
+		function lanzar(){
+			//Sumamos 1 a partidas
+			partidas++;
+
+			//Generamos los dos números random de los dados
+			var dado1 = Math.floor((Math.random()*6)+1);
+			var dado2 = parseInt((Math.random()*6)+1);
+
+			//Mostramos en pantalla la cara que toque de cada dado
+			dado2D.children[0].src = "dice"+dado1+".png";
+			dado2D.children[1].src = "dice"+dado2+".png";
+			
+			//Realizamos la suma, para saber el número total
+			var suma = dado1+dado2;
+			solucion.innerHTML = suma;
+
+			//Recogemos las variables del usuario
+			var apuesta = apuestaTirada.value;
+			var mayor = document.getElementsByTagName('mOm')[0].checked;
+
+			//Borrar las opciones del SELECT, ya que luego las volveremos a crear con las monedas que nos queden
+			for(let i=0; i<monedas; i++){
+				monedasApuesta.firstElementChild.remove();
+			}
+
+			//Pregunto que apuesta el usuario y decidimos si ha ganado o no
+			if(suma==7){
+				resultado.innerHTML = 'Ha salido 7, ni para ti, ni para mi';
+			}else{
+				if(mayor){
+					if(suma>7){
+						resultado.innerHTML = "HAS GANADO, te llevas mis monedas";
+						monedas+=apuesta;
+						ganadas++;
+					}else{
+						resultado.innerHTML = "HAS PERDIDO, me quedo tus monedas";
+						monedas-=apuesta;
+						perdidas++;
+					}
+				}else{
+					if(suma<7){
+						resultado.innerHTML = "HAS GANADO, te llevas mis monedas";
+						monedas+=apuesta;
+						perdidas++;
+					}else{
+						resultado.innerHTML = "HAS PERDIDO, me quedo tus monedas";
+					}
+				}
+			}
+
+			//Comprobamos si tenemos más monedas ahora, que el record absoluto y en el caso que sea así, actualizamos el record
+			if(monedas>record){
+				record=monedas;
+			}
+
+			//Pregunto si me quedan monedas y en el caso que no, aviso al usuario y reseteo el juego
+			if(monedas==0){
+				alert('TE HAS QUEDADO SIN DINERO... ¿VOLVEMOS A JUGAR?');
+				monedas = 10;
+				partidas = 0;
+				ganadas = 0;
+				perdidas = 0;
+			}
+
+			//Vuelvo a generar las opciones del SELECT con la cantidad de monedas que me quedan
+			for(let i=0; i<monedas; i++){
+				monedasApuesta.appendChild(document.createElement('option'));
+				monedasApuesta.children[i].value = i+1;
+				monedasApuesta.children[i].innerHTML = i+1;
+			}
+
+			//Imprimo las estadísticas
+			document.getElementById('monedas').innerHTML = monedas;
+			document.getElementById('partidas').innerHTML = partidas;
+			document.getElementById('ganadas').innerHTML = ganadas;
+			document.getElementById('perdidas').innerHTML = perdidas;
+			document.getElementById('record').innerHTML = record;	
+		}
+		
+	</script>
+</body>
+</html>

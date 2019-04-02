@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 1 - Fusiones de Goku</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<header>
+		<h2>Transformaciones de Son Goku</h2>
+	</header>
+	<p>Dale click a Goku e irá mostrando sus transformaciones</p>
+	
+	<figure>
+		<img src="images/goku.png" onclick="cambiar(this);" height="700" width="500" id="foto" />
+	</figure>
+	
+	<!-- <button onclick="cambiar(foto.value);">Click-me</button> -->
+
+	<script type="text/javascript">
+		//1.- Para saber en que estado creamos una variable fuera de la función: 
+		var estado = 0;
+
+		function cambiar(imagen){
+			//2.- Cuando nos hacen clic en la img tenemos que cambiar el atributo src del this en función de que estado/imagen estamos mostrando
+            //Porque la intencion de crear un contador / estado es saber que img viene después. como no se como se cambia el atributo voy a mirar internet
+            //Tal como dice internet de "Change src tag img: " ->document.getElementById("imageid").src="../template/save.png"; Pues probamos:
+			
+			switch(estado){
+
+				//Si estado es 0 es que está en el estado inicial y queremos mostrar la siguiente:
+                 /* imagen.src="../template/save.png"; //cambiamos la src de la img y aumentamos el estado al siguiente 
+                    estado++; */
+				case 0:
+					imagen.src="images/goku1.png";
+					estado++;
+				break; 
+				case 1:
+					imagen.src="images/goku2.png";
+					estado++;
+				break;
+				case 2:
+					imagen.src="images/goku3.png";
+					estado++;
+				break;
+
+				case 3:
+					imagen.src="images/goku4.png";
+					estado++;
+				break;
+
+				case 4:
+					imagen.src="images/goku5.png";
+					estado++;
+				break;
+
+				case 5:
+					imagen.src="images/goku.png";
+					estado=0; //Sólo cambia aqui que en vez de incrementar cuando llegamos al final es decir vale 3 ya hemos mostrado las 3 img y hay que volver a iniciar
+				break;
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 1 - Pelota Baloncesto</title>
+	<style type="text/css">
+		#campo{
+			background-image: url(img/campo.png);
+			background-repeat: no-repeat;
+			height: 1000px;
+			width: 1135px;
+			position: relative;
+		}
+		#pelota{
+			height: 100px;
+			width: 100px;
+			position: absolute;
+			animation-name: botar, bote, rotar, desplazar;
+			animation-duration: 1s, 2s;
+			animation-timing-function: cubic-bezier(.67,.06,.94,.74), linear;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+		}
+		@keyframes botar{
+			from{top: 0px;}
+			to{top: 300px;}
+		}
+		@keyframes bote{
+			from{left: 0px;}
+			to{left: 300px;}
+		}
+		@keyframes rotar{
+			from{transform: rotateZ(0deg);}
+			to{transform: rotateZ(360deg);}
+		}
+		@keyframes desplazar{
+			0%{left: -10%; transform: rotateZ(0deg);}
+			20%{left: 20%; transform: rotateZ(0deg);}
+			40%{left: 40%; transform: rotateZ(180deg);}
+			60%{left: 60%; transform: rotateZ(180deg);}
+			80%{left: 80%; transform: rotateZ(180deg);}
+			100%{left: 100%; transform: rotateZ(180deg);}
+		}
+	</style>
+</head>
+<body>
+	<div id="campo">
+		<img id="pelota" src="img/baloncesto.png" alt="pelota" title="pelotaBaloncesto">
+	</div>
+</body>
+</html>
+

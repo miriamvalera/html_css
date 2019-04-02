@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejemplo - Animación from-to</title>
+	<style type="text/css">
+		/*#animado{
+			height: 50px;
+			width: 500px;
+			background-color: red;
+			animation: alargar 3s;
+		}
+		@keyframes alargar{
+			from{width: 200px};
+			to{width: 500px};
+		}
+		*/
+
+		/*animación con fotogramas clave*/
+		#animado{
+			height: 50px;
+			width: 200px;
+			background-color: red;
+			animation: alargar 3s;
+		}
+		@keyframes alargar{
+			0% {width: 200px; height: 50px;}
+			25% {width: 500px; height: 50px;}
+			50% {width: 500px; height: 300px;}
+			75% {width: 500px; height: 50px;}
+			100% {width: 200px;}
+		}
+	</style>
+</head>
+<body>
+	<h1>El div animado</h1>
+	<div id="animado"></div>
+</body>
+</html>

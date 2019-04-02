@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 5 - Mejora del ejercicio 2 - Nombre compuesto</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function nombre(nombre, apellido1, apellido2){
+			
+			//Solucionamos el posible error de tener espacio antes o después del nombre
+			nombre = nombre.trim();
+
+			//Posibilidad de que nos hagan más de un espacio entre el nombre compuesto. Debemos comenzar desde la opción cn más espacios
+			nombre = nombre.replace('    ',' ');
+			nombre = nombre.replace('   ',' ');
+			nombre = nombre.replace('  ',' ');
+
+			//Comprobamos si hay algun espacio entre los nombres y por tanto, es nombre compuesto
+			if(nombre.indexOf(' ')>-1){
+				//Buscamos la posición del espacio
+				let espacio = nombre.search(' ');
+
+				//Generamos el nombre y apellidos tal y como nos lo piden 
+				nombre = nombre[0].toUpperCase()+nombre.slice(1,espacio)+' '+nombre[espacio+1].toUpperCase()+nombre.slice(espacio+2);
+			}else{
+				nombre = nombre[0].toUpperCase()+nombre.slice(1);
+			}
+
+			//Imprimimos por pantalla
+			alert(apellido1+' '+apellido2+', '+nombre);
+	}
+	</script>
+	
+	<h2>Escribe tu nombre y apellidos</h2>
+	<label>Nombre:</label>
+	<input type="text" id="nom" /><br />
+
+	<label>Primer apellido:</label>
+	<input type="text" id="apellido1" /><br />
+
+	<label>Segundo apellido:</label>
+	<input type="text" id="apellido2" /><br />
+
+	<button onclick="nombre(nom.value.toLowerCase(), apellido1.value.toUpperCase(), apellido2.value.toUpperCase());">¿Como me llamo?</button>
+</body>
+</html>

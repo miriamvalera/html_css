@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 4 - Galería con 5 imágenes</title>
+	<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+	<style type="text/css">
+		h2{
+			text-align: center;
+			font-family: 'Gloria Hallelujah', cursive;
+		}
+		figure img{
+			border: 1px solid #000;
+		}
+		main{
+			display: flex;
+			flex-wrap: wrap;
+			min-width: 50%;
+		}
+		figure{
+			flex: 1;	
+		}
+		
+	</style>
+</head>
+<body>
+	<h2>Galería de imágenes</h2>
+	<main>
+		<figure>
+			<img src="images/homer.png" onmouseenter="escalar(this, 1.30);" onmouseleave="escalar(this, 0.70);" height="500" width="500" id="foto1" onclick="colorear(this, incolor.value);" />
+		</figure>
+
+		<figure>
+			<img src="images/marge.png" onmouseenter="escalar(this, 1.30);" onmouseleave="escalar(this, 0.70);" height="500" width="500" id="foto2" onclick="colorear(this, incolor.value);" />
+		</figure>
+
+		<figure>
+			<img src="images/bart.png" onmouseenter="escalar(this, 1.30);" onmouseleave="escalar(this, 0.70);" height="500" width="500" id="foto3" onclick="colorear(this, incolor.value);" />
+		</figure>
+
+		<figure>
+			<img src="images/lisa.png" onmouseenter="escalar(this, 1.30);" onmouseleave="escalar(this, 0.70);" height="500" width="500" id="foto4" onclick="colorear(this, incolor.value);" />
+		</figure>
+
+		<figure>
+			<img src="images/maggie.png" onmouseenter="escalar(this, 1.30);" onmouseleave="escalar(this, 0.70);" height="500" width="500" id="foto5" onclick="colorear(this, incolor.value);" />
+		</figure>
+	</main>
+	<span>Color:</span>
+	<input type="color" id="incolor" value="#FF0000" />
+	<button onclick="colorear(document.body, incolor.value);">Colorear</button>
+
+	<script type="text/javascript">
+		function escalar(imagen, valor){
+			imagen.height*=valor;
+			imagen.width*=valor;
+		}
+
+		function colorear(objeto, color){
+			objeto.style.backgroundColor = color;
+		}
+	</script>
+</body>
+</html>

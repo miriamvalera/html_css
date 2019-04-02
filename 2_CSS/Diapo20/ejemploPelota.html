@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejemplo - Pelota</title>
+	<style type="text/css">
+		body{
+			margin: auto;
+			width: 50%;
+			padding-top: 10%;
+		}
+		#campo{
+			height: 400px;
+			width: 500px;
+			position: relative;
+			border: 1px solid #000;
+		}
+		#pelota{
+			height: 100px;
+			width: 100px;
+			position: absolute;
+			animation-name: botar, rotar;
+			animation-duration: 1s, 2s;
+			animation-timing-function: cubic-bezier(.67,.06,.94,.74), linear;
+			animation-iteration-count: infinite;
+			animation-direction: alternate, normal;
+		}
+		@keyframes botar{
+			from{top: 0px;}
+			to{top: 300px;}
+		}
+		@keyframes rotar{
+			from{transform: rotateZ(0deg);}
+			to{transform: rotateZ(360deg);}
+		}
+	</style>
+</head>
+<body>
+	<div id="campo">
+		<img id="pelota" src="img/pelota.png" alt="pelota" title="la pelota botante" />	
+	</div>
+</body>
+</html>

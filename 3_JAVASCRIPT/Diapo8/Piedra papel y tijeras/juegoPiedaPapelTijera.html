@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 2 - Piedra Papel Tijera</title>
+	<style type="text/css">
+		body{
+			margin: auto;
+			width: 80%;
+		}
+		main{
+			border: 1px solid #000;
+			grid-area: main;	
+		}
+		h1{
+			text-align: center;
+		}
+		#jugadores{
+			display: flex;
+			margin-left: 30px;
+			align-items: center; 
+			justify-content: center;
+		}
+		#jugadores figure{
+			display: inline-block;
+		}
+		figure img{
+			text-align: center;
+			flex: 1;
+			
+		}
+		#jugadas{
+
+		}
+		#jugadas figure{
+			display: inline-block;
+		}
+		#estadistica{
+			display: inline-block;
+			
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<h1>Juego de piedra papel tijera</h1>
+		<div id="jugadores">
+			<figure>
+				<figcaption>Jugador 1</figcaption>
+				<img id="firstPlayer" src="images/interrogantes.png" width="300" height="300"/>
+			</figure>
+			
+			
+			<figure>
+				<figcaption>Jugador 2</figcaption>
+				<img id="secondPlayer" src="images/interrogantess.png" width="300" height="300"/>
+			</figure>
+		</div>	
+		<div id="resultado"></div>
+		<section id="jugadas">
+			<h2>Selecciona tirada</h2>
+				<figure>
+					<figcaption>Piedra</figcaption>
+					<img src="images/piedra.jpg" width="200" height="200" id="piedra" onclick="tirada('piedra')" />
+				</figure>
+				
+				<figure>
+					<figcaption>Papel</figcaption>
+					<img src="images/papel.jpg" width="200" height="200" id="papel" onclick="tirada('papel')" />
+				</figure>
+
+				<figure>
+					<figcaption>Tijera</figcaption>
+					<img src="images/tijeras.jpg" width="200" height="200" id="tijera" onclick="tirada('tijeras')" />
+				</figure>
+		</section>
+		
+		<aside id="estadistica">
+			<h2>Estadística</h2>
+			<div><span id="totalPartidas">Partidas:</span></div>
+			<div><span id="totalGanadas">Ganadas:</span></div>
+			<div><span id="totalPerdidas">Perdidas:</span></div>
+			<div><span id="totalEmpatadas">Empatadas:</span></div>
+		</aside>
+		
+	</main>
+
+	<script type="text/javascript">
+		var partidas = 0;
+		var ganadas = 0;
+		var perdidas = 0;
+		var empatadas = 0;
+
+
+		function tirada(tiradaJugador){
+			document.getElementById('firstPlayer').src = 'images/'+tiradaJugador+'.jpg';
+		
+			var random = parseInt(Math.random()*3);
+		
+			switch(random){
+				case 0:
+					random = "piedra";
+				break;
+
+				case 1:
+					random = "papel";
+				break;
+
+				case 2:
+					random = "tijeras";
+				break;
+			}
+			document.getElementById('secondPlayer').src = 'images/'+random+'.jpg';
+			
+				if(tiradaJugador =='piedra' && random == 'tijeras' || tiradaJugador =='tijeras' && random =='papel' || tiradaJugador == 'papel' && random == 'piedra'){
+					document.getElementById('resultado').innerHTML = "HAS GANADO";
+					//alert('¡Tu ganas!');
+					ganadas++;
+
+				}else if(tiradaJugador==random){
+					document.getElementById('resultado').innerHTML = "HAS EMPATADO";
+					//alert("¡Es un empate!");
+					empatadas++;
+
+				}else{
+					document.getElementById('resultado').innerHTML = "GANA EL RANDOM";  
+					//alert("¡Gana el random!"); 
+					perdidas++;
+				}
+					partidas++;
+					document.getElementById('totalPartidas').innerHTML = tiradas;
+					document.getElementById('totalGanadas').innerHTML = ganadas;
+					document.getElementById('totalEmpatadas').innerHTML = empatadas;
+					document.getElementById('totalPerdidas').innerHTML = perdidas;
+		}
+
+	</script>
+</body>
+</html>

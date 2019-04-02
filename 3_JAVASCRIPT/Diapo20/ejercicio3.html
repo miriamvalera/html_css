@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 3 - Foto que va cambiando cada 5 segundos</title>
+	<style type="text/css">
+		img{
+			width: 400px;
+		}
+	</style>
+</head>
+<body style="transition:0.5s;">
+	<p>Cambio de foto...</p>
+
+	<img src="imgMarvel/1.png" id="imagen" />
+
+<!-- 	<script type="text/javascript">
+		var fotos = ['imgMarvel/1.png', 'imgMarvel/2.png', 'imgMarvel/3.png', 'imgMarvel/4.png'];
+		
+		var i = 1;
+
+		function cambiar(){
+			i++;
+
+			if(i >= fotos.length){
+				i = 0;
+			}
+
+			document.getElementById('imagen').src = fotos[i];
+		}
+
+		i = setInterval(cambiar, 5000);
+
+	</script> -->
+
+
+	<!--otra opción-->
+	<script>
+		var fotos = ['imgMarvel/1.png', 'imgMarvel/2.png', 'imgMarvel/3.png', 'imgMarvel/4.png'];
+		var i = 1;
+
+		setInterval(function(){
+			document.body.children[1].src = fotos[i];  //children porque al tener el elemento p coge al primer hijo que es la img ya que p es el 0..
+			//si no hubiese la p se pondria firstElementChild que sería el primer hijo 
+			i++;
+			if(i==fotos.length){
+				i=0;
+			}
+		}, 2000);
+	</script>
+</body>
+</html>
+

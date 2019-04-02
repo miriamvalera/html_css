@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 3 - Descuentos</title>
+</head>
+<body>
+	<h2>Calcular descuentos</h2>
+	<label>Precio:</label>
+	<input type="number" id="price" />
+	<br />
+
+	<label>Introduce el descuento:</label>
+	<input type="number" id="desc" />
+	<br />
+
+	<button onclick="descuento(price.value, desc.value)">Calcular</button>
+
+	<script type="text/javascript">
+		function descuento(precio, descuento){
+			var precioFinal = precio - (precio*descuento)/100;
+			if(descuento<0 || descuento>100){
+				alert(NaN);
+			}else{
+				if (precioFinal<0){
+					alert(NaN);
+				}else{
+					alert('Precio final ' + precioFinal.toFixed(2) + ' €');
+				}
+			}
+				
+		}
+	</script>
+</body>
+</html>

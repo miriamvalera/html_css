@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 2 - Hacer una imagen grande de una pequeña</title>
+	<style type="text/css">
+		body{
+			width: 80%;
+		}
+		figure{
+			display: inline-block;
+		}
+		img{
+			border: 3px solid #720707;
+			border-radius: 5px;
+			width: 400px;
+		}
+	</style>
+</head>
+<body id="galeria">
+
+	<figure>
+		<img src="imgCar/car1.png" onclick="agrandar(this)">
+	</figure>
+
+	<figure>
+		<img src="imgCar/car2.png" onclick="agrandar(this)">
+	</figure>
+	<script>
+		function agrandar(img){
+			console.log(img, img.getAttribute('src'),  img.getAttribute('onclick'));
+			var nuevaIMG = document.createElement('img');
+			nuevaIMG.src =img.getAttribute('src'); //Le asignamos el source de la img
+			nuevaIMG.setAttribute("onclick","borrame(this)");
+						
+			/**************************************************/
+			//nuevaIMG.style.position = "fixed";
+			//nuevaIMG.style.right = 0;
+    		//nuevaIMG.style.left = 0;
+   			//nuevaIMG.style.margin = "auto";
+   			//Todo esto es style qeu se puede hacer de una vez creando un string con eso: 
+   			
+   			Object.assign(nuevaIMG.style,{position:"fixed",left:"0",right:"0", margin:"auto"});
+   			/**************************************************/
+
+			console.log(nuevaIMG);
+			document.body.appendChild(nuevaIMG);
+		}
+		function borrame(img){
+			img.remove();
+		}
+	</script>
+</body>
+</html>

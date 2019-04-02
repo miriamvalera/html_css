@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Agencia de viajes-Barcelona</title>
+	<style type="text/css">
+	 	header, nav, main, footer{
+			border: 1px solid #00F;
+			margin: 5px;
+			background-color: #e6f2ff;
+		}
+		body{
+			padding: 30px;
+			width: 1000px;
+			margin: auto;
+		}
+		header{
+			display: flex;
+  			flex-wrap: nowrap;
+			border: 1px solid #00F;
+			background-image:url('img/nubes3.jpg');
+			background-attachment: fixed;
+			background-size: cover;
+			background-position:center;
+		}
+		#logo{
+			margin-top: 20px;
+			margin-left: 15px;
+		}
+		#logo > img {
+			height: 100px;
+			width: 300px;
+		}
+		#login {
+			margin-left: 270px;
+		}
+		img{			 
+			display: inline-block;
+			border-radius: 8px;
+		}
+		/* 		header form 		*/
+		h1, label{
+			font-family: arial;
+
+		}
+		h1{
+			font-size: 20px;
+			margin-left: 40px;
+		}
+		fieldset{
+			border: none;
+			width: 350px;
+		}
+		label{
+			width: 120px;
+			display: inline-block;
+			text-align: right;
+			margin-right: 1px;
+			margin-top: 10px;
+			font-size: 14px;
+		}
+		input{
+			border-radius: 5px / 8px;
+			margin-left: 4px;
+		}
+		button{
+			border-radius: 5px / 8px;
+			margin-left: 130px;
+			margin-top: 10px;
+		}
+		/* 		 */
+
+
+		figure{
+			margin: 25px;
+			display: inline-block;
+			width: 236px;
+		}
+
+		/* 		NAV 		*/
+		nav{
+			
+			text-align: left;
+		}
+		li{
+			display: inline-block;
+			padding: 5px 20px 5px 20px;
+			padding-top: 10px;
+			position: relative;
+  			background-color: #AFAFD1;
+  			overflow: hidden; /*quitar los puntos de la lista*/
+  		}
+  		nav li:hover{
+  			background-color: #000;
+  			color: #fff;
+  		}
+  		a{
+  			color: inherit;
+  			text-decoration: none;
+  			font-weight: bold;
+  			font-family: verdana;	
+		}
+		.active{
+			border-bottom: 3px solid #000;
+		}
+
+		/*			*/
+
+		body main, section{
+			padding: 15px;
+		}
+		p{
+			font-family: verdana, arial;
+			text-align: justify;
+		}
+		/* 		MAIN > ARTICLE 		*/
+		#artPresent > h1 {
+			text-align: center;
+		}
+		iframe{
+			margin-right: inherit;
+			padding-left: 10px;
+			width: 45%;
+		}
+		#artPresent > img{
+			/*display: block;*/
+			margin-left: auto;
+			margin-right: inherit;
+			width: 48%;
+			padding-left: 30px;
+		}
+		#art1 > p {
+			width: 55%;
+			display: inline-block;
+			vertical-align: middle;
+		}
+		#art1 > img {
+			width: 43%;
+			margin-left: 15px;
+			vertical-align: middle;
+		}
+		#art2{
+			margin-top: 15px;
+		}
+		#art2 > p {
+			width: 55%;
+			display: inline-block;
+			vertical-align: middle;
+		}
+		#art2 > img {
+			width: 40%;
+			margin-top: 0px;
+			margin-right: 15px;
+			vertical-align: middle;
+		}
+		#pictures > *  {
+			margin: 30px 30px 30px 50px;
+			display: inline-block;
+			width: 40%;
+		}
+		#pictures img {
+			width: 100%;
+		}
+		#pictures h3{
+			margin: 0px;
+			text-align: center;
+		}
+		#imgiframe{
+			padding-left: 10px;
+		}
+		#listaimg{
+			padding: 0px;
+			display: block;
+			margin-right: auto;
+			margin-left: auto;
+			border: none;
+		}
+		/* 		*/
+
+		footer{
+			height: 40px;
+			padding-top: 30px;
+			text-align: center;
+			padding-right: 10px;
+			font-family: verdana;
+		}	
+	</style>
+
+</head>
+<body>
+	<header>
+		<div id="logo">
+			<img id="" src="img/travelmiriam.png" alt="travelmiriam">
+		</div>
+		<form id="login" method="post">
+			<fieldset>
+				<h1>LOGIN</h1>
+				<label>USER:</label>
+					<input type="text" name="user"><br />
+		
+					<label>PASSWORD:</label>
+					<input type="password" name="password"><br />
+		
+					<button type="submit" value="login">login</button>
+			</fieldset>
+		</form>
+	</header>
+	<nav>
+
+		<ul>
+			<li><a href="index.html">Inicio</a></li>
+			<li><a href="roma.html" target="_blank" title="roma">Roma</a></li>
+			<li class="active"><a href="barcelona.html" target="_blank" title="barcelona">Barcelona</a></li>
+			<li><a href="paris.html" target="_blank" title="paris">Paris</a></li>
+			<li><a href="contacto.html" target="_blank" title="contacto">Contacto</a></li>
+			<li><a href="registro.html" target="_blank" title="registro">Registro</a></li>
+		</ul>
+	</nav>
+	<main id="mainP">
+		<article id="artPresent">
+			<h1>BARCELONA</h1>
+
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/qO0t2XwZ_mM?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+			<img src="img/barcelona5.jpg" alt="barcelona5" >
+			<p>Barcelona es una ciudad española, capital de la comunidad autónoma de Cataluña, de la comarca del Barcelonés y de la provincia homónima.
+			Con una población de 1.620.343 habitantes en 2018, es la segunda ciudad más poblada de España después de Madrid, y la undécima de la Unión Europea. El área metropolitana de Barcelona, incluida en el ámbito metropolitano de Barcelona, cuenta con 5.029.181 habitantes (2011), siendo así la sexta ciudad de mayor población de la Unión Europea. </p>
+
+			<p>Se ubica a orillas del mar Mediterráneo, a unos 120 km al sur de la cadena montañosa de los Pirineos y de la frontera con Francia, en un pequeño llano litoral limitado por el mar al este, la sierra de Collserola al oeste, el río Llobregat al sur y el río Besós al norte. Por haber sido capital del condado de Barcelona, se suele aludir a ella con la denominación antonomástica de Ciudad Condal.
+			La historia de Barcelona se extiende a lo largo de 4000 años, desde finales del Neolítico, con los primeros restos hallados en el territorio de la ciudad, hasta la actualidad. El sustrato de sus habitantes aúna a los pueblos íberos, romanos, judíos, visigodos, musulmanes y cristianos. Como capital de Cataluña y segunda ciudad en importancia de España, la Ciudad Condal ha forjado su relevancia con el tiempo, desde ser una pequeña colonia romana hasta convertirse en una ciudad valorada internacionalmente por aspectos como su economía, su patrimonio artístico, su cultura, su deporte y su vida social.
+			En la actualidad, Barcelona está reconocida como una ciudad global por su importancia cultural, financiera, comercial y turística. Posee uno de los puertos más importantes del Mediterráneo y es también un importante punto de comunicaciones entre España y Francia, debido a las conexiones por autopista y alta velocidad ferroviaria. El aeropuerto de Barcelona-El Prat, situado a 15 km del centro de la ciudad, fue utilizado por más de 47,2 millones de pasajeros en 2017. </p>
+		</article>
+		<article id="art1">
+			<p>La Sagrada Familia
+			El Templo Expiatorio de la Sagrada Familia es la obra maestra inacabada del genial arquitecto Antoni Gaudí y el monumento más visitado de Barcelona.
+			Gaudí, máximo representante del modernismo catalán, cogió las riendas de la construcción de esta iglesia en 1883, de la que un año antes se había colocado la primera piedra, dejando a su muerte, en 1926 todos los planos para que futuros arquitectos pudieran finalizar la obra.
+			El interior y el exterior de La Sagrada Familia son una maravilla, nada comparable con otras iglesias del mundo, empleando Gaudí en ella toda su experiencia y nuevas técnicas , creando un estilo naturalista, donde todos sus elementos fluyen en completa armonía. En el exterior destacan las 3 fachadas dedicadas al Nacimiento, Pasión y Gloria de Jesús y las torres que llegarán hasta las 18 cuando se termine el monumento.
+			Hace poco se puso la fecha del 2026 como año de finalización de esta espectacular basílica católica, así que ya estamos impacientes, ya que cada día queda menos para ver La Sagrada Familia en su máximo esplendor.
+			Para visitar la iglesia te recomendamos ir a primera hora, ya que se forman largas colas y el cupo de entradas de diarias se agotan rápido. Una buena opción es reservar esta visita guiada con la que te asegurarás la entrada y además evitarás la espera en la cola.
+			También tienes la opción de subir a una de las torres y disfrutar de las vistas. En este caso puedes reservar esta visita guiada, que incluye la subida a la torre.
+			Horario de visita: todos los días de marzo a octubre de 9:00 a 20:00, los otros meses cierra a las 18:00.</p>
+			<img src="img/barcelona1.jpg" alt="barcelona1" id="img3">
+		</article>
+						
+		<article id="art2">
+			<img src="img/barcelona2.jpg" alt="barcelona2" id="img2">
+			<p>Paseo de Gracia (Casa Batlló, La Pedrera)
+			El Passeig de Gràcia es la avenida más conocida y uno de los lugares que visitar en Barcelona más imprescindibles. Esta calle conecta la popular Plaza de Catalunya con el barrio de Gracia y destaca por sus edificios modernistas, restaurantes y sus tiendas de las marcas más famosas y lujosas.
+			Entre las joyas del modernismo catalán del Paseo de Gracia destaca la Casa Batlló, una de las obras maestras del genial Antonio Gaudí, declarada Patrimonio Mundial de la Unesco, y nuestro edificio favorito de la ciudad.
+			Al lado de Casa Batlló se encuentra la bonita fachada de Casa Amatller, cerca de la cual también se encuentran la Casa Mulleras y la Casa Lleó i Morera, obra de otro de los grandes arquitectos modernistas, Lluís Domènech i Montaner.
+			La Casa Milà o La Pedrera, es otro de los edificios increíbles que hizo Gaudí en esta calle y que también merece una visita, sobre todo su azotea. Otros edificios del Passeig de Gràcia a los que merece la pena prestar atención son la Casa Enric Batlló, la Casa Bonaventura Ferrer, el Palau Malagrida y el Palau Robert.
+			Una gran opción para conocer la obra de Gaudí, uno de los mejores arquitectos de la historia y evitar perder tiempo es reservar este tour que incluye la entrada sin colas en la Casa Milá, La Pedrera, la Sagrada Familia y el Park Guell.
+			Horario de visita Casa Batlló: todos los días de 9:00 a 21:00. Reservar entrada sin colas aquí. Entrada incluida en el Barcelona Pass.
+			Horario de visita Casa Milá: todos los días de 9:00 a 21:00, de marzo a octubre cierran a las 18:30. Reservar entrada sin colas aquí. Entrada incluida en el Barcelona Pass.</p>
+		</article>
+		<section id="pictures">
+			<article id="img4">
+				<h3>Park Güell</h3><br />
+				<img src="img/barcelona3.jpg" alt="barcelona3">
+			</article>
+			<article id="img5">
+				<h3>Barrio Gótico</h3><br />
+				<img src="img/barcelona4.jpg" alt="barcelona4">
+			</article>
+		</section>
+
+		<h1>Imágenes Barcelona</h1>
+		<a id="imgiframe" href="img/barcelona6.jpg" target="marco"><img src="img/barcelona6.jpg" alt="barcelona6" width="150" height="100">
+		<a href="img/barcelona7.jpg" target="marco"><img src="img/barcelona7.jpg" alt="barcelona7" width="150" height="100">
+		<a href="img/barcelona8.jpg" target="marco"><img src="img/barcelona8.jpg" alt="barcelona8" width="150" height="100">
+		<a href="img/barcelona9.jpg" target="marco"><img src="img/barcelona9.jpg" alt="barcelona9" width="150" height="100">
+		<a href="img/barcelona10.jpg" target="marco"><img src="img/barcelona10.jpg" alt="barcelona10" width="150" height="100">
+		<a href="img/barcelona11.jpg" target="marco"><img src="img/barcelona11.jpg" alt="barcelona11" width="150" height="100">
+
+
+		<iframe id="listaimg" src="img/barcelona6.jpg" name="marco" width="400" height="300"></iframe> 
+
+	</main>
+	<footer>
+		Miriam Valera
+	</footer>
+</body>
+</html>

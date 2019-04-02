@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 4 - Invertir</title>
+</head>
+<body>
+	<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 3 - Encriptar texto y desencriptar</title>
+</head>
+<body>
+<!-- 	<script type="text/javascript">
+		
+		function encriptar(){
+			var texto = document.getElementById('texto').value;
+			var encrip = texto.charCodeAt(0);
+			encrip+=1;
+			texto = String.fromCharCode(encrip);
+			alert(texto);
+			// document.write(encrip);
+		}
+
+		function desencriptar(){
+			var texto = document.getElementById('texto').value;
+			var desencrip = texto.charCodeAt(0);
+			desencrip-=1;
+			texto = String.fromCharCode(desencrip);
+			alert(texto);
+			//document.write(desencrip);
+		}
+	</script> -->
+
+		<script type="text/javascript">
+		var claveEncriptadora = 1;
+
+		function invertir(palabraInvertir){
+			var res ="";
+			console.log(palabraInvertir);
+			for (var i = palabraInvertir.length-1; i >= 0; i--) {
+				console.log("letra invertida=",palabraInvertir[i] );
+				res += palabraInvertir[i];
+			}
+			console.log("res-",res);
+			return res;
+		}
+
+		function encriptar(){
+			var texto = document.getElementById('texto').value;
+			console.log(texto,claveEncriptadora);
+			var encrip; 
+			var text = "";
+
+			for(var i=0; i<texto.length; i++){
+				encrip = texto.charCodeAt(i);
+				encrip+=claveEncriptadora;
+				text += String.fromCharCode(encrip);
+				console.log("for->", encrip, "text->", text);
+			}
+			//console.log(text);
+			 document.getElementById('texto').value = invertir(text);
+			// document.write(encrip);
+		}
+
+		function desencriptar(){
+			var texto = document.getElementById('texto').value;
+			var desencrip;
+			var text = "";
+
+			for(var i=0; i<texto.length; i++){
+				desencrip = texto.charCodeAt(i);
+				desencrip-=claveEncriptadora;
+				text += String.fromCharCode(desencrip);
+				console.log("for->", desencrip, "text->", text);
+			}
+			//console.log(text);
+			document.getElementById('texto').value = invertir(text);
+			//document.write(desencrip);
+		}
+	</script>
+
+	<h2>Función para encriptar y otra para desencriptar texto</h2>
+
+	<label>Introduce un texto:</label>
+	<input type="text" id="texto" /><br />
+
+	<label>Número para encriptar:</label>
+	<input type="number" id="numero"><br />
+	
+	<button onclick="encriptar();">Encriptar</button>
+	<button onclick="desencriptar();">Desencriptar</button>
+	<button onclick="invertir();">Invertir</button>
+</body>
+</html>

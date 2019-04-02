@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Formulario HTML5</title>
+	<style type="text/css">
+		fieldset{
+			width: 310px;
+			border-color: #ff99cc;
+			padding-left: 30px;
+		}
+		label{
+			width: 120px;
+			display: inline-block;
+			text-align: left;
+			margin-right: 1px;
+			margin-top: 12px;
+		}
+		input{
+			border-radius: 5px / 8px;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<fieldset>
+			<label>Búsqueda</label>
+			<input type="search" name="search"><br />
+
+			<label>Dirección URL</label>
+			<input type="url" name="web"><br />
+
+			<label>Teléfono</label>
+			<input type="tel" name="telefono" placeholder="Ingrese su telefono"><br />
+
+			<label>Dirección Web</label>
+			<input type="url" name="web" placeholder="Ingrese su sitio web"><br />
+
+			<label>Email</label>
+			<input type="email" name="email" placeholder="Ingrese su email"><br />
+
+			<label>Fecha y hora</label>
+			<input type="datetime-local" name="time"><br />
+
+			<label>Fecha</label>
+			<input type="date" name="date"><br />
+
+			<label>Hora</label>
+			<input type="time" name="time"><br />
+
+			<label>Número</label>
+			<input type="number" name="number" min="0" maxlength="10"><br />
+
+			<label>Rango</label>
+			<input type="range" name="points" min="0" max="10" step="1" value="5"><br />
+
+			<label>Color</label>
+			<input type="color" name="color" value="#000"><br />
+		</fieldset>
+	</form>
+</body>
+</html>

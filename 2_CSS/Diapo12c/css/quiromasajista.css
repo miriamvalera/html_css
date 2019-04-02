@@ -1,0 +1,170 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	margin: auto;
+}
+/* 	HEADER 	*/
+header{
+	background-image: url(../img/logo.png);/*, url(../img/fondoheader.png)*/
+	background-color: #93dfe6;
+	background-repeat: no-repeat;
+	background-size: 28%;
+	background-attachment: fixed;
+	background-position: center -18%; 
+	text-align: center;	
+	width: 100%;
+	height: 200px;
+}
+#login{
+	position: absolute;
+	width: 250px;
+	top: 50px;
+	right: -257px;
+	padding: 10px;
+	border-radius: 10px;
+	text-align: center;
+	box-shadow: 4px 0px 14px 5px rgba(0,0,0,0.75);
+}
+#login:hover{
+	right: 0;
+}
+header label{
+	font-family: 'Permanent Marker', cursive;
+	font-size: 0.6vw;
+}
+/* 	NAV		*/
+nav{
+	display: flex;
+	font-family: 'Permanent Marker', cursive;
+	font-size: 1vw;
+	width: 100%;
+	background-image: linear-gradient(to bottom right, #0066cc, #66ff99);
+}
+nav>div, form{
+	display: inline-block;
+}
+nav a{
+	padding: 5px;
+	display: inline-block;
+}
+#menu{
+	flex: 3;
+}
+input {
+	margin: 1%;
+	border-radius: 2px / 3px;
+}
+li{
+	list-style: none;
+	display: inline-block;
+	margin-left: 2%;
+}
+form{
+	flex: 1;
+}
+form>input{
+	width: 40%;
+}
+/* 	MAIN 	*/
+main{
+	padding-left: 0.8%;
+	/*background-image: url(../img/logo.png);
+	background-repeat: no-repeat;*/
+	/*background-color: rgb(0,0,255); opacity: 0.5;
+	background-color: rgba(0,0,255,0.5);*/
+}
+h2{
+	padding: 1%;
+	font-family: 'Permanent Marker', cursive;
+}
+content{
+	display: flex;
+}
+#textobienv {
+	flex: 3;
+	text-align: justify;
+}
+main aside{
+	flex: 1;
+}
+main p:first-child{
+	padding: 1%;
+	padding-right: 2%;
+}
+main table, th, td{
+	border: 1px solid #000;
+	border-collapse: collapse;
+	width: 90%;
+}
+main table th{
+	background: #ededed;
+}
+#galeria{
+	display: flex;
+	flex-wrap:wrap; 
+}
+figure div img{
+	width: 100%;
+	height: 10vw;
+	min-width: 15%;
+	
+}
+article{
+	text-align: justify;
+	padding-right: 0.5%;
+	padding-bottom: 1%;
+}
+div.polaroid{
+	flex: 1;
+  	background-color: grey;
+  	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  	margin-bottom: 25px;
+}
+
+@media only screen and (max-width: 1010px)  {
+ div.polaroid{
+    flex: 2;
+  }
+}
+
+figcaption{
+	text-align: center;
+  	padding: 10px 20px;
+}
+
+/* 	FOOTER 	*/
+footer{
+	background-color: #000;
+	color: #FFF;
+	width: 100%;
+	bottom: 0;
+	display: flex;
+}
+footer div{
+	flex: 1;
+	text-align: center;
+}
+footer>div>p{
+	padding: 10%;
+}
+footer div:last-child{
+	box-sizing: border-box;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	font-size: 2vw;
+}
+footer div:last-child a{
+	color: #FFF;
+}
+video{
+	position: relative;
+	width: 25%;
+	height: 38%;
+	padding: 1%;
+}
+footer iframe{
+	position: absolute;
+}
+

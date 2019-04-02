@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio 3B - Cubo 3D con imágenes </title>
+	<style type="text/css">
+		body{
+			margin: 10%;
+			padding-left: 10%;	
+		}
+		.cubo{
+			position: relative;
+			transform-style: preserve-3d;
+			height: 200px;
+			width: 200px;
+			transform: rotateX(45deg) rotateY(45deg);
+		}
+		.cubo .cara{
+			position: absolute;
+			border: 1px solid #000;
+			height: 200px;
+			width: 200px;
+			text-align: center;
+		}
+		.cubo .front{
+			transform: translateZ(100px);
+		}
+		.cubo .back{
+			transform: rotateY(180deg) translateZ(100px);
+		}
+		.cubo .left{
+			transform: rotateY(90deg) translateZ(100px);
+		}
+		.cubo .right{
+			transform: rotateY(-90deg) translateZ(100px);
+		}
+		.cubo .top{
+			transform: rotateX(90deg) translateZ(100px);
+		}
+		.cubo .bottom{
+			transform: rotateX(-90deg) translateZ(100px);
+		}
+	</style>
+</head>
+<body>
+	<div class="cubo">
+		<img class="cara front" src="imagenes/captain.jpg"></img>
+		<img class="cara back" src="imagenes/deadpool.jpg"></img>
+		<img class="cara left" src="imagenes/ironman.jpg"></img>
+		<img class="cara right" src="imagenes/spiderman.jpg"></img>
+		<img class="cara top" src="imagenes/thor.jpg"></img>
+		<img class="cara bottom" src="imagenes/wolverine.jpg"></img>	
+	</div>
+</body>
+</html>
+

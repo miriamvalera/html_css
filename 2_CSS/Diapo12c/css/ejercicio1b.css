@@ -1,0 +1,110 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	margin: auto;
+	width: 90%;
+	border: 1px solid #F00;
+}
+/* 	HEADER 	*/
+header, /*nav, */main, footer {
+	border: 1px solid #000;
+	margin-top: 0.5%;
+	padding: 0.5%;
+}
+header{
+	display: flex;
+}
+header div{
+	border: 1px solid #000;
+}
+#logo{
+	width: 20%;
+	height: 50%
+	border: 1px solid #000;
+	display: inline-block;
+}
+h1{
+	font-size: 4vw; 
+	display: inline-block;
+	margin-left: 20%;
+	flex:1;
+}
+/* 	NAV 	*/
+nav{
+	display: flex;
+}
+nav>div, form{
+	border: 1px solid #000;
+	display: inline-block;
+}
+nav a{
+	padding: 5px;
+	display: inline-block;
+}
+#menu{
+	flex: 3;
+
+}
+input {
+	margin: 1%;
+	border-radius: 2px / 3px;
+}
+li{
+	list-style: none;
+	display: inline-block;
+	margin-left: 2%;
+}
+form{
+	flex: 1;
+}
+form>input{
+	width: 40%;
+}
+/* 	MAIN 	*/
+main{
+	padding-left: 0.8%;
+}
+h2{
+	padding: 1%;
+}
+content{
+	display: flex;
+}
+#textobienv {
+	flex: 3;
+	text-align: justify;
+}
+main aside{
+	flex: 1;
+}
+main p:first-child{
+	padding: 1%;
+	padding-right: 2%;
+}
+main table, th, td{
+	border: 1px solid #000;
+	border-collapse: collapse;
+	width: 90%;
+}
+main table th{
+	background: #ededed;
+}
+figure{
+	display: flex;
+}
+figure div{
+	border: 1px solid #000;
+	padding-left: 5%;
+	width: 40%;
+	flex: 1;
+}
+article{
+	text-align: justify;
+	padding-right: 0.5%;
+}
+/*	 FOOTER 	*/
+footer{
+	text-align: right;
+}

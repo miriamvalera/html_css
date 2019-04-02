@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Fakebook</title>
+	<style type="text/css">
+		/* 	HEADER 	*/
+		header{
+			background-color: #045FB4;
+			margin: auto;
+			padding-left: 3%;
+			color: #fff;
+		}
+		@font-face{
+			font-family: "facebolf";
+			src:url(fuentes/FACEBOLF.otf);
+		}
+		header>h1{
+			width: 25%;
+			display: inline-block;
+			font-family: "facebolf";
+		}
+		form{
+			display: inline-block;
+			text-align: middle;
+		}
+		label, input, div, button{
+			display: inline-block;
+		}
+		a , a:hover{
+  			text-decoration: none;
+			color: #fff;
+		}
+		#logo{
+			width: 49%;
+			/*margin-right: 0px;*/
+			margin-left: 22.5%;
+		}
+		#registro{
+			padding: 10px;
+  			float: right;	
+		}
+		button{
+			
+		}
+		/* 	MAIN 	*/
+		main{
+			background: linear-gradient(white, #D3D8E8);
+        	background-image: linear-gradient(white, rgb(211, 216, 232));
+		}
+		#izq{
+			display: inline-block;
+		}
+		h2{
+			margin-left: 50%;
+			line-height: 1.5em;
+		    height: 3em;       
+		    overflow: hidden;
+		}
+		img{
+			width: 55%;
+			margin-left: 50%;
+		}
+		main>h1{
+			margin-left: 40%;
+		}
+		.datos, option{
+			width: 13vw;
+			height: 2vw;
+			border-radius: 10px;
+			margin: 4px;
+			border-color: #bdc7d8;
+			font-size: 14px;
+		}
+		form{
+			display: inline-block;
+		}
+		aside{
+			margin: -16% 50% 20% 55%;
+		}
+		label{
+			font-family: arial;
+		}
+		.why, a{
+			color: #365899;
+    		cursor: pointer;
+    		vertical-align: middle;
+    		font-size: 13px;
+    		max-width: 150px;
+    		display: inline-block;
+		}
+		.clic {
+		  background-color: #4CAF50; /* Green */
+		  border: none;
+		  color: white;
+		  padding: 15px 32px;
+		  text-align: center;
+		  text-decoration: none;
+		  display: inline-block;
+		  font-size: 16px;
+		  border-radius: 10px;
+		}
+
+		/* 	FOOTER 	*/
+		ul{
+			list-style: none;
+		}
+		li{
+			display: inline-block;
+			vertical-align: top;
+		}
+		
+	
+	</style>
+</head>
+<body>
+	<header>
+		<div id="logo">
+			<h1>Facebook</h1>
+		</div>
+
+		<div id="registro">
+			<form>
+				<div>
+					<label>Correo o teléfono</label><br />
+					<input type="text" name="cor_tel"/><br />
+					<input type="checkbox" name="aceptar" value="acepto"/>
+					<label>No cerrar sesión</label>
+				</div>
+				<div>	
+					<label>Contraseña</label><br />
+					<input type="password" name="pwd"/><br />
+					<a href="">¿Has olvidado tu contraseña?</a>
+				</div>
+
+				<button type="submit" value="Entrar">Entrar</button>
+			</form>
+		</div>
+	</header>
+	<main>
+		<section id="izq">
+			<h2>Facebook te ayuda a comunicarte y compartir con las personas que forman parte de tu vida.</h3>
+			<img src="imagenes/mapa.png" alt="mapa"/>
+		</section>
+
+		<aside>
+			<form>
+				<h1>Registrarte</h1>
+				<h3>Es gratis y lo será siempre</h4>
+
+				<input class="datos" type="text" name="name" placeholder=" Nombre"/>
+				<input class="datos" type="text" name="lastname" placeholder=" Apellidos"/><br />
+				<input class="datos" type="text" name="tel_cor" placeholder=" Número de móvil o correo electrónico"/><br />
+				<input class="datos" type="password" name="pwd" placeholder=" Contraseña nueva"/><br />
+
+				<label>Fecha de nacimiento</label><br />
+				<select>
+					<option selected="selected" value="day">1</option>
+					<option selected="selected" value="day">2</option>
+					<option selected="selected" value="day">3</option>
+					<option selected="selected" value="day">4</option>
+					<option selected="selected" value="day">5</option>
+					<option selected="selected" value="day">6</option>
+					<option selected="selected" value="day">7</option>
+					<option selected="selected" value="day">8</option>
+					<option selected="selected" value="day">9</option>
+					<option selected="selected" value="day">10</option>
+					<option selected="selected" value="day">11</option>
+					<option selected="selected" value="day">12</option>
+					<option selected="selected" value="day">13</option>
+					<option selected="selected" value="day">14</option>
+					<option selected="selected" value="day">15</option>
+				</select>
+				<select>
+					<option selected="selected" value="enero">Ene</option>
+					<option selected="selected" value="febrero">Feb</option>
+					<option selected="selected" value="marzo">Mar</option>
+					<option selected="selected" value="abril">Abr</option>
+					<option selected="selected" value="mayo">May</option>
+					<option selected="selected" value="junio">Jun</option>
+					<option selected="selected" value="julio">Jul</option>
+					<option selected="selected" value="agosto">Ago</option>
+					<option selected="selected" value="septiembre">Sep</option>
+					<option selected="selected" value="noviembre">Nov</option>
+					<option selected="selected" value="diciembre">Dic</option>
+				</select>
+				<select>
+					<option selected="selected" value="">1986</option>
+					<option value="day">1987</option>
+					<option value="day">1988</option>
+					<option value="day">1989</option>
+					<option value="day">1990</option>
+				</select>
+				<a class="why" href="#"> ¿Por qué tengo que facilitar mi fecha de nacimiento?</a>
+
+				<br />
+					<input type="radio" name="sex"/><label>Mujer</label>
+					<input type="radio" name="sex"/><label>Hombre</label>
+				
+				<br />
+				<p>Al hacer clic en Registrarte, aceptas nuestras <a href="#">Condiciones</a>. Obtén mñas información sobre cómo recopilamos, usamos y compartimos tu información en la <a href="#">Política de datos</a>, así como el uso que hacemos de las cookies y tecnologías similares en nuestra <a href="#"> Política de cookies</a>. Es posible que te enviemos notificaciones por SMS que podrás desactivar cuando quieras</p>
+
+				<button class="clic" type="submit" name="registrar">Registrarte</button>
+			</form>
+			<a href="#">Crea una página</a><p>para un personaje público, un grupo de música o un negocio.</p>
+		</aside>
+
+	</main>
+
+	<footer>
+		<ul>
+			<li>Español (España)</li>
+			<li><a href="#">Català</a></li>
+			<li><a href="#">English (US)</a></li>
+			<li><a href="#">Français (France)</a></li>
+			<li><a href="#">Românâ</a></li>
+			<li><a href="#">Italiano</a></li>
+			<li><a href="#">Galego</a></li>
+			<li><a href="#">Deutsch</a></li>
+			<li><a href="#">Português (Brasil)</a></li>
+			<a role="button" href="#" title="Mostrar más idiomas"></a><i class="far fa-plus-square"></i>
+		</ul>
+		<hr>
+		<ul>
+			<li><a href="#">Registarte</a></li>
+			<li><a href="#">Entrar</a></li>
+			<li><a href="#">Messenger</a></li>
+			<li><a href="#">Facebook Lite</a></li>
+			<li><a href="#">Móvil</a></li>
+			<li><a href="#">Buscar amigos</a></li>
+			<li><a href="#">Personas</a></li>
+			<li><a href="#">Perfiles</a></li>
+			<li><a href="#">Páginas</a></li>
+			<li><a href="#">Categorías de páginas</a></li>
+			<li><a href="#">Lugares</a></li>
+			<li><a href="#">Juegos</a></li>
+			<li><a href="#">Lugares</a></li>
+			<li><a href="#">Marketplace</a></li>
+			<li><a href="#">Grupos</a></li>
+			<li><a href="#">Instagram</a></li>
+			<li><a href="#">Local</a></li>
+			<li><a href="#">Recaudaciones de fondos</a></li>
+			<li><a href="#">Eventos</a></li>
+			<li><a href="#">Información</a></li>
+			<li><a href="#">Crear anuncio</a></li>
+			<li><a href="#">Crear página</a></li>
+			<li><a href="#">Desarrolladores</a></li>
+			<li><a href="#">Empleo</a></li>
+			<li><a href="#">Privacidad</a></li>
+			<li><a href="#">Cookies</a></li>
+			<li><a href="#">Gestión de anuncios</a></li>
+			<li><a href="#">Condiciones</a></li>
+			<li><a href="#">Seguridad de la cuenta</a></li>
+			<li><a href="#">Ayuda para entrar en Facebook</a></li>
+			<li><a href="#">Ayuda</a></li>
+		</ul><br />
+		<p>Facebook &copy 2019</p>
+	</footer>
+</body>
+</html>
+
+    

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Métodos de la clase STRING</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var string = "Probando métodos string";
+		document.write(string.charAt(2)+'<br />' + '<hr>');
+	</script>
+
+	<script type="text/javascript">
+		var texto1 = "Hola";
+		var texto2 = " Mundo";
+		document.write(texto1.concat(texto2) + '<br />' + '<hr>');
+	</script>
+
+		<script type="text/javascript">
+		var str1 = "Estamos probando el método string";
+		var str2 = str1.replace("string", "replace()");
+		document.write((str2) + '<br />' + '<hr>');
+	</script>
+
+	<script type="text/javascript">
+		var str1 = "viva el mundo, viva la programación!!";
+		var str2 = str1.indexOf("viva");
+		document.write(str2 + '<br />' + '<hr>');
+	</script>
+
+	<script type="text/javascript">
+		var str1 = "viva el mundo, viva la programación!!";
+		var str2 = str1.lastIndexOf("viva");
+		document.write(str2 + '<br />' + '<hr>');
+	</script>
+
+	<script type="text/javascript">
+		var str1 = "Viva la programación!!";
+		var str2 = str1.search("programación");
+		document.write(str2 + '<br />' + '<hr>');
+	</script>
+
+	<script type="text/javascript">
+		var str1 = "Viva la programación!!";
+		var str2 = str1.slice(1, 11); //te lo cargarías
+		document.write(str2 + '<br />' + '<hr>');
+	</script>
+
+	<script type="text/javascript">
+		var str1 = "Viva la programación!!";
+		var str2 = str1.split("");
+		document.write(str2 + '<br />' + '<hr>');
+	</script>
+
+	<script type="text/javascript">
+		var str1 = "Viva la programación!!";
+		var str2 = str1.substring(1, 15); //extraer una copia
+		document.write(str2 + '<br />' + '<hr>');
+	</script>
+
+	<script type="text/javascript">
+		var str1 = "SEGUIMOS CON LOS EJERCICIOS DE JAVASCRIPT.";
+		var str2 = str1.toLowerCase();
+		document.write(str2 + '<br />' + '<hr>');
+	</script>
+
+	<script type="text/javascript">
+		var str1 = "Seguimos con los ejercicios de javascript.";
+		var str2 = str1.toUpperCase();
+		document.write(str2 + '<br />' + '<hr>');
+	</script>
+
+	<script type="text/javascript">
+		var str1 = "    Seguimos con los ejercicios de javascript.      ";
+		var str2 = str1.trim();
+		document.write(str2 + '<br />' + '<hr>');
+	</script>
+
+</body>
+</html>
+
+	<!--charAt()
+		concat()
+		replace()
+		indexOf
+		lastIndexOf()
+		search()
+		slice()
+		split()
+		substring()
+		toLowerCase()
+		toUpperCase()
+		trim()
+	-->

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercici 7 Diapo 6</title>
+	<script type="text/javascript">
+		function calcular(){
+			var base = parseInt(document.getElementById('base').value);
+			var exponent = parseInt(document.getElementById('exponent').value);
+			var expabs = Math.abs(exponent);
+			var resultat = 1;
+
+			for(var i=1; i<=expabs; i++){
+				
+				resultat *=base;
+			}
+
+			if(exponent>0){
+				document.getElementById('resultat').innerHTML = resultat;
+			}else if(exponent==0){
+				document.getElementById('resultat').innerHTML = 1;
+			}
+			else{
+				document.getElementById('resultat').innerHTML = 1/resultat;
+			}
+			// Opció amb el MATH.pow
+			//var resultat = Math.pow(base, exponent);
+
+			
+		}
+
+	</script>
+</head>
+<body>
+	<h1>Calcular un número elevat a un altre</h1>
+	<label>base: </label><input type="text" id="base" />
+	<label>Exponent: </label><input type="text" id="exponent" />
+	<button onclick="calcular();">Calcular</button>
+	<hr>
+	<span id='resultat'></span>
+</body>
+</html>

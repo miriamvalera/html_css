@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Usa la función colorea()</title>
+	<style type="text/css">
+		div{
+			border: 1px solid #000;
+			width: 200px;
+			height: 200px;
+			margin: 2%; 
+		}
+	</style>
+</head>
+<body>
+	<h1>Colorea</h1>
+	<p>Selecciona un color y haz click en los div</p>
+
+	<span>Color:</span>
+	<input type="color" id="incolor" value="#ff0000" />
+
+	<div onclick="colorea(this, incolor.value);"></div>
+	<div onclick="colorea(this, incolor.value);"></div>
+	<div onclick="colorea(this, incolor.value);"></div>
+
+	<button onclick="colorea(document.body, incolor.value);">Colorear body</button>
+
+	<script type="text/javascript">
+		//elemento recoge la variable this, color de la id incolor
+		function colorea(elemento, color){
+		elemento.style.backgroundColor = color;
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio 4 - Calcular perímetro, área y diámetro de una circunferencia</title>
+	<style type="text/css"></style>
+</head>
+<body>
+	<h1>Calcular perímetro, área y díametro circunferencia</h1>
+
+	<label>Radio:</label>
+	<input type="number" id="radio" /><br />
+
+	<label>¿Que quieres calcular?</label>
+	<select id="selector"><!-- onchange="calcular()" te lo calcula directamente, no necesitas el button -->
+		<option>Selecciona operación</option>
+		<option value="p">Perímetro</option>
+		<option value="a">Área</option>
+		<option value="d">Diámetro</option>
+	</select>
+	<br />
+
+	<button onclick="calcular();">Calcular</button>
+	<br />
+
+	<output id="resultado"></output>
+
+	<script type="text/javascript">
+		function calcular(){
+			//r obtenida del usuario
+			var r = document.getElementById('radio').value;	
+			var opcion = document.getElementById('selector').value;
+			const PI = 3.141592653;
+
+			if(opcion == "p"){
+				//si opcion escogida es igual a p pues solo calcularemos el perímetro
+			
+				var perimetro = 2*PI*r; //aquí declaramos la variable perímetro y le asignamos el valor de la operación con la variable
+				
+				//ahora tendremos que devolver el valor de perímetro al HTML entonces añadimos un h6 con la id resultado para insertarlo ahí:
+				document.getElementById('resultado').innerHTML = "El perímetro es: " + perimetro;
+			}else if(opcion == "a"){//Prueba a desarrollar este bloque:
+	                					/*Realiazar :
+						                    - la toma de variables (radio)
+						                    - Realizar el calculo
+						                    - mostrar en elemento
+						                */
+						var area = PI*r*r;
+						document.getElementById('resultado').innerHTML = "El área es: " + area;
+				}else if(opcion == "d"){
+					var diametro = 2*r;	
+					document.getElementById('resultado').innerHTML = "El diámetro es: " + diametro;
+				}else{
+					document.getElementById('resultado').innerHTML = "ERROR";
+				}
+		}
+	</script>
+</body>
+</html>

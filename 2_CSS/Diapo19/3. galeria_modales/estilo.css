@@ -1,0 +1,68 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+html{
+  background-color: lightblue;
+}
+body{
+  width: 90%;
+  margin: 20px auto;
+  background-color: white;
+  padding: 20px;
+}
+
+/*Galería con GRID (tres columnas)*/
+#galeria{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 5px;
+}
+
+/*Las figuras de la galería*/
+#galeria figure{
+  text-align: center;
+}
+
+/*Las imágenes de la galería que no son de clase cerrar*/
+#galeria figure img:not(.cerrar){
+  width: 80%;
+}
+
+/*Las imágenes de la galería que son de clase cerrar*/
+#galeria figure img.cerrar{
+  display: none; /*de entrada, no se deben mostrar*/
+  position: absolute;
+  top: -5%;
+  right: -5%;
+  width: 10%;
+  background-color: white;
+}
+
+/* Las figuras de la galería cuando tienen el target */
+#galeria figure:target{
+  position: fixed; /* Ponerlas en "grande" */
+  top:10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  background-color: white;
+  border: solid 2px black;
+}
+
+/* Las imágenes de la galería que no son de clase cerrar, 
+cuando su figura tiene el target */
+#galeria figure:target img:not(.cerrar){
+  height: 80%;
+  width: initial;
+}
+
+/* Las imagenes de la galeria que son de la clase cerrar,
+cuando su figura tiene el target*/
+#galeria figure:target img.cerrar{
+  display: initial; /* mostrarlas (estaban ocultas)*/
+}
+
+
+

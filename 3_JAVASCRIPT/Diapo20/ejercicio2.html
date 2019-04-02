@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 2 - Desactivar botón</title>
+</head>
+<body>
+
+	<button onclick="ejecutar(this);">Desactivar</button>
+
+	<script type="text/javascript">
+		function ejecutar(boton){
+			//Primer de todo crear los elementos que voy a ir mostrando
+			var imagen = document.createElement('img');
+			var contenedor = document.createElement('div');
+			var texto = document.createElement('p');
+
+			//Desactivo el Botón, añadiendo un atributo disabled. Tenemos dos opciones para hacerlo
+			boton.setAttribute('disabled', 'disabled');
+			
+			//Le damos prestaciones al primer elemento, que es la imagen
+			imagen.src = "imgMercedes/mercedesAMG.png";
+			imagen.alt = "Mercedes AMG";
+			imagen.title = "Mercedacos";
+			//La añadimos la imagen como hij@ del body
+			document.body.appendChild(imagen);
+			
+			//Generamos el setTimeout que nos elimina la imagen y nos inserta el contenedor, a los 2 segundos de iniciar la función
+			setTimeout(function(){
+				imagen.remove();
+				contenedor.style.backgroundColor = '#8A0606';
+				contenedor.style.width ='200px';
+				contenedor.style.height = '200px';
+				document.body.appendChild(contenedor);
+			}, 2000);
+
+			//A los 4 segundos de iniciar la función, eliminamos el contenedor e insertamos el texto
+			setTimeout(function(){
+				contenedor.remove();
+				texto.innerHTML = 'HOLIII';
+				document.body.appendChild(texto);
+			}, 4000);
+
+			//Por último a los 5 segundos, eliminamos el texto y volvemos a activar el botón
+			setTimeout(function(){
+				texto.remove();
+				boton.removeAttribute('disabled');
+			}, 5000);
+		}
+	</script>
+</body>
+</html>

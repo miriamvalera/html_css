@@ -1,0 +1,120 @@
+header, nav div, main, footer{
+	padding: 10px;
+}
+body{
+	width: 90%;
+	margin: auto;
+	font-family: 'Roboto Mono', monospace;
+}
+header{
+	background-color: #296B73;
+	grid-area: he;
+	background-image: url(../imgbarcos/name.svg);
+	background-repeat: no-repeat;
+	background-position: 50%;
+	animation-name: headerFooter;
+  	animation-duration: 3s;
+	
+}
+header img{
+	width: 12%;
+	animation-name: logoIn;
+  	animation-duration: 3s;
+}
+nav{
+	background-color: #98E1ED;
+	grid-area: na;
+}
+nav a{
+	text-decoration: none;
+	color: #194759;
+	padding-left: 10%;
+}
+nav div{
+	  transition: background-color 0.5s linear;
+}
+nav div:hover{
+	  background-color: #296B73;
+}
+nav div:hover a{
+	color:#98E1ED;
+}
+nav div:first-child{
+	margin-top: 20%;
+}
+main{
+	grid-area: ma;
+}
+main h1{
+	grid-area: ti;
+	font-family: 'Roboto Mono', monospace;
+	text-transform: uppercase;
+	text-align: center;
+}
+main figure{
+	/*overflow: auto;*/
+}
+figure img{
+	width: 20%;
+	/*overflow: auto;	*/
+}
+figure:nth-of-type(odd)>img{
+	float: left;
+}
+figure:nth-of-type(even)>img{
+	float: right;
+}
+main figure article{
+	font-family: 'Roboto Mono', monospace;
+}
+main article{
+	text-align: justify;
+	margin: 5%;
+}
+footer{
+	background-color: #296B73;
+	grid-area: fo;
+	animation-name: headerFooter;
+  	animation-duration: 3s;
+  	text-align: center;
+}
+.grid-container{
+	display: grid;
+	grid-template-columns: 15% auto 20%;
+	grid-template-areas:
+		'he he he'
+		'na ma ma'
+		'na ma ma'
+		'na ma ma'
+		'fo fo fo';
+	/*grid-gap: 5px;*/
+}
+/*.grid-main{
+	display: grid;
+	grid-template-columns: 20% auto;
+	grid-template-areas:
+		'ti ti'
+		'fi art'
+		'art2 fi2'
+		'fi3 art3';
+	grid-gap: 5px;
+}*/
+/* 	Animacion 	*/
+@keyframes logoIn {
+  from  {margin-left:-110%;}
+  to {margin-left:0%;}
+}
+@keyframes headerFooter{
+	from {background-color: #98E1ED}
+}
+@media screen and (max-width: 500px){
+	.grid-container{
+		grid-template-columns: auto;
+		grid-template-areas: 
+			'he he'
+			'na ma'
+			'na ma'
+			'na ma'
+			'fo fo';
+	}
+}

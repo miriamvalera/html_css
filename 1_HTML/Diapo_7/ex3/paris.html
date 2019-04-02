@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Agencia de viajes-Paris</title>
+	<style type="text/css">
+	 	header, nav, main, footer{
+			border: 1px solid #00F;
+			margin: 5px;
+			background-color: #e6f2ff;
+		}
+		body{
+			padding: 30px;
+			width: 1000px;
+			margin: auto;
+		}
+		header{
+			display: flex;
+  			flex-wrap: nowrap;
+			border: 1px solid #00F;
+			background-image:url('img/nubes3.jpg');
+			background-attachment: fixed;
+			background-size: cover;
+			background-position:center;
+		}
+		#logo{
+			margin-top: 20px;
+			margin-left: 15px;
+		}
+		#logo > img {
+			height: 100px;
+			width: 300px;
+		}
+		#login {
+			margin-left: 270px;
+		}
+		img{			 
+			display: inline-block;
+			border-radius: 8px;
+		}
+		/* 		header form 		*/
+		h1, label{
+			font-family: arial;
+
+		}
+		h1{
+			font-size: 20px;
+			margin-left: 40px;
+		}
+		fieldset{
+			border: none;
+			width: 350px;
+		}
+		label{
+			width: 120px;
+			display: inline-block;
+			text-align: right;
+			margin-right: 1px;
+			margin-top: 10px;
+			font-size: 14px;
+		}
+		input{
+			border-radius: 5px / 8px;
+			margin-left: 4px;
+		}
+		button{
+			border-radius: 5px / 8px;
+			margin-left: 130px;
+			margin-top: 10px;
+		}
+		/* 		 */
+
+
+		figure{
+			margin: 25px;
+			display: inline-block;
+			width: 236px;
+		}
+
+		/* 		NAV 		*/
+		nav{
+			
+			text-align: left;
+		}
+		li{
+			display: inline-block;
+			padding: 5px 20px 5px 20px;
+			padding-top: 10px;
+			position: relative;
+  			background-color: #AFAFD1;
+  			overflow: hidden; /*quitar los puntos de la lista*/
+  		}
+  		nav li:hover{
+  			background-color: #000;
+  			color: #fff;
+  		}
+  		a{
+  			color: inherit;
+  			text-decoration: none;
+  			font-weight: bold;
+  			font-family: verdana;	
+		}
+		.active{
+			border-bottom: 3px solid #000;
+		}
+
+		/*			*/
+
+
+
+		body main, section{
+			padding: 15px;
+		}
+		p{
+			font-family: verdana, arial;
+			text-align: justify;
+		}
+		/* 		MAIN > ARTICLE 		*/
+		#artPresent > h1 {
+			text-align: center;
+		}
+		iframe{
+			margin-right: inherit;
+			padding-left: 20px;
+			width: 45%;
+		}
+		#artPresent > img{
+			margin-left: auto;
+			margin-right: inherit;
+			width: 45%;
+			padding-left: 38px;
+		}
+		#art1 > p {
+			width: 55%;
+			display: inline-block;
+			vertical-align: middle;
+		}
+		#art1 > img {
+			width: 43%;
+			margin-left: 15px;
+			vertical-align: middle;
+		}
+		#art2{
+			margin-top: 15px;
+		}
+		#art2 > p {
+			width: 55%;
+			display: inline-block;
+			vertical-align: middle;
+		}
+		#art2 > img {
+			width: 40%;
+			margin-top: 0px;
+			margin-right: 15px;
+			vertical-align: middle;
+		}
+		#pictures > *  {
+			margin: 30px 30px 30px 50px;
+			display: inline-block;
+			width: 40%;
+		}
+		#pictures img {
+			width: 100%;
+		}
+		#pictures h3{
+			margin: 0px;
+			text-align: center;
+		}
+		#imgiframe{
+			padding-left: 10px;
+		}
+		#listaimg{
+			padding: 0px;
+			display: block;
+			margin-right: auto;
+			margin-left: auto;
+			border: none;
+		}
+		/* 		*/
+
+		footer{
+			height: 40px;
+			padding-top: 30px;
+			text-align: center;
+			padding-right: 10px;
+			font-family: verdana;
+		}	
+	</style>
+
+</head>
+<body>
+	<header>
+		<div id="logo">
+			<img id="" src="img/travelmiriam.png" alt="travelmiriam">
+		</div>
+		<form id="login" method="post">
+			<fieldset>
+				<h1>LOGIN</h1>
+				<label>USER:</label>
+					<input type="text" name="user"><br />
+		
+					<label>PASSWORD:</label>
+					<input type="password" name="password"><br />
+		
+					<button type="submit" value="login">login</button>
+			</fieldset>
+		</form>
+	</header>
+	<nav>
+
+		<ul>
+			<li><a href="index.html">Inicio</a></li>
+			<li><a href="roma.html" target="_blank" title="roma">Roma</a></li>
+			<li><a href="barcelona.html" target="_blank" title="barcelona">Barcelona</a></li>
+			<li  class="active"><a href="paris.html" target="_blank" title="paris">Paris</a></li>
+			<li><a href="contacto.html" target="_blank" title="contacto">Contacto</a></li>
+			<li><a href="registro.html" target="_blank" title="registro">Registro</a></li>
+		</ul>
+	</nav>
+	<main id="mainP">
+		<article id="artPresent">
+			<h1>PARÍS</h1>
+
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/AQ-J_TI7TBk?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+			<img src="img/paris.jpg" alt="paris" >
+			<p>París (en francés Paris, pronunciado Acerca de este sonido es la capital de Francia y su ciudad más poblada. Capital de la región de Isla de Francia (o "Región Parisina"), constituye la única comuna unidepartamental del país. Está situada a ambos márgenes de un largo meandro del río Sena, en el centro de la cuenca parisina, entre la confluencia del río Marne y el Sena, aguas arriba, y el Oise y el Sena, aguas abajo. La ciudad de París, dentro de sus estrechos límites administrativos, tiene una población de 2.273.305 habitantes en 2015. Sin embargo, en el siglo XX, el área metropolitana de París se expandió más allá de los límites del municipio de París, y es hoy en día, con una población de 12.405.426 habitantes en 2013, la segunda área metropolitana del continente europeo (después de Londres) y la 28ª del mundo.</p>
+			
+			<p>París, considerada como la ciudad más romántica del mundo y un lugar lleno de lugares encantadores, es para nosotros una de esas ciudades que debes visitar. Pasear por la orilla del Sena, tomarte un café en alguna de sus bonitas terrazas, subir a las torres de la Catedral de Notre Dame, ver la Torre Eiffel desde Trocadero, perderte por los barrios de Montmartre o Le Marais o embriagarte de arte en el Louvre, son sólo algunos de los muchos lugares que visitar en París imprescindibles. </p>
+		</article>
+		<article id="art1">
+			<p>Torre Eiffel
+			La Torre Eiffel fue creada para la Exposición Universal de París del año 1889 y aunque en un principio no gustó a los parisinos, a lo largo de los años se ha convertido en el icono de la ciudad. Sus 1.665 escalones hacen recomendable la subida en ascensor, aunque escojas la forma que escojas, lo que no puedes perderte son las vistas increíbles de la ciudad desde arriba.
+			Además en la torre se encuentra uno de los mejores restaurantes de París “Le 58 Tour Eiffel“, donde reservar una cena romántica, puede ser memorable y un momento inolvidable.
+			Las mejores vistas que puedes tener de la Torre Eiffel son desde la plaza Trocadero, aunque también tendrás muy buena perspectiva desde el Parque del Campo de Marte o desde la Rue de l´Université, desde donde la podrás contemplar entre edificios.
+			Como comentario te diremos que en los ascensores se forman largas colas, por las escaleras prácticamente no tendrás que esperar, por lo que si no dispones de mucho tiempo, te recomendamos reservar este tour que incluye también el crucero y la visita guiada por París. Si no quieres hacer ningún tour puedes comprar tus entradas con antelación aquí y saltarte las colas.
+			La Torre Eiffel está abierta todos los días de 9:00 a 24:00 horas. Si quieres subir por las escaleras estas cierran a las 18:30. A tener en cuenta que en verano se alarga el cierre hasta medianoche.</p>
+			<img src="img/paris1.jpg" alt="paris1" id="img3">
+		</article>
+						
+		<article id="art2">
+			<img src="img/paris2.jpg" alt="paris2" id="img2">
+			<p>Catedral de Notre Dame
+			La Catedral de Notre Dame es una de las catedrales góticas más antiguas del mundo de la que se terminó su construcción el año 1272. Su interior es espectacular con grandes ventanales y una gran altura, que hacen de este lugar una de las visitas imprescindibles de la ciudad.
+			Nuestra parte favorita de la visita es la subida a las dos torres, en la que se encuentran sus famosas y misteriosas quimeras o gárgolas y desde donde podrás disfrutar de unas vistas maravillosas de la ciudad. La subida es un poco dura con 387 escalones, pero las vistas y las fotos que te llevarás como recuerdo, merecen la pena todo el esfuerzo.
+			Para subir se forman grandes colas, por lo que te recomendados que vayas lo más temprano posible.
+			Una buena opción para conocer mejor su historia y subir a las torres es reservar esta visita guiada en español.
+			Entrada incluida en el Paris Pass.
+			El horario de visita es de las 8:00 a las 18:45h. El fin de semana cierra a las 19:15h.</p>
+		</article>
+		<section id="pictures">
+			<article id="img4">
+				<h3>Sainte Chapelle</h3><br />
+				<img src="img/paris3.jpg" alt="paris3">
+			</article>
+			<article id="img5">
+				<h3>Arco del Triunfo</h3><br />
+				<img src="img/paris4.jpg" alt="paris4">
+			</article>
+		</section>
+
+		<h1>Imágenes París</h1>
+		<a id="imgiframe" href="img/paris5.jpg" target="marco"><img src="img/paris5.jpg" alt="paris5" width="150" height="100">
+		<a href="img/paris6.jpg" target="marco"><img src="img/paris6.jpg" alt="paris6" width="150" height="100">
+		<a href="img/paris7.jpg" target="marco"><img src="img/paris7.jpg" alt="paris7" width="150" height="100">
+		<a href="img/paris8.jpg" target="marco"><img src="img/paris8.jpg" alt="paris8" width="150" height="100">
+		<a href="img/paris9.jpg" target="marco"><img src="img/paris9.jpg" alt="paris9" width="150" height="100">
+		<a href="img/paris10.jpg" target="marco"><img src="img/paris10.jpg" alt="paris10" width="150" height="100">
+
+
+		<iframe id="listaimg" src="img/paris5.jpg" name="marco" width="400" height="300"></iframe> 
+
+	</main>
+	<footer>
+		Miriam Valera
+	</footer>
+</body>
+</html>

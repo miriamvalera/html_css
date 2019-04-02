@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Diapo 5 Ejemplo omitiendo el break para def.rangos</title>
+</head>
+<body>
+	<h1>Calcular notas</h1>
+
+	<label>Nota:</label>
+	<input type="number" id="innota" />
+	<br />
+
+	<button type="button" onclick="calcular();">CALCULAR NOTA</button>
+	<br />
+	<span>La nota es: <output id="outnota"></output></span>
+
+	<script type="text/javascript">
+		function calcular(){
+			//tomar datos
+			var nota = parseInt(innota.value);
+			var notaTexto ="";
+
+			switch(nota){ //calcular la nota
+				case 0:
+				case 1:
+				case 2: notaTexto = "Deficiente";
+				break;
+				case 3:
+				case 4: notaTexto = "Suspenso";
+				break;
+				case 5:
+				case 6: notaTexto = "Aprobado";
+				break;
+				case 7:
+				case 8: notaTexto = "Notable";
+				break;
+				case 9:
+				case 10: notaTexto = "Excelente";
+				break;
+				default: notaTexto = "Error en la nota";
+			}
+			//imprimir resultados
+			outnota.innerHTML = notaTexto;
+		}
+	</script>
+</body>
+</html>

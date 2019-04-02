@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Agencia de viajes</title>
+	<link rel="stylesheet" type="text/css" href="agenciaviajes.css">
+
+		.centrar{
+			text-align: center;
+			width: 300px;
+		}
+	</style>
+
+</head>
+<body>
+		<header>
+		<div>
+			<img src="img/travelmiriam.png" alt="travelmiriam">
+		</div>
+		<form id="login" method="post">
+			<fieldset>
+				<h1>LOGIN</h1>
+				<label>USER:</label>
+					<input type="text" name="user"><br />
+					<label>PASSWORD:</label>
+					<input type="password" name="password"><br />
+					<button type="submit" value="login">login</button>
+			</fieldset>
+		</form>
+	</header>
+
+	<nav>
+		<ul>
+			<li><a href="index.html" target="_blank" title="index">Home</a></li>
+			<li><a href="roma.html" target="_blank" title="roma">
+				<!--<img src="img/iconoroma.png">-->Roma</a></li>
+			<li><a href="barcelona.html" target="_blank" title="barcelona">
+				<!-- <img src="img/iconobcn.png"> --> Barcelona</a></li>
+			<li><a href="paris.html" target="_blank" title="paris">
+				<!-- <img src="img/iconoparis.png"> -->Paris</a></li>
+			<li><a href="contacto.html" target="_blank" title="contact">Contacto</a></li>
+			<li class="active"><a href="registro.html" target="_blank" title="registro">Registro</a></li>
+		</ul>
+	</nav>
+	<main id="registro">
+		<form>
+		<fieldset>
+			<h1>Registro</h1>
+			<label>Usuario</label>
+			<input type="text" name="user"><br />
+
+			<label>Contraseña</label>
+			<input type="password" name="pwd">
+			<input type="hidden" name="login" value="pwd"><br />
+
+			<label>Nombre:</label>
+			<input type="text" name="firstname"><br />
+
+			<label>Apellidos</label>
+			<input type="text" name="lastname"><br />
+
+			<label>Fecha nacimiento</label>
+				<select>
+					<option selected="selected" value="dia">1</option>
+					<option value="dia">2</option>
+					<option value="dia">3</option>
+					<option value="dia">4</option>
+					<option value="dia">5</option>
+					<option value="dia">6</option>
+					<option value="dia">7</option>
+					<option value="dia">8</option>
+					<option value="dia">9</option>
+					<option value="dia">10</option>
+				</select>
+				<select>
+					<option selected="selected" value="ene">Enero</option>
+					<option value="feb">Febrero</option>
+					<option value="mar">Marzo</option>
+					<option value="abr">Abril</option>
+					<option value="may">Mayo</option>
+					<option value="jun">Junio</option>
+					<option value="jul">Julio</option>
+					<option value="ago">Agosto</option>
+					<option value="sep">Septiembre</option>
+					<option value="oct">Octubre</option>
+					<option value="nov">Noviembre</option>
+					<option value="dic">Diciembre</option>
+				</select>
+				<select>
+					<option selected="selected" value="anyo">1986</option>
+					<option value="anyo">1987</option>
+					<option value="anyo">1988</option>
+					<option value="anyo">1989</option>
+					<option value="anyo">1990</option>
+					<option value="anyo">1991</option>
+				</select><br />
+
+			<label>DNI</label>
+			<input type="text" maxlength="9" name="dni"><br />
+
+			<label>Dirección</label>
+			<input type="text" name="direccion"><br />
+
+			<label>Codigo Postal</label>
+			<input type="text" maxlength="5" name="cp"><br />
+
+			<label>Población</label>
+			<input type="text" name="poblacion"><br />
+
+			<label>Provincia</label>
+			<input type="text" name="provincia"><br />
+
+			<label>Email</label>
+			<input type="email" name="email" placeholder="Ingrese su email"><br />
+
+		<div>
+			<input type="radio" name="aceptar" value="acepto"/>
+			<label class="centrar">Acepto formar parte de la web de viajes</label>
+		</div>
+		<br />	
+
+			<button type="submit" value="enviar">Registrarse</button>
+
+		</fieldset>
+	</form>
+	</main>
+	<footer>
+		<p>&copy Miriam Valera</p>
+	</footer>
+</body>
+</html>

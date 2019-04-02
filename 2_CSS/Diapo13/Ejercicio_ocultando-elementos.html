@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Ocultando Elementos</title>
+	<style type="text/css">
+		figure{
+			border: 2px solid #000;
+			display: inline-block;
+			margin-left: auto;
+		}
+		figcaption{
+			text-align: center;
+			font-weight: bold;
+		}
+		img:first-of-type:hover{
+			display: none;
+		}
+		img:last-of-type:hover{
+			visibility: hidden;
+		}
+	</style>
+</head>
+<body>
+	<h1>Descripción</h1>
+	<p>Diferencia entre el display: none y el visibility: hidden</p>
+	<figure>
+		<img src="fondos/deadpool.jpg" />
+		<figcaption>DEADPOOL</figcaption>
+	</figure>
+	<figure>
+		<img src="fondos/wolverine.jpg" />
+		<figcaption>WOLVERINE</figcaption>
+	</figure> 
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 2 - Reloj Digital</title>
+</head>
+<body onload="startTime()">
+
+<h1 id="resultado"></h1>
+
+<script type="text/javascript">
+    function startTime() {
+      var hoy = new Date();
+      var horas = hoy.getHours();
+      var minutos = hoy.getMinutes();
+      var segundos = hoy.getSeconds();
+
+      minutos = checkTime(minutos);
+      segundos = checkTime(segundos);
+
+      document.getElementById('resultado').innerHTML = horas + ":" + minutos + ":" + segundos;
+
+      var t = setTimeout(startTime, 500);
+    }
+
+    function checkTime(i) {
+      if (i < 10) {i = "0" + i};  // añadir cero delante si es menor a 10 
+      return i;
+    }
+</script>
+
+</body>
+</html>

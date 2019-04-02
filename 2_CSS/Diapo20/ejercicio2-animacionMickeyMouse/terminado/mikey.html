@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 2 - Animaciones</title>
+	<style>
+		#paisaje{
+			background-image: url(paisaje.jpg);
+			background-repeat: no-repeat;
+			height: 800px;
+
+		}
+		#mk{
+			position: relative;
+			top: 250px;
+			animation-name: moveMickey;
+			animation-duration: 3s;
+			animation-direction: alternate;
+
+		}
+		#bd{
+			width: 6%;
+		    position: absolute;
+		    top: 38%;
+		    left: 5.6%;
+		    animation: moveBd 2s infinite;
+		    animation-direction: alternate;
+		}
+		#bi{
+			width: 6%;
+			position: absolute;
+		    top: 38%;
+		    left: 0%;
+		    animation: moveBi 2s infinite;
+		    animation-direction: alternate;
+		}
+		#mikiBody{
+			width: 12%;
+			
+		}
+
+		@keyframes moveBd {
+			0% {
+				transform: rotateZ(0deg);
+				top: 38%;
+    			left: 5.6%;
+			}
+			20%{
+				top: 48%;
+			}
+			100% {
+				transform: rotateZ(100deg);
+			    left: 0%;
+			    top: 47%;
+			}
+		}
+		@keyframes moveBi {
+			0% {
+				transform: rotateZ(0deg);
+				top: 38%;
+		    	left: 0%;
+			}
+			20%{
+			}
+			100% {
+				/*transform: rotateZ(100deg);*/
+				top: 31%;
+		    	left: -0.8%;
+			}
+		}
+		@keyframes moveMickey{
+			from{left: 1000px;}
+			to{right: 100px;}
+		}
+		@keyframes moveMickey{
+			0%{left: 0%; transform: rotateZ(0deg);}
+			15%{left: 20%; transform: rotateZ(0deg);}
+			30%{left: 40%; transform: rotateZ(100deg);}
+			50%{left: 60%; transform: rotateZ(100deg);}
+			70%{left: 80%; transform: rotateZ(100deg);}
+			90%{left: 100%; transform: rotateZ(100deg);}
+		}
+		
+	</style>
+</head>
+<body>
+	<!--afecte el tamaño del div #mk al resto de img
+	aplicar un tamaño a este div y que las img se adapten al tamaño definido a la caja, no me parece normal que le ponga un tamaño a la caja = div y que las img se salgan fuera -->
+	<header id="paisaje">
+		<div id="mk">
+			<img id="bd" src="brazoI.png" alt="brazoDerecho" />
+			<img id="mikiBody" src="cuerpoM.png" alt="cuerpoMickey" />
+			<img id="bi" src="brazoD.png" alt="brazoIzquiedo" />
+		</div>
+	</header>
+</body>
+</html>

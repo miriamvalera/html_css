@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio 1D</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			padding: 10px;
+		}
+		header, aside, main, section, footer{
+			text-align: center;
+			border: 2px solid #000;	
+			padding: 20px;
+		}
+		.grid-container{
+			display: grid;
+			grid-template-columns: 30% 30% auto;
+			grid-gap: 5px;
+		}
+		aside{
+			background-color: #A2EFEA;
+			grid-area: 1/1/4/2;
+		}
+		header{
+			background-color: #F1EE9A;
+			grid-column: 2/4;
+		}
+		main{
+			background-color: #CD9CF6;
+			grid-column: 2/3;
+		}
+		section{
+			background-color: #F4C1C1;
+			grid-area: 2/3/4/4; /*fila inicial/ columna inicial/ fila final /columna final*/
+		}
+		footer{
+			background-color: #F7AEE3;
+			grid-column: 2/3;
+		}
+		
+	</style>
+</head>
+<body class="grid-container">
+	<aside>IZQ</aside>
+	<header>HEADER</header>
+	<main>MAIN</main>
+	<footer>FOOTER</footer>
+	<section>DER</section>
+</body>
+</html>

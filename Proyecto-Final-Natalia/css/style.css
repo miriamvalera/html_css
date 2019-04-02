@@ -1,0 +1,434 @@
+body{
+	margin: auto;
+}
+header{
+	background-color: #5bedbb;
+	grid-area: header;	
+}
+header img{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 15%;
+	transition: 2s;
+}
+header img:hover{
+	transform: scale(1.5);
+}
+#redes{
+	position: absolute;
+	right: 2%;
+    font-size: 2vw;
+    top: 2%;	
+
+}
+#redes i{
+	color: #008C72;
+	margin-top: 100%;
+	display: block;
+    top: 0px;
+    transition: 2s;
+}
+#redes i:hover{
+	cursor: pointer;
+	transform: rotateY(380deg);
+}
+nav{
+	z-index: 10;
+	grid-area: nav;
+	text-align: center;
+	background-color: #008C72;
+	position: sticky;
+	top: 0;
+}
+nav > div{
+	display: inline-block;
+	margin-left: 5%;
+	padding: 20px;
+}
+nav > div:hover{
+	background-color: #5bedbb;
+}
+nav a{
+	text-decoration: none;
+	text-transform: capitalize;
+	color: #fff;
+	font-family: Elephant;
+	font-size: 1.1vw;
+}
+.dropdown-content a {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {
+	background-color: #5bedbb;
+}
+.dropdown-content {
+	text-align: left;
+	margin-top: 20px;
+	margin-left: -20px;
+	display: none;
+	position: absolute;
+	background-color: #008e70;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+.dropdown:hover .dropdown-content {display: block;}
+
+main{
+	grid-area: main;
+	width: 90%;
+	margin: auto;
+}
+main h2{
+	text-transform: capitalize;
+	font-family: Bodoni MT Black;
+}
+main p{
+	font-family: helvetica, arial;
+}
+.text{
+	width: 75%;
+	display: inline-block;
+}
+.text:nth-of-type(odd){
+	margin-right: 2%;
+}
+.text:nth-of-type(even){
+	margin-left: 2%;
+}
+.imagen{
+	display: inline-block;
+	vertical-align: middle;
+	outline: 2px solid #000;	
+}
+.imagen:nth-of-type(odd)>img{
+	left:0;
+}
+.imagen:nth-of-type(even)>img{
+	right: 0;
+}
+article{
+	grid-area: article;
+}
+.persona{
+	margin: 5% auto;
+}
+/*------- separador -------*/
+#separador{
+	margin: 5% auto;
+	width: 40%;
+	height: 3px;
+	background-color: #bf0024;
+}
+/*-------  -------*/
+
+/*------- 1r blockquote -------*/
+.blockquote{
+  font-size: 1.4em;
+  width:60%;
+  margin:50px auto;
+  font-family:Open Sans;
+  font-style:italic;
+  color: #555555;
+  padding:1.2em 30px 1.2em 75px;
+  border-left:8px solid #78C0A8 ;
+  line-height:1.6;
+  position: relative;
+  background:#EDEDED;
+}
+.blockquote::before{
+  font-family:Arial;
+  content: "\201C";
+  color:#78C0A8;
+  font-size:4em;
+  position: absolute;
+  left: 10px;
+  top:-10px;
+}
+.blockquote::after{
+  content: '';
+}
+.blockquote span{
+  display:block;
+  color:#333333;
+  font-style: normal;
+  font-weight: bold;
+  margin-top:1em;
+}
+/*-------  -------*/
+
+/*------- pizarra -------*/
+.pizarra{
+	background-image: url("../imagenes/pizarra.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	padding: 7%;
+
+}
+.caja{
+	display: flex;	
+}
+.caja div{
+	flex: 1;
+}
+
+@font-face{
+	font-family: "tiza";
+	src:url('../fuentes/tiza/tiza.ttf');
+}
+.pizarra h3,.pizarra li{
+	/*text-transform: uppercase;*/
+	font-family: "tiza";
+	color: #fff;
+}
+li{
+	list-style: none;
+	list-style-type: lower-alpha;
+	list-style-image: url('../imagenes/chalks2.png');
+	list-style-position: inside;
+}
+/*------- Conceptos Parte 3 -------*/
+.listaFunciones{
+	font-family: "tiza";
+	color: #000;
+}
+#parte3{
+	margin: 5% auto;
+}
+/*------- Conceptos diagrama -------*/
+#parte4 figure{
+	text-align: center;
+}
+/*-------  -------*/
+/*------- estrategias -------*/
+#libro{
+	background-color: #def7f1;
+	width: 100%;
+	text-align: center;
+	position: relative;
+}
+#imgLibro{
+	width: 1000px;
+	z-index: 1;
+}
+/*------- estrategias / nubes -------*/
+#nube1{
+	top: 5%;
+	width: 20%;
+	animation: moveCloud1 6s linear infinite alternate;
+}
+#nube2{
+    width: 15%;
+    top: 11%;
+    animation: moveCloud2 6s ease infinite alternate;
+}
+#nube3{
+    width: 15%;
+    top: 30%;
+    animation: moveCloud3 6s ease-in-out  infinite alternate;
+}
+#nube4{
+    width: 20%;
+    top: 32%;
+    animation: moveCloud4 6s ease-out  infinite alternate;
+}
+
+.nube, .nube p{
+	cursor: pointer;
+	position: absolute;
+}
+.nube img{
+    width: 100%;
+ 	z-index: 2;
+}
+.nube p{
+	z-index: 3;
+	top: 32%;
+	left: 36%;
+	
+}
+.nube a{
+	text-decoration: none;
+	color: #000;
+}
+@keyframes moveCloud1{
+	from{left: 22%;}to{left:15%;}
+}
+@keyframes moveCloud2{
+	from{right: 15%;}to{right: 22%;}
+}
+@keyframes moveCloud3{
+	from{left: 20%;}to{left: 12%;}
+}
+@keyframes moveCloud4{
+	from{left: 75%;}to{left:65%;}
+}
+/*-------  -------*/
+
+/*------- estrategias / objetivos -------*/
+.p{
+	width: 60%;
+	margin: auto;
+}
+.p article{
+	margin-top: 5%;
+}
+.cv li{
+	list-style-image: url('../imagenes/resume2.png');
+}
+.objetivos{
+	background-image: url(../imagenes/objetivosImg.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	display: flex;
+	justify-content: center;
+	height: 400px;
+	padding: 5%;
+}
+.objetivos ul{
+	width: 30%;
+}
+.objetivos li{
+	list-style-image: url('../imagenes/pencil2.png');
+}
+/*-------  -------*/
+.show{
+	animation: mostrar 1s linear both;
+}
+.hide{
+	visibility: hidden;
+}
+@keyframes mostrar{
+	from{opacity:0} to{opacity: 1};
+}
+.planificacion{
+	position: relative;
+	height: 180px;
+	margin-bottom: 20px;   
+}
+.planificacion img{
+	text-align: center;
+	width: 600px;
+}
+
+#p1{
+	left: 0%;
+}
+#p2{
+	left: 14.5%;
+}
+#p3{
+	left: 28%;
+}
+#p4{
+	left: 42%;
+}
+#p5{
+	left: 56%;
+}
+#p6{
+	left: 70%;
+}
+#p7{
+	left: 84%; 
+}
+/*Bolita verde que une el P con la img de cada point*/
+.sp{
+    background-color: #00bea6;
+    padding: 5px;
+    border-radius: 5px;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    bottom: 60%;
+}
+.point {
+
+	text-align: center;
+	position: absolute;
+	bottom: 0;
+	width: 100px;
+	height: 150px;
+}
+.point p{
+    background-color: #00bea6;
+    padding: 5px;
+    border-radius: 5px;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+.point img {
+	position: absolute;
+	left: 30px;
+	bottom: 5px;
+	width: 50px;
+}
+#progressBar{
+	height: 5px;
+	border-radius: 10px;
+	background-color: #00bea6;
+	position: absolute;
+	bottom: 0px;
+}
+.progressBarAnumation{
+	animation:animationProgressBar 15s linear 0.2s both;	
+}
+
+@keyframes animationProgressBar {
+	from{width:0%;}
+	to{width:100%;}
+}
+
+/*------- recursos -------*/
+#mover1, #mover2{
+	color: #FFF;
+	text-align: center;
+	justify-content: center;
+    display: inline-block;
+}
+#color1{
+	background-color: #F0C83E;
+	width: 250px;
+	height: 250px;
+}
+#color2{
+	background-color: #0EA3D4;
+	width: 250px;
+	height: 250px;
+}
+#color3{
+	background-color: #791ECE;
+	width: 250px;
+	height: 250px;
+}
+#color4{
+	background-color: #64BE0D;
+	width: 250px;
+	height: 250px;
+}
+span{
+	font-family: helvetica, arial;
+}
+footer{
+	grid-area: footer;
+	background-color: #008C72;
+	text-align: center;
+	font-family: helvetica;
+}
+#grid-container{
+	display: grid;
+	grid-template-columns: 33.3% auto 33.3%;
+	grid-template-areas: 
+		'header header header'
+		'nav nav nav'
+		'main main main'
+		'main main main'
+		'main main main'
+		'main main main'
+		'footer footer footer'
+}

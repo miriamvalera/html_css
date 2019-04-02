@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html data-lt-installed="true"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 3 - Galería de fotos</title>
+	<style type="text/css">
+		body{
+			width: 90%;
+			margin: auto;
+		}
+		h1{
+			text-align: center;
+			font-size: 3vw;
+			border-bottom: 3px solid #FD9F4C;
+			color: #CD5A06;
+		}
+		#galeria{
+			display: flex;
+			flex-wrap: wrap;	
+		}
+		figure{
+			display: inline-block;
+			flex: 1;
+			margin: 2% auto;
+			min-width: 400px;
+			text-align: center;
+			font-weight: bold;	
+		}
+		img{
+			border: 3px solid #720707;
+			border-radius: 5px;
+			width: 80%;	
+		}
+		.grande{
+			position: fixed;
+			width: 60%;
+			top: 20%;
+			left: 15%;
+		}
+		
+	</style>
+</head>
+<body>
+		
+</head>
+<body>	
+	<header>
+		<h1>Galería de Fotos</h1>	
+	</header>
+
+	<section id="galeria">
+	
+		<figure>
+			<img src="imgP/paisaje1.jpg" alt="Foto1 alternativo" title="Juego de Tronos" onclick="agrandar(this);" data-nombre="Game Of Thrones" />
+		</figure>
+
+		<figure>
+			<img src="imgP/paisaje2.jpg" alt="Foto2 alternativo" title="Paisaje 1" onclick="agrandar(this);" data-nombre="Game Of Thrones" />
+		</figure>
+
+		<figure>
+			<img src="imgP/paisaje3.jpg" alt="Foto3 alternativo" title="Paisaje 2" onclick="agrandar(this);" data-nombre="Game Of Thrones" />
+		</figure>
+
+		<figure>
+			<img src="imgP/paisaje4.jpg" alt="Foto4 alternativo" title="Paisaje 3" onclick="agrandar(this);" data-nombre="Game Of Thrones" />
+		</figure>
+
+		<figure>
+			<img src="imgP/paisaje5.jpg" alt="Foto5 alternativo" title="Paisaje 4" onclick="agrandar(this);" data-nombre="Game Of Thrones" />
+		</figure>
+
+		<figure>
+			<img src="imgP/paisaje6.jpg" alt="Foto6 alternativo" title="Paisaje 5" onclick="agrandar(this);" data-nombre="Game Of Thrones" />
+		</figure>
+
+		<figure>
+			<img src="imgP/paisaje7.jpg" alt="Foto7 alternativo" title="Paisaje 6" onclick="agrandar(this);" data-nombre="Game Of Thrones" />
+		</figure>
+
+		<figure>
+			<img src="imgP/paisaje8.jpg" alt="Foto8 alternativo" title="Paisaje 7" onclick="agrandar(this);" data-nombre="Game Of Thrones" />
+		</figure>
+	</section>	
+	
+	<script type="text/javascript">
+	
+		function agrandar(elemento){
+			
+			var nuevaIMG = document.createElement('figure');
+			nuevaIMG.appendChild(document.createElement('img'));
+			nuevaIMG.firstElementChild.src = elemento.src;
+			
+			nuevaIMG.setAttribute('class','grande');
+			
+			nuevaIMG.setAttribute('onclick','this.remove()');
+			
+			
+			//recuperar la información y ponerla en un figcaption
+				var leyenda = document.createElement('figcaption');
+				var nombre = elemento.dataset.nombre;
+	
+				leyenda.innerHTML = nombre.toUpperCase();
+				nuevaIMG.appendChild(leyenda);
+				document.body.appendChild(nuevaIMG);
+		}
+	</script>
+</body>
+</html>

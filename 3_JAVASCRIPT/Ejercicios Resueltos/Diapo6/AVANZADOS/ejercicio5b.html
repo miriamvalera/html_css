@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercici 7 Diapo 6</title>
+	<script type="text/javascript">
+		function calcular(base, exponent){
+		
+				document.getElementById('resultat').innerHTML = Math.pow(base, exponent);
+			
+		}
+
+	</script>
+</head>
+<body>
+	<h1>Calcular un número elevat a un altre</h1>
+	<label>base: </label><input type="text" id="base" />
+	<label>Exponent: </label><input type="text" id="exponent" />
+	<button onclick="calcular(parseInt(document.getElementById('base').value),parseInt(document.getElementById('exponent').value));">Calcular</button>
+	<hr>
+	<span id='resultat'></span>
+</body>
+</html>

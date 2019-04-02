@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 2 - Agrandar o encoger imágenes</title>
+</head>
+<body>
+	<h2>Función para agrandar o encoger imágenes en base a la escala</h2>
+
+	<figure>
+		<img src="images/bart.png" onmouseenter="escalar(this, 0.5);" height="100" width="50" id="foto"">
+	</figure>
+		
+	<figure>
+		<img src="images/lisa.png" onmouseenter="encoger(this, 1.5);" height="500" width="400" id="photo">
+	</figure>
+
+	<script type="text/javascript">
+		function escalar(imagen){
+			imagen.height*=2;
+			imagen.width*=2;
+		}
+
+		function encoger(image){
+			image.height/=2;
+			image.width/=2;
+		}
+	</script>
+</body>
+</html>

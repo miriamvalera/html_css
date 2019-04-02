@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio 10 - Juego de adivinar el número</title>
+	<style type="text/css"></style>
+</head>
+<body>
+	<h1>Adivina el número</h1>
+
+	<label>Número:</label><input type="number" id="num" min="0" max="128" />
+
+	<button onclick="adivinar();">OK</button>
+	<button onclick="reiniciar();">Reiniciar</button>
+	<hr>
+
+	<span>Resultado:<output id="resultado"></output></span><br />
+	<span>Intentos:<output id="intentos"></output></span>
+</body><!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 10 - Juego de adivinar el número</title>
+    <style type="text/css"></style>
+</head>
+<body>
+    <h1>Adivina el número</h1>
+
+    <label>Número:</label><input type="number" id="num" min="0" max="128" />
+
+    <button onclick="adivinar();">OK</button>
+    <button onclick="reiniciar();">Reiniciar</button>
+    <hr>
+
+    <span>Resultado:<output id="resultado"></output></span><br />
+    <span>Intentos:<output id="intentos"></output></span>
+</body>
+<script>
+    //Declaramos las variables que quieres mostrar y que necesitamos, que son: 
+        //Número máximo
+        //Numero mínimo
+        //Cantidad de intentos
+        //El numero que ha pensado la máquina.
+    var max = 1;
+    var min = 128;
+    var nIntentos = 0;
+    var numOculto = parseInt(Math.random() * (max - min) + min);
+    //Para no repetir código aquí puedes crear dos variables que apunten a los resultados. 
+    console.log(numOculto);
+    //Ahora hacemos una funcion que se llame comprobar/adivinar:
+    function adivinar(){
+        //cuando llamamos a esta fucnion ¿qué queremos hacer?:
+        //Pues coger el valor que se ha introducido: 
+        var numeroIntroducido = document.getElementById('num').value;
+
+        //Feedbak del nº de intentos: 
+        var showIntentos = document.getElementById('intentos').value;
+        //Comprobar si es igual que el número que habia pensado la máquina: 
+        if (numeroIntroducido==numOculto){
+            document.getElementById('resultado').innerHTML = 'Acertaste';
+            //reset();
+            console.log('acierto');
+        }else{
+            document.getElementById('resultado').innerHTML = 'Fallaste';
+            nIntentos++;
+            console.log('fallo',nIntentos);
+        }
+        //Despues de comprobar cosas actualizamos : 
+        showIntentos.innerHTML = nIntentos;
+            
+    }
+    //Aquí tendremos otra funcion reset()
+    function reset(){
+        //Reseteamos contadores: 
+        nIntentos = 0;
+        //Generamos un nuevo numero: 
+
+        //Borramos los div de resultados: 
+
+    }
+
+</script>
+</html>
+<script>
+    //Declaramos las variables que quieres mostrar y que necesitamos, que son: 
+        //Cantidad de intentos
+        //El numero que ha pensado la máquina.
+    var nIntentos = 0;
+    var numOculto = math.Random(); //tengo que ver como es.. 
+    //Para no repetir código aquí puedes crear dos variables que apunten a los resultados. 
+
+    //Ahora hacemos una funcion que se llame comprobar/adivinar:
+    function adivinar(){
+        //cuando llamamos a esta fucnion ¿qué queremos hacer?:
+        //Pues coger el valor que se ha introducido: 
+        var numeroIntroducido = document.getElementById('num').value;
+        //Comprobar si es igual que el número que habia pensado la máquina: 
+
+            //Si es igual hacer una cosa: 
+                //Mostrar mensaje de acierto
+                //Resetear los contadores llamando a la funcion que también unsamos para reset el juego.
+                reset();
+
+            //Si no aumentar la lista de intentos y mostrar algo por ejemplo: 
+    }
+    //Aquí tendremos otra funcion reset()
+    function reset(){
+        //Reseteamos contadores: 
+        nIntentos = 0;
+        //Generamos un nuevo numero: 
+
+        //Borramos los div de resultados: 
+
+    }
+
+</script>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+		var aleatorio=Math.floor(Math.random()*128)+1;
+		var intentos=0;
+
+
+		function restart(){
+			//recalcular el aleatorio
+			aleatorio=Math.floor(Math.random()*128)+1;
+
+			//poner los intentos a 0
+			intentos=0;
+
+			//habilitar el botón para jugar
+			jugar.removeAttribute('disabled');
+
+			//deshabilitar el botón de reinicio
+			reiniciar.setAttribute('disabled','disabled');
+
+			//borrar el output
+			outresultado.innerHTML='';
+
+			innumero.value='';
+			innumero.focus();
+		}
+
+		function calcular(){
+			//tomar el número del input
+			var numero=parseInt(innumero.value);
+
+			//incrementar intentos
+			intentos=intentos+1;
+
+			if(numero==aleatorio){
+
+				outresultado.innerHTML='Acertaste';
+
+				if(intentos>7){
+					outresultado.innerHTML+=' pero eres malo';
+				}
+
+				reiniciar.removeAttribute('disabled');
+				jugar.setAttribute('disabled','disabled');
+
+			}else{
+
+				if(numero<aleatorio){
+					outresultado.innerHTML='Buscamos un número mayor';
+				}else{
+					outresultado.innerHTML='Buscamos un número menor';
+				}
+
+			}
+
+
+		}
+		</script>
+	</head>
+	<body>
+		<h1>Adivinar</h1>
+		<label>numero: </label>
+		<input type="text" id="innumero">
+		<br>
+		<button id="jugar" onclick="calcular();">Calcular</button>
+		<button id="reiniciar" disabled="disabled" onclick="restart();">Reiniciar</button>
+
+		<h2>Resultados</h2>
+		<output id="outresultado"></output>
+	
+	</body>
+</html>

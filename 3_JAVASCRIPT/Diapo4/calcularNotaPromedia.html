@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio 2 - Calcular nota promedia aprobada o no</title>
+	<style type="text/css"></style>
+</head>
+<body>
+	<h1>Calcular nota promedia</h1>
+	<label>Inserte 3 notas:</label>
+	<input type="number" id="n1" min="0" max="10"/>
+	<br />
+	<input type="number" id="n2" min="0" max="10"/>
+	<br />
+	<input type="number" id="n3" min="0" max="10"/>
+	<br />
+
+	<button onclick="calcularNotas();">Calcular Notas</button>
+	<br />
+
+	<span>El promedio es:</span><output id="resultado"></output>
+	
+
+	<script type="text/javascript">
+		function calcularNotas(){
+			var n1 = parseFloat(document.getElementById('n1').value);
+			var n2 = parseFloat(document.getElementById('n2').value);
+			var n3 = parseFloat(document.getElementById('n3').value);
+			
+
+			var res = (n1+n2+n3)/3;
+			if(res>=5){
+				document.getElementById('resultado').innerHTML = ("Aprobaste");
+			}else
+				document.getElementById('resultado').innerHTML = ("Suspendiste");
+
+				//para que salga la nota promedia
+				// document.getElementById('resultado').innerHTML = res.toFixed(2);
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!Doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Ejercicio 5</title>
+		<script>
+		
+		function calcular(){
+			//borrar los outputs 
+			outd.innerHTML='';
+			outa.innerHTML='';
+			outp.innerHTML='';
+
+			//tomar el radio
+			var radio=parseFloat(inradio.value);
+
+			//si quieren el diametro
+			if(ind.checked){
+				var d=radio*2;
+				outd.innerHTML=d.toFixed(2);
+			}
+
+			//si quieren el area
+			if(ina.checked){
+				var a=Math.PI*radio*radio;
+				outa.innerHTML=a.toFixed(2);
+			}
+			
+			//si quieren el perimetro
+			if(inp.checked){
+				var p=Math.PI*radio*2;
+				outp.innerHTML=p.toFixed(2);
+			}
+	}
+		</script>
+	</head>
+	<body>
+
+	<h1>calculadora de círculos</h1>
+	<label>radio:</label>
+	<input type="number" id="inradio">
+	<br>
+	
+	<label>Selecciona operaciones:</label>
+	<br>
+	<input type="checkbox" id="ind">
+	<label>diametro</label>
+	<br>
+	<input type="checkbox" id="ina">
+	<label>area</label>
+	<br>
+	<input type="checkbox" id="inp">
+	<label>perimetro</label>
+	<br>
+	
+	<button onclick="calcular();">Click-me</button>
+	
+	<h2>Resultado</h2>
+	<label>diametro</label>
+	<output id="outd"></output>
+	<br>
+	<label>area</label>
+	<output id="outa"></output>
+	<br>
+	<label>perimetro</label>
+	<output id="outp"></output>
+	
+	</body>
+</html>
+
+
+
+

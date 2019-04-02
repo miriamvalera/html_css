@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 3 - Calcular letra DNI</title>
+</head>
+<body>
+	<h2>Calcular letra DNI</h2>
+
+	<label>Número DNI:</label>
+	<input type="string" pattern="[0-9]{8}" id="dni" /><br />
+
+	<button onclick="calcular(dni.value);">Calcular Letra</button>
+	<h3 id="res"></h3>
+
+	<script type="text/javascript">
+		function calcular(dni){
+			var letra;
+			var arrayLetra = ['T','R','W','A','G','M','Y','F','P','D','X','B','N','J','Z','S','Q','V','H','L','C','K','E'];
+			var DNI = parseInt(dni);
+
+			if(dni.length!=8){
+				alert("DNI no válido");
+			}else{
+				letra = arrayLetra[DNI%23];
+			}
+
+			document.getElementById('res').innerHTML = "Resultado: " + letra;
+			
+			//alert(letra);
+		}
+	</script>
+
+	<script type="text/javascript">
+		function calcular(dni){
+			var arrayLetra = ['T','R','W','A','G','M','Y','F','P','D','X','B','N','J','Z','S','Q','V','H','L','C','K','E'];
+			document.getElementById('res').innerHTML = dni+' - '+arrayLetra[dni%23];
+		}
+	</script>
+</body>
+</html>

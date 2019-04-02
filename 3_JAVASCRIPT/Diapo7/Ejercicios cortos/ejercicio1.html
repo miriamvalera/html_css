@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio 1 - Devuelve el valor más pequeño </title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<h2>Devuelve el valor más pequeño</h2>
+
+	<label>Primer número:</label>
+	<input type="number" id="n1" />
+	<br />
+
+	<label>Segundo número:</label>
+	<input type="number" id="n2" />
+	<br />
+
+	<button onclick="minimo(n1.value, n2.value);">Calcular</button>
+
+	<script type="text/javascript">
+		function minimo(numero1, numero2){
+			if(numero1<numero2){
+				numero1.innerHTML = numero1;
+			alert(numero1 + ' és más pequeño que ' + numero2);
+			}else{
+				numero2.innerHTML = numero2;
+				alert(numero2 + ' és más pequeño que ' + numero1);
+			}
+			
+		}
+	</script>
+</body>
+</html>

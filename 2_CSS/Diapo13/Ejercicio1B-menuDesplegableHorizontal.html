@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Menú Desplegable Horizontal</title>
+	<style type="text/css">
+		ul, a, html, body{
+			padding: 0;
+			margin: 0;
+			text-decoration: none;
+		}
+		.menu li, .submenu, li{
+			list-style-type: none;
+			padding: 10px;
+			color: #FFF;
+			font-size: 1vw;
+		}
+		.menu{
+			padding: 10px;
+			background-color: #AAE7F8;
+		}
+		ul.menu>li{
+			display: inline-block;
+			position: relative;
+		}
+		.menu li:hover{
+			color: #FFF;
+			background-color: #0FEDE0;
+		}
+		.menu>li:hover .submenu{
+			display: initial;
+
+		}
+		.submenu{
+			display: none;
+			position: absolute;
+			top: 40px;
+			left: 0px;
+			background-color: #FFF;
+			/*width: 100%;*/
+			box-shadow: 0px 2px 4px rgba(60,60,60,0.6);
+		}
+		.submenu li {
+			width: 80px;
+		}
+
+	</style>
+</head>
+<body>
+	<nav>
+	<ul class="menu">
+		<li><a href="#">Inicio</a></li>
+		<li><a href="#">Quiénes somos</a></li>
+		<li><a href="#">Servicios</a>
+			<ul class="submenu">
+				<li><a href="#">Servicio A </a></li>
+				<li><a href="#">Servicio B</a></li>
+				<li><a href="#">Servicio C</a></li>
+		
+			</ul>
+		</li>
+		<li><a href="#">Contacto</li>
+	</ul>
+</nav>
+</body>
+</html>

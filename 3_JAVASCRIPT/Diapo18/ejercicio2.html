@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 2</title>
+</head>
+<body>
+	<button onclick="crear();">Crear</button>
+
+	<script type="text/javascript">
+		function crear(){
+		
+			//creamos el elemento img
+			var imageObj = document.createElement('img');
+			//editamos el atributo src del elemento
+			imageObj.src = 'img/wonderWoman.png'; 
+
+			//creamos el elemento de figcaption
+			var piePagina = document.createElement('figcaption');
+			//hacemos inner al elemento
+			piePagina.innerHTML = 'WONDER WOMAN';
+
+			//creamos el elemento padre que será figure:
+			var figura = document.createElement('figure');
+			//añadimos la img y el figcaption a este elemento
+			figura.appendChild(imageObj);
+			figura.appendChild(piePagina);
+
+			//creamos el atributo class
+			var clase = document.createAttribute('class');
+			//atributo
+			clase.value = 'foto';
+			figura.setAttributeNode(clase);
+
+			//añadimos los elementos al body
+			document.body.appendChild(figura);
+		}
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio 2 - Calcular área y perímetro </title>
+	<style type="text/css"></style>
+</head>
+<body>
+	<h1>Calcular ÁREA Y PERÍMETRO</h1>
+	<label>Base:</label>
+	<input type="number" id="base" />
+	<br />
+
+	<label>Altura:</label>
+	<input type="number" id="altura" />
+	<br />
+
+	<button onclick="calcular();">CALCULAR</button><br />
+
+	<span>El área es:<output id="resultado"></output></span><br />
+	<span>El perímetro es:<output id="resultado1"></output></span>
+
+
+
+	<script type="text/javascript">
+		function calcular(){
+		var base = parseFloat(document.getElementById('base').value);
+		var altura = parseFloat(document.getElementById('altura').value);
+
+		if(base>0 && altura>0){
+			var area = base*altura;
+			var perimetro =(base+altura)*2;
+		}else{
+			alert('Datos incorrectos');
+		}
+		document.getElementById('resultado').innerHTML = area;
+		document.getElementById('resultado1').innerHTML = perimetro;
+	}
+
+	</script>
+</body>
+</html>

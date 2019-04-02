@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio 1a Diapo9</title>
+	<style type="text/css">
+		form{
+			width: 350px;
+		}
+	
+	</style>
+</head>
+<body>
+	<h1>User Input Form</h1>
+	<form>
+		<fieldset>
+			<legend>Personal Particular</legend>
+			<label>Name:</label>
+			<input type="text" name="usuario"><br /><br /> 
+
+			<label>Password:</label>
+			<input type="password" name="pwd"><br /><br />
+
+			<label>Gender:</label>
+			<input type="radio" name="sexo" value="male"/>
+			<label>Male</label>
+			<input type="radio" name="sexo" value="female"/>
+			<label>Female</label><br /><br />
+
+			<label>Age:</label>
+				<select name="edad">
+					<option selected="selected" value="menor1">< 1 year old</option>
+					<option value="igual1">1 year old</option>
+					<option value="mas1">> 1 year old</option>		
+				</select>
+		</fieldset>
+
+		<fieldset>
+			<legend>Languages</legend>
+			<input type="checkbox" name="java" name="java">
+			<label>Java</label>
+			<input type="checkbox" name="c/c++" name="c/c++">
+			<label>C/C++</label>
+			<input type="checkbox" name="c#" name="c#">
+			<label>C#</label>
+		</fieldset>
+
+		<fieldset>
+			<legend>Instruction</legend>
+			<textarea rows="10" cols="30">Enter your instruction here...</textarea>
+		</fieldset>
+
+		<button type="submit" value="enviar">SEND</button>
+		<button type="reset" value="limpiar">CLEAR</button>
+	</form>
+</body>
+</html>

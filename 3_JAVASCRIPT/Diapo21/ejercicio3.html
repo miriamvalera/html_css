@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 3 - Crear página que se recargue sola</title>
+</head>
+<body>
+	
+	<h1>Está página se va a recargar...<span id="tiempo">10s</span></h1>
+	
+	<!-- <script type="text/javascript">
+		setTimeout("document.location=document.location", 5000);	
+	</script> -->
+
+	<script type="text/javascript">
+		setTimeout(function(){
+			location.reload();
+		}, 10000);
+	</script>
+</body>
+</html>

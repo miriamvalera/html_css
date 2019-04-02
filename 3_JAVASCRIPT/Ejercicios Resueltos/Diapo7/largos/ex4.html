@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		div{
+			border: 1px solid #000;
+			width: 50px;
+			height: 50px;
+			margin: 1px;
+			display: inline-block;
+		}
+	</style>
+	
+	<script type="text/javascript">
+		function aleatorio(){
+			return Math.floor(Math.random()*256);
+		}
+
+		function colorear(contenedor){
+			contenedor.style.backgroundColor = "rgb("+aleatorio()+","+aleatorio()+","+aleatorio()+")";
+		}
+	</script>
+</head>
+<body>
+	<script type="text/javascript">
+		for(var i=0; i<=1000; i++){
+			document.write('<div onmouseenter="colorear(this);"></div>');
+		}
+	</script>
+</body>
+</html>

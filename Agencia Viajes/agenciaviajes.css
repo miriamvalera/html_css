@@ -1,0 +1,290 @@
+header, main {
+	padding:1%;
+}
+body {
+	font-family: arial;
+	width: 90%;
+	margin :auto;
+}
+input {
+	margin: 1%;
+	border-radius: 5px / 8px;
+}
+a{
+	text-decoration: none;
+	color: inherit;
+}
+ul {
+  list-style: none; 
+  padding: 0;
+  margin: 0;
+}
+
+/*	Margin cajas body */
+body > * {
+	box-sizing: border-box;
+	margin:1%;
+	border: 1px solid #00F;
+}
+/*	HEADER	*/
+header {
+	background-image:url('img/nubes3.jpg');
+	background-attachment: fixed;
+	background-size: cover;
+	background-position:center;
+}
+header form {
+	text-align: right;
+}
+header div, form {
+	width: 49%;
+	display: inline-block;
+}
+fieldset {
+	border:none;
+}
+nav , button{
+	background-color: #AFAFD1;
+}
+nav a{
+	text-align: center;
+	padding: 10px;
+	display: inline-block;
+}
+nav ul{
+	display: flex;
+  	flex-direction: row;
+}
+nav li:hover,  button:hover{
+	background-color: #000;
+	color: #fff;
+}
+
+.active {
+	border-bottom: 3px solid #000;
+}
+
+
+/* 	MAIN 	*/
+main h2,main h1, .polaroid  div{
+	text-align: center;
+	font-family: "december_pastel", cursive;
+    font-size: 400%;
+    text-shadow: 2px 2px 4px #F00;
+}
+main > p:first-letter{
+	font-size: 1.5vw;
+	color: #F00;
+}
+main blockquote{
+	padding: 10px;
+	border-left: 4px solid #AFAFD1; 
+}
+
+main, footer {
+	background-color: #e6f2ff; 
+}
+article{
+	overflow: auto;
+	margin: 30px 0px;
+}
+
+main article:first-child img, iframe{
+	width: 49%;
+	vertical-align: middle;
+}
+
+main article:not(:first-child):nth-child(n) img, article:not(:first-child):nth-child(n)  p{
+	width: 49%;
+	display: inline-block;
+	padding: 10px;
+	box-sizing: border-box;
+	vertical-align: middle;
+}
+.galeria {
+	text-align: center;
+}
+.vuelos { 
+	overflow: scroll; 
+}
+.vuelos table thead > tr:first-child {
+	background-color: #AFAFD1;
+	box-shadow: 0px 3px 5px 0px #000;
+}
+.vuelos table, th, td {
+	margin: 0 auto;
+	padding: 1%;
+	border-collapse: collapse;
+}
+
+#bcn {
+	background-image: url('img/iconobcn.png');
+	background-repeat:no-repeat;
+	background-size: 20%;
+} 
+#paris {
+    background-image: url(img/torreParis.png);
+    background-repeat: no-repeat;
+    background-size: 12%;
+	background-position: 150px 30px;
+}
+#roma {
+	background-image: url('img/iconoRomaPng.png');
+	background-repeat:no-repeat;
+	background-size: 25%;
+    background-position: 50px 35px;
+}
+/* 	CONTACTO 	*/
+#contacto{
+	text-align: center;
+	display: inherit;
+	margin: auto;
+	width: 55%;
+	border-radius: blue;
+	background-image: linear-gradient(#ffffff, #cce6ff);
+	font-family: arial;	
+	font-size: 14px;
+}
+#contacto label {
+	margin-top: 10px;
+}
+#email{
+	width: 200px;
+}
+.mapa{
+	padding-top: 15px;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	width: 55%;
+	border: 1px solid #ddd;
+		border-radius: 4px;
+}
+/* 	REGISTRO 	*/
+#registro form{
+	display: inherit;
+	margin: auto;
+	width: 550px;
+	border-radius: blue;
+	background-image: linear-gradient(#ffffff, #cce6ff);
+	font-family: arial;
+	font-size: 12px;	
+}
+#registro button{
+	margin-left: 200px;
+	color: #FFF;
+	font-size: 14px;
+}
+#registro label{
+	display: inline-block;
+	width: 150px;
+	text-align: right;
+	margin-right: 1px;
+	margin-top: 10px;
+	font-size: 14px;
+}
+#registro .centrar{
+	text-align: center;
+	width: 300px;
+}
+#registro input[type="radio"] {
+	margin-left: 75px;
+}
+
+.listaMonumentos:first-of-type li{
+	list-style-type: none;
+	background-position: left center;
+	background-repeat: no-repeat;
+	padding: 1px 0px 2px 45px;
+	font-family: verdana;
+	width: 50%;
+	margin: auto;
+	padding-left: 60px;
+
+}
+.listaRoma:first-of-type li{
+	background-image: url(img/coliseo.png);
+	background-size: 50px;
+}
+.listaParis:first-of-type li{
+	background-image: url(img/torreParis.png);
+	background-size: 15px;
+
+}
+.listaBcn:first-of-type li{
+	background-image: url('img/iconobcn.png');
+	background-size: 30px;
+
+}
+.listaMonumentos ul {
+	column-count: 3;
+}
+/* FOTOS POLAROID */
+.fotos { text-align: center; }
+.polaroid {
+	margin: 3% 1%;
+	overflow: auto;
+	display: inline-block;
+	width: 28%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	background-color: white;
+}
+.polaroid img {
+	width: 100%;	
+}
+.polaroid p {
+	margin: 0pc;
+}
+
+.polaroid:nth-child(even){
+  -webkit-transform: rotate(-2deg);
+  -moz-transform: rotate(-2deg);
+}
+.polaroid:nth-child(odd){
+  -webkit-transform: rotate(2deg);
+  -moz-transform: rotate(2deg);
+}
+.polaroid:hover {
+  transform: scale(1.25);
+  -webkit-transform:  scale(1.25);
+  -moz-transform: scale(1.25);
+  position: relative;
+  z-index: 5;
+}
+
+
+/* 	FOOTER 	*/
+footer{ 
+	text-align: center;
+}
+
+/* 	RESPONSIVE 	*/
+@media only screen and (max-width: 710px) {
+	header div, form {
+		text-align: center;
+		width: 100%;
+	}
+	header img { 
+		width: 100%;
+	}
+	nav ul{
+		display: block;
+		text-align: center;
+	}
+	.polaroid {
+		width: 80%;
+	}
+	main article:first-child img, iframe{
+		width: 90%;
+		margin: 10px;
+	}
+	main article:not(:first-child):nth-child(n) img, article:not(:first-child):nth-child(n)  p{
+		width: 90%;	
+		text-align: justify;
+	}
+	#roma {
+		background-position: inherit;
+	}
+
+
+}

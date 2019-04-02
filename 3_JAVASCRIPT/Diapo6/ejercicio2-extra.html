@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio 2 EXTRA - Divisores de un número n</title>
+</head>
+<body>
+	<h2>Dime los divisores del número..</h2>
+	<label>Introduce un número:</label>
+	<input type="number" id="n" /><br />
+
+	<button onclick="divisor();">DIVISOR</button>
+	<span id="resultado"></span>
+
+	<script type="text/javascript">
+		function divisor(){
+			var n = parseInt(document.getElementById('n').value);
+			var resultado = " ";
+
+			for(let i=1; i<=n; i++){
+				if(n%i==0){
+				resultado+=i+', ';
+				}
+			}
+			alert(resultado);
+		}
+	</script>
+
+</body>
+</html>

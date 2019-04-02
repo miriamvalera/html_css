@@ -1,0 +1,216 @@
+		header, nav, main, footer{
+			border: 1px solid #00F;
+			margin: 0.5%;
+			background-color: #e6f2ff;
+		}
+		body{
+			padding: 10%;
+			width: 55%;
+			margin: auto;
+		}
+		header{
+			display: flex;
+  			flex-wrap: nowrap;
+			border: 1px solid #00F;
+			background-image:url('img/nubes3.jpg');
+			background-attachment: fixed;
+			background-size: cover;
+			background-position:center;
+		}
+		#logo{
+			margin-top: 20px;
+			margin-left: 15px;
+		}
+		#logo > img {
+			height: 100px;
+			width: 300px;
+		}
+		#login {
+			margin-left: 270px;
+		}
+		img{			 
+			height: 150px;
+			width: 260px;
+			padding-right: 42px;
+			display: inline-block;
+			border-radius: 8px;
+			vertical-align: middle; 	
+		}
+		/* 		header form 		*/
+		h1, label{
+			font-family: arial;
+
+		}
+		h1{
+			font-size: 20px;
+			margin-left: 40px;
+		}
+		fieldset{
+			border: none;
+			width: 350px;
+		}
+		label{
+			width: 120px;
+			display: inline-block;
+			text-align: right;
+			margin-right: 1px;
+			margin-top: 10px;
+			font-size: 14px;
+		}
+		input{
+			border-radius: 5px / 8px;
+			margin-left: 4px;
+		}
+		button{
+			border-radius: 5px / 8px;
+			margin-left: 130px;
+			margin-top: 10px;
+		}
+		/* 		 */
+
+
+		figure{
+			margin: 25px;
+			display: inline-block;
+			width: 236px;
+		}
+
+		/* 		NAV 		*/
+		nav{
+			text-align: left;
+			background-image: url(img/);
+		}
+		li{
+			display: inline-block;
+			padding: 5px 20px 5px 20px;
+			position: relative;
+  			background-color: #AFAFD1;
+  			overflow: hidden; /*quitar los puntos de la lista*/
+  		}
+  		nav li:hover{
+  			background-color: #000;
+  			color: #fff;
+  		}
+  		nav li > img{
+  			vertical-align: middle;
+  			width: 10%;
+  			height: 10%;
+  		}
+  		a{
+  			color: inherit;
+  			text-decoration: none;
+  			font-weight: bold;
+  			font-family: verdana;	
+		}
+		.active{
+			border-bottom: 3px solid #000;
+		}
+
+		/*			*/
+		      /*  MAIN    */
+		h2{
+			padding-top: 15px;
+			display: inline-block;
+			margin-left: 5%;
+			margin-right: 10%;
+			text-shadow: 2px 2px 4px #F00;
+		}
+		p{
+			font-family: verdana, arial;
+			text-align: justify;
+		}
+		p:first-letter{
+			font-size: 1.5vw;
+			color: #F00;
+		}
+		.centrado{
+			text-align: center;
+		}
+		blockquote{
+			padding: 10px;
+			border-left: 4px solid #AFAFD1; 
+		}
+		body main, section{
+			padding: 15px;
+		}
+
+	
+		/* 		MAIN > ARTICLE 		*/
+		#artPresent > h1 {
+			text-align: center;
+		}
+		iframe{
+			margin-right: inherit;
+			padding-left: 10px;
+		}
+		#artPresent > img{
+			/*display: block;*/
+			margin-left: auto;
+			margin-right: inherit;
+			width: 50%;
+			padding-left: 22px;
+		}
+		#art1 > p {
+			width: 55%;
+			display: inline-block;
+			vertical-align: middle;
+		}
+		#art1 > img {
+			width: 43%;
+			margin-left: 15px;
+			vertical-align: middle;
+		}
+		#art2{
+			margin-top: 15px;
+		}
+		#art2 > p {
+			width: 55%;
+			display: inline-block;
+			vertical-align: middle;
+		}
+		#art2 > img {
+			width: 40%;
+			margin-top: 0px;
+			margin-right: 15px;
+			vertical-align: middle;
+		}
+		#pictures > *  {
+			margin: 30px 30px 30px 50px;
+			display: inline-block;
+			width: 40%;
+		}
+		#pictures img {
+			width: 100%;
+		}
+		#pictures h3{
+			margin: 0px;
+			text-align: center;
+		}
+		#imgiframe{
+			padding-left: 10px;
+		}
+		#listaimg{
+			padding: 0px;
+			display: block;
+			margin-right: auto;
+			margin-left: auto;
+			border: none;
+		}
+
+		footer{
+			height: 40px;
+			padding-top: 30px;
+			text-align: center;
+			padding-right: 10px;
+			font-family: verdana;
+		}
+
+		@font-face{
+			font-family: 'december_pastel';
+			src:url("fonts/December Pastel.otf");
+		}
+
+		h2{
+			font-family: "december_pastel", cursive;
+			font-size: 400%;
+		}

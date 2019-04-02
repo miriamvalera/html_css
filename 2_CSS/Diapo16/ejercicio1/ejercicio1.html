@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 1 - Filters</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<main>
+		<figure>
+			<img src="img/deadpool.jpg" alt="deadpool" id="image" />
+		</figure>
+
+		<section>
+			<article>
+				<div>
+					<label>blur(px):</label><br />
+					<input type="range" oninput="cambiar(this,'blur')"value="0" /><br />
+				</div>
+
+				<div>
+					<label>brightness(%):</label><br />
+					<input type="range" oninput="cambiar(this,'brightness')"value="100" /><br />
+				</div>
+
+				<div>
+					<label>contrast(%):</label><br />
+					<input type="range" oninput="cambiar(this,'contrast')" value="100" /><br />
+				</div>
+
+				<div>
+					<label>drop-shadow(h,v,b,c):</label><br />
+					<label>horizontal:</label><br />
+					<input type="range" oninput="cambiar(this,'h')" value="0" /><br />
+					<label>vertical:</label><br />
+					<input type="range" oninput="cambiar(this,'v')" value="0" /><br />
+					<label>blur:</label><br />
+					<input type="range" oninput="cambiar(this,'b')" value="0" /><br />
+					<label>color:</label><br />
+					<input type="color" oninput="cambiar(this,'c')" />	
+				</div>			
+			</article>
+
+			<article>
+				<div>
+					<label>grayscale(%):</label><br />
+					<input type="range" oninput="cambiar(this,'grayscale')" value="0" /><br />
+				</div>
+
+				<div>
+					<label>hue-rotate(deg):</label><br />
+					<input type="range" oninput="cambiar(this,'rotate')" value="0" /><br />
+				</div>
+
+				<div>
+					<label>invert(%):</label><br />
+					<input type="range" oninput="cambiar(this,'invert')" value="0" /><br />
+				</div>
+
+				<div>
+					<label>opacity(%):</label><br />
+					<input type="range" oninput="cambiar(this,'opacity')" value="100" /><br />
+				</div>
+
+				<div>
+					<label>saturate(%):</label><br />
+					<input type="range" oninput="cambiar(this,'saturate')" value="100" /><br />
+				</div>
+
+				<div>
+					<label>sepia(%):</label><br />
+					<input type="range" oninput="cambiar(this,'sepia')" value="0" />
+				</div>
+
+				<button id="reset" onclick="reset();">Reestablecer</button>
+			</article>
+			
+		</section>
+	</main>
+<script>
+	// var rng = document.querySelectorAll('input');
+	// detectChange('mousedown');
+	// detectChange('mousemove');
+	// detectChange('keydown');
+	// function detectChange(event){
+	//   for (var i = 0; i < rng.length; i++) {
+	//	   rng[i].addEventListener(event,function(){
+	// 		  cambiar(this);
+	//    }
+	// }
+	var img = document.getElementById('image');
+	function cambiar(element,type){
+		//var type = element.getAttribute('id');
+		switch(type){
+			case 'blur':
+				var valor = 'blur(' + element.value + 'px)';  
+				img.style.filter  = valor;
+			break;
+
+			case 'brightness':
+				var valor = 'brightness(' + element.value + '%)';
+				img.style.filter = valor;
+			break;
+
+			case 'contrast':
+				var valor = 'contrast(' + element.value + '%)';
+				img.style.filter = valor;
+			break;
+
+			case 'h':
+				var valor = 'h(' + element.value + 'px)';
+				img.style.filter = valor;
+			break;
+
+			case 'v':
+				var valor = 'v(' + element.value + 'px)';
+				img.style.filter = valor;
+			break;
+
+			case 'b':
+				var valor = 'b(' + element.value + 'px)';
+				img.style.filter = valor;
+			break;
+
+			case 'c':
+				var valor = 'c(' + element.value + ')';
+				img.style.filter = valor;
+			break;
+
+			case 'grayscale':
+				var valor = 'grayscale(' + element.value + '%)';
+				img.style.filter = valor;
+			break;
+
+			case 'rotate':
+				var valor = 'hue-rotate(' + element.value + 'deg)';
+				img.style.filter = valor;
+			break;
+
+			case 'invert':
+				var valor = 'invert(' + element.value + '%)';
+				img.style.filter = valor;
+			break;
+
+			case 'opacity':
+				var valor = 'opacity(' + element.value + '%)';
+				img.style.filter = valor;
+			break;
+
+			case 'saturate':
+				var valor = 'saturate(' + element.value + '%)';
+				img.style.filter = valor;
+			break;
+
+			case 'sepia':
+				var valor = 'sepia(' + element.value + '%)';
+				img.style.filter = valor;
+			break;
+		}
+	}
+
+	function reset(){
+		location.reload();
+	}
+</script>
+</body>
+</html>

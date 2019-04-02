@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Probando</title>
+	<style type="text/css">
+		h1, h2{
+			color: #0f0;
+		}
+
+		div p{
+			color: #00f;
+		}
+
+		div>p{
+			font-weight: bold;
+		}
+
+		p+div p{  /*despues de una p tiene que haber un div y después una p este dentro de un div*/
+			text-decoration: underline;
+		}
+
+		#rojo:target{
+			color: #f00;
+		}
+
+		#cegatillo:target{
+			font-size: 2em;
+		}
+	</style>
+</head>
+<body>
+	<a href="#rojo">Poner en color Rojo</a>
+	<a href="#">Poner en color Verde</a>
+	<h1 id="rojo">Titulo1</h1>
+	<h2>Titulo2</h2>
+	<p>Parrafo1</p>
+	<p>Parrafo2</p>
+	<p>Parrafo3</p>
+	<p>Parrafo4</p>
+	
+	<div>
+		<span>
+			<p>Parrafo1 div</p>
+		</span>
+	</div>
+	<div>
+		<p>Parrafo2 div</p>
+	</div>
+
+	<a href="#cegatillo">Letra pa cegatillos</a>
+	<a href="#">Letra normal</a>
+	<h2 id="cegatillo">Titulo3</h2>
+
+</body>
+</html>

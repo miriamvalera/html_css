@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 2A</title>
+</head>
+<body>
+	<h2>Calcular área de un triangulo</h2>
+	<label>Introduce la base:</label>
+	<input type="number" id="b" />
+	<br />
+
+	<label>Introduce la altura:</label>
+	<input type="number" id="a" />
+	<br />
+
+	<button onclick="calcular(b.value, a.value);">Calcular</button>
+
+	<script type="text/javascript">
+		function calcular(base, altura){
+			var area = (base*altura)/2;
+
+			alert('El área del triángulo es: ' + area);
+		}
+	</script>
+</body>
+</html>

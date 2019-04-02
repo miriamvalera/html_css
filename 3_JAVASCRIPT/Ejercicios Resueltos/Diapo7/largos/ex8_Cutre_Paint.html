@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercici 6, Diapo 7</title>
+	<style type="text/css">
+		body {
+			padding: 100px;
+		}
+		#lienzo{
+			width: 500px;
+			height: 500px;
+			border: 5px solid grey;
+		}
+		div.pixel{
+			height: 5px;
+			width: 5px;
+			float: left;
+		}
+	</style>
+	<script>
+	var pintar = false;
+
+		function colorear(elemento){
+			elemento.style.backgroundColor = document.getElementById('color').value;
+		}
+	</script>
+</head>
+<body>
+	<h1>El Cutre-Paint</h1>
+	<p>Selecciona un color y pasa el ratón por el recuadro</p>
+	<p>Haz click para activar y desactivar el pincel</p>
+	<label>Color: </label><input type="color" id="color" /><br />
+	<div id="lienzo" onclick="pintar = !pintar">
+		<script>
+			for(var i=0; i<10000; i++){
+				document.write('<div class="pixel" onmouseover="if(pintar) colorear(this);"></div>');
+			}
+		</script>
+	</div>
+</body>
+</html>

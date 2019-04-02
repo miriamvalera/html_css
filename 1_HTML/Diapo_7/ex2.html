@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Plantilla</title>
+	<style type="text/css">
+		body{
+			padding: 30px;
+			width: 1000px;
+			margin: auto;
+		}
+		
+		header{
+			border: solid 1px #000;
+		}
+		header>*{
+			display: inline-block;
+			width: 60px;
+		}
+		.logo > img{
+			height: 100px;
+			width: 150px;
+			padding-right: 50px;
+			display: inline-block;
+		}
+		h1{
+			text-align: center;
+		}
+		header>h1{
+			width: 500px;
+		}
+		#login{
+			padding-left: 100px;
+			display: inline-block;
+		}
+		nav{
+			border: solid 1px #000;
+			height: 100px;
+			text-align: right;
+			margin-top: 5px;
+			margin-bottom: 5px;		
+		}
+		ul{
+			padding-right: 10px;
+		}
+		li{
+			border: solid 1px #000;
+			display: inline-block;
+			padding: 10px;
+			margin-top: 30px;
+			
+		}
+		a{
+			text-decoration: none;
+			color: #000;
+			text-align: right;
+
+		}
+		main{
+			padding: 30px;
+			border: solid 1px #000;
+		}
+		.detalles{
+
+			width: 600px;
+			display: inline-block;
+
+		}
+		.detalles img{
+			width: 170px;
+		}
+		.divTabla{
+			width: 300px;
+			display: inline-block;
+			position: absolute; /*PReguntar */
+			margin-left: 15px;
+		}
+
+		.divTabla table{
+			
+			border-collapse: collapse;
+			width: 300px;
+		}
+		.divTabla table, tr , td {
+			border: 1px solid #000;
+		}
+		.divTabla  td{
+			padding: 20px;
+		
+		}/*
+		.divTabla >table >tbody >tr:first-child td{
+			background-color: grey;
+		}*/
+		.tfondo{
+			background-color: #b7b7b7;
+		}
+		#imgMain{
+			margin-top: 40px;
+		}
+		#imgMain img{
+			width: 120px;
+			margin-left: 10px;
+		}
+		footer {
+			border: solid 1px #000;
+			height: 50px;
+			margin-top: 5px;
+			text-align: right;
+			padding-right: 20px;
+			
+		}
+		@media screen and (min-width: 769px) {
+   			
+		}
+
+		
+	</style>
+</head>
+<body>
+	<header>
+		<figure class="logo">
+			<img src="images/coche.png" alt="coche">		
+		</figure>
+		<h1>Mega Coches</h1>
+		<form id="login" method="post">
+			<label>user:</label>
+			<input type="text" name="user"><br />
+	
+			<label>password:</label>
+			<input type="password" name="password"><br />
+	
+			<input type="submit" value="login">
+		</form>
+		
+
+	</header>
+	<nav>
+		<ul>
+			<li><a href="#">Inicio</li></a>
+			<li><a href="#">Fotos</li></a>
+			<li><a href="#">Contacto</li></a>
+			<li><a href="#">Registro</li></a>
+		</ul>
+	</nav>
+	<main>
+
+		<div id="bv">
+			<h2>Bienvenidos...</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		</div>
+
+		<div class="detalles">
+			<h2>Detalles</h2>
+			<img src="images/coche1.jpg" alt="coche1">
+			<img src="images/coche2.jpg" alt="coche2">
+			<img src="images/coche3.jpg" alt="coche3">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		</div>
+
+		<div class="divTabla">
+			<h2>Principales modelos</h2>
+			<table>
+				<tr class="tfondo">
+					<td>#</td>	
+					<td>Modelo</td>	
+					<td>Año</td>	
+				</tr>
+				<tr>
+					<td>1</td>	
+					<td>BMW 430i</td>	
+					<td>2018</td>	
+				</tr>
+				<tr>
+					<td>2</td>	
+					<td>Ford Mustang</td>	
+					<td>2016</td>	
+				</tr>
+				<tr>
+					<td>3</td>	
+					<td>Tesla</td>	
+					<td>2017</td>	
+				</tr>
+			</table>	
+		</div>
+
+		<div id="imgMain">
+			<img src="images/coche.png" alt="coche">
+			<img src="images/coche.png" alt="coche">
+			<img src="images/coche.png" alt="coche">
+			<img src="images/coche.png" alt="coche">
+ 			<img src="images/coche.png" alt="coche">
+			<img src="images/coche.png" alt="coche">
+			<img src="images/coche.png" alt="coche">
+		</div>
+	</main>
+	<footer><p>by: Miriam Valera</p></footer>
+
+</body>
+</html>

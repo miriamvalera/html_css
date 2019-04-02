@@ -1,0 +1,45 @@
+h1:first-of-type{
+	color: #00F;
+}
+/*h1 único en su tipo en su contenedor*/
+h1:only-of-type{
+	font-style: italic;
+}
+/*primer párrafo de cada artículo*/
+p:first-of-type{
+	text-decoration: underline;
+}
+/*último párrafo de cada artículo*/
+p:last-of-type{
+	text-decoration: line-through;
+}
+/*segundo párrafo de cada artículo*/
+p:nth-of-type(2){
+	text-transform: uppercase;
+}
+/*penúltimo parráfo de cada artículo*/
+p:nth-last-of-type(2){
+	color: #F00;
+}
+
+figure img{
+	width: 15%;
+}
+article{
+	margin: 1%;
+	padding: 1%;
+	border: solid 1px #848484;
+	overflow: hidden;
+}
+/*figuras de los artículos impares*/
+article:nth-of-type(odd) figure{
+	float: right;
+}
+/*figuras de los artículos pares*/
+article:nth-of-type(even) figure{
+	float: left;
+}
+/*artículos impares*/
+article:nth-of-type(odd){
+	background-color: lightblue;
+}

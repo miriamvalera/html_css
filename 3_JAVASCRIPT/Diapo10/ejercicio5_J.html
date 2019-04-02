@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 5 - Nombre Compuesto</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var nombre = "jose alberto";
+		var nombre2 = "miriam";
+		var nombre3 = "jose alberto lorenzo";
+
+		function cambiarNombre(nombre){
+			var arrayNombre = nombre.split(" ");
+			var nombreTransformado ="";
+
+
+			if (arrayNombre.length >1) {
+				for (var i = 0; i < arrayNombre.length; i++) {
+					//nombreTransformado += arrayNombre[0].charAt(0).toLocaleLowerCase.concat(arrayNombre[0].slice(1)) +" "; --No me funciona concat
+					nombreTransformado += arrayNombre[i].charAt(0).toLocaleUpperCase().concat(arrayNombre[i].slice(1).concat(" "));
+					console.log("for:",i,nombreTransformado);
+				}
+			}else {
+				console.log("else");
+				//nombreTransformado = nombre.charAt(0).toLocaleLowerCase.concat(nombre.slice(1));
+				nombreTransformado = nombre.charAt(0).toLocaleUpperCase().concat(nombre.slice(1)) ;
+			}
+
+			return nombreTransformado
+		}
+
+		console.log("Resultado=",cambiarNombre(nombre));
+		console.log("Resultado=",cambiarNombre(nombre2));
+		console.log("Resultado=",cambiarNombre(nombre3));
+		/*
+		var nombre2 = arrayNombre[0] + arrayNombre[1]
+		console.log(nombre2);
+		var nombre2 = nombre2.charAt(0).toLocaleLowerCase.concat(nombre.slice(1));
+		*/
+	</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio 4</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			margin: auto;
+			width: 90%;
+			font-family: helvetica;
+		}
+		h1, input, button, h4{
+			margin-top: 1%;
+		}
+		figure{
+			display: inline-block;
+		}
+
+	</style>
+	<script type="text/javascript">
+		function convertirKM(){
+			//recogemos las variables de entrada
+			var km = document.getElementById('km').value;
+
+			//convert KM a Millas
+			var res = km*0.62137;
+
+			//muestro por pantalla el resultado
+			document.getElementById('resultadoKM').innerHTML = res.toFixed(2);
+		}
+
+		function convertirMK(){
+			var mi = document.getElementById('mi').value;
+			var res = mi/0.62137; //1.60934
+			document.getElementById('resultadoMK').innerHTML = res.toFixed(2);
+		}
+	</script>
+</head>
+<body>
+	<h1>Convertir de Kilómetros a Millas</h1>
+	<label>Kilómetros:</label>
+	<input type="number" id="km" />
+	<br />
+
+	<label>Millas:</label>
+	<input type="number" id="mi" />
+	<br />
+
+	<button onclick="convertirKM();">Convertir km a millas</button>
+	<button onclick="convertirMK();">Convertir millas a km</button>
+
+	<h4>La conversión de km a millas es: <span id="resultadoKM"></span></h4>
+	<h4>La conversión de millas a km es: <span id="resultadoMK"></span></h4>
+
+	<figure>
+		<img src="imagenes/km-mile.png" alt="kmile" />
+	</figure>
+</body>
+</html>

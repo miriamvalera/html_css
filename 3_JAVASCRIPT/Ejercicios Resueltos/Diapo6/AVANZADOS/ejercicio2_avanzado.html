@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Ejemplo</title>	
+	</head>
+	<body>
+		<script>
+			function calcular(){
+				//borrar el output
+				resultado.innerHTML='';
+
+				//tomar el número
+				var numero=parseInt(inn1.value);
+
+				//ves dividiendo el número por 1,2,3...
+				for(let i=1; i<=numero; i++){
+					//si el resto de la operacion es 0
+					if(numero%i==0){
+						//imprimir ese divisor
+						resultado.innerHTML+=i+', ';
+					}
+				}
+
+				
+			}
+		</script>
+
+		<label>numero</label>
+		<input type="number" id="inn1">
+		<button onclick="calcular();">Click-me</button>
+		<br>
+		<output id="resultado"></output>
+		
+	</body>
+</html>

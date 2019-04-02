@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio Z-INDEX</title>
+	<style type="text/css">
+		figure{
+			position: relative;
+		}
+		img{
+			position: absolute;
+		}
+		/*cuando pasa el ratón por encima del fondo hace un zoom*/
+		/*img:hover{
+			transform: scale(1.5); 
+		}*/
+		figure>img:hover{
+			z-index: 5;
+		}
+		/*SIN Z-INDEX*/
+		/*img:first-of-type{
+			top: 20px; left: 10px;
+		}
+		img:nth-of-type(2){
+			top: 40px; left: 60px;
+		}
+		img:nth-of-type(3){
+			top: 60px; left: 120px;
+		}
+		img:last-of-type{
+			top: 80px; left: 180px;
+		}*/
+		/*CON Z-INDEX cambia el orden*/
+		img:first-of-type{
+			top: 20px; left: 10px; z-index: 4;
+		}
+		img:nth-of-type(2){
+			top: 40px; left: 60px; z-index: 3;
+		}
+		img:nth-of-type(3){
+			top: 60px; left: 120px; z-index: 2;
+		}
+		img:last-of-type{
+			top: 80px; left: 180px; z-index: 1;
+		}
+
+	</style>
+</head>
+<body>
+	<figure>
+		<img src="fondos/f1.jpg" />
+		<img src="fondos/f2.jpg" />
+		<img src="fondos/f3.jpg" />
+		<img src="fondos/f4.jpg" />
+	</figure>
+</body>
+</html>

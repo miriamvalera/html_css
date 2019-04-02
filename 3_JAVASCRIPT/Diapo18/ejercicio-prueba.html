@@ -1,0 +1,78 @@
+<!-- <!DOCTYPE html>
+<html data-lt-installed="true">
+<head>
+	<title></title>
+
+	<meta charset="UTF-8">
+	<meta name="">
+	<style type="text/css">
+	</style>
+
+		<script type="text/javascript">
+		a = document;
+	</script>
+</head>
+<body>
+
+	<div data-oh="meh meh" data-meh="oh"></div>
+	<p onmouseover="a.body.appendChild(a.createElement('div')).textContent='Oh...';"> Destruir parrafo 1 </p>
+		
+	<script type="text/javascript">
+
+	</script>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html data-lt-installed="true">
+<head>
+	<title></title>
+
+	<meta charset="UTF-8">
+	<meta name="">
+	<style type="text/css">
+	</style>
+
+		<script type="text/javascript">
+		a = document;
+		oh = false;
+	</script>
+</head>
+<body>
+
+	<div data-oh="meh meh" data-meh="oh"></div>
+	<p onmouseover="if(!oh)a.body.appendChild(a.createElement('div')).textContent='Oh...';oh=true;"> Destruir parrafo 1 </p>
+		
+	<script type="text/javascript">
+
+	</script>
+
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html data-lt-installed="true">
+<head>
+	<title></title>
+
+	<meta charset="UTF-8">
+	<meta name="">
+	<style type="text/css">
+	</style>
+
+		<script type="text/javascript">
+		a = document;
+		</script>
+</head>
+<body>
+
+	<div data-oh="meh meh" data-meh="oh"></div>
+	<p onmouseover="a.body.appendChild(oh = a.createElement('div')).textContent='Oh...';" onmouseout="oh.remove()"> Destruir parrafo 1 </p>
+		
+	<script type="text/javascript">
+
+	</script>
+
+</body>
+</html> -->

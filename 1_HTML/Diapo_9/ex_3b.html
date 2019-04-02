@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Formulario de registro</title>
+	<style type="text/css">
+		form{
+			width: 550px;
+			border-radius: blue;
+			background-image: linear-gradient(#ffffff, #cce6ff);
+			font-family: arial;
+			font-size: 12px;	
+		}
+		fieldset{
+			border-color: #ff99cc;
+		}
+		label{
+			display: inline-block;
+			width: 150px;
+			text-align: right;
+			margin-right: 1px;
+			margin-top: 10px;
+			font-size: 14px;
+		}
+		.centrar{
+			text-align: center;
+			width: 300px;
+		}
+		input{
+			border-radius: 5px / 8px;
+		}
+		div{
+			text-align: center;
+		}
+		button{
+			margin-left: 200px;
+			background-color: #33cc33;
+			color: #FFF;
+			font-size: 14px;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<fieldset>
+			<h1>Registro</h1>
+			<label>Usuario</label>
+			<input type="text" name="user"><br />
+
+			<label>Contraseña</label>
+			<input type="password" name="pwd">
+			<input type="hidden" name="login" value="pwd"><br />
+
+			<label>Nombre:</label>
+			<input type="text" name="firstname"><br />
+
+			<label>Apellidos</label>
+			<input type="text" name="lastname"><br />
+
+			<label>Fecha nacimiento</label>
+				<select>
+					<option selected="selected" value="dia">1</option>
+					<option value="dia">2</option>
+					<option value="dia">3</option>
+					<option value="dia">4</option>
+					<option value="dia">5</option>
+					<option value="dia">6</option>
+					<option value="dia">7</option>
+					<option value="dia">8</option>
+					<option value="dia">9</option>
+					<option value="dia">10</option>
+				</select>
+				<select>
+					<option selected="selected" value="ene">Enero</option>
+					<option value="feb">Febrero</option>
+					<option value="mar">Marzo</option>
+					<option value="abr">Abril</option>
+					<option value="may">Mayo</option>
+					<option value="jun">Junio</option>
+					<option value="jul">Julio</option>
+					<option value="ago">Agosto</option>
+					<option value="sep">Septiembre</option>
+					<option value="oct">Octubre</option>
+					<option value="nov">Noviembre</option>
+					<option value="dic">Diciembre</option>
+				</select>
+				<select>
+					<option selected="selected" value="anyo">1986</option>
+					<option value="anyo">1987</option>
+					<option value="anyo">1988</option>
+					<option value="anyo">1989</option>
+					<option value="anyo">1990</option>
+					<option value="anyo">1991</option>
+				</select><br />
+
+			<label>DNI</label>
+			<input type="text" maxlength="9" name="dni"><br />
+
+			<label>Dirección</label>
+			<input type="text" name="direccion"><br />
+
+			<label>Codigo Postal</label>
+			<input type="text" maxlength="5" name="cp"><br />
+
+			<label>Población</label>
+			<input type="text" name="poblacion"><br />
+
+			<label>Provincia</label>
+			<input type="text" name="provincia"><br />
+
+			<label>Email</label>
+			<input type="text" name="email"><br />
+
+		<div>
+			<input type="radio" name="aceptar" value="acepto"/>
+			<label class="centrar">Acepto formar parte de la web de viajes</label>
+		</div>
+		<br />	
+
+			<button type="submit" value="enviar">Registrarse</button>
+
+		</fieldset>
+	</form>
+</body>
+</html>

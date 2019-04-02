@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 3 - Fecha Nacimiento</title>
+</head>
+<body>
+	
+	<h2>¿Cuánto falta para tu cumpleaños? :)</h2>
+
+	<label>Introduce el día:</label>
+	<input type="number" id="d" min="1" max="31"><br />
+
+	<label>Introduce el mes:</label>
+	<input type="number" id="m" min="1" max="12" min="1900" max="2100"><br />
+
+	<label>Introduce el año:</label>
+	<input type="number" id="a"><br /><br />
+
+	<button onclick="calcular(d.value, m.value, a.value);">Calcular</button>
+
+	<h3 id="resultado"></h3>
+
+	<script type="text/javascript">
+		const milisengudosDia = 86400000;
+		function calcular(dia, mes, any){
+			var hoy = new Date();
+			var cumple = new Date();
+			cumple.setDate(dia);
+			cumple.setMonth(mes);
+			
+			comprobacionesValores(dia, mes, any);
+
+			if(cumple.getUTCMonth()>=hoy.getUTCMonth()){
+				if (cumple.getDate()==hoy.getDate()) {
+					alert(" Felicidades ! ");
+				}else{
+					var dias = (cumple.getTime()-hoy.getTime())/milisengudosDia;
+					console.log(dias, hoy.getTime(),cumple.getTime(), hoy.getTime()-cumple.getTime());
+					alert('Faltan ' + parseInt(dias) + ' días para tu cumple');
+				}
+				
+			}else{
+				alert('Tu cumple del 2019 ya ha pasado');
+			}		
+			
+			function comprobacionesValores(dia, mes, any){
+				var diasPorMes = [31,28,31,30,31,30,31,31,30,31,30,31];
+				console.log(dia,mes,any, typeof(dia));
+				if (dia =="" || dia>diasPorMes[mes] ) {
+					alert("Valor de Día incorrecto ;(");
+					throw new Error("Valor de Día incorrecto ;(");
+				}
+				if (mes >11 || mes =="") {
+					alert("Mes incorrecto");
+					throw new Error("Mes incorrecto");
+				}
+			}
+		}
+	</script>
+
+	<h3>Opción 2</h3>
+	<label>Fecha de nacimiento</label>
+	<input type="date" id="f">
+	<button onclick="happyBday(f.value)">¿Cuánto queda?</button>
+	<h5 id="r"></h5>
+	<script>
+		var res = document.getElementById('r');
+		function happyBday(f){
+			bd = new Date(f);
+			today = new Date();
+			if (bd.getFullYear() > today.getFullYear()) {
+				r.innerHTML = "Aún no has nacido";
+			}else{
+				if (bd.getUTCMonth() >= today.getUTCMonth()) {
+
+					if (bd.getUTCMonth() == today.getUTCMonth() && bd.getDate() == today.getDate()) {
+						a = today.getFullYear()-bd.getFullYear();
+						r.innerHTML = 'Felicidades por tus ' + a + ' Años';
+					}else if (bd.getUTCMonth() == today.getUTCMonth() && bd.getDate() < today.getDate()) {
+						r.innerHTML = "Tu cumpleaños ya ha pasado";
+					}else{
+						var dias = (bd.getTime()-today.getTime())/milisengudosDia;
+						console.log(dias, today.getTime(),bd.getTime(), today.getTime()-bd.getTime());
+						r.innerHTML = 'Faltan ' + parseInt(dias) + ' días para tu cumple';
+					}
+				}else{
+					r.innerHTML = "Tu cumpleaños ya ha pasado";
+				}
+			}
+		}
+	</script>
+</body>
+</html>

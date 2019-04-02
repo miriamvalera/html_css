@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 4A</title>
+	<style type="text/css">
+		div{
+			border: 1px solid #000;
+			padding: 10px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<h2>Cuando pase el ratón aparece un div nuevo</h2>
+	<div onmouseenter="divNuevo()">
+		<p>Este es un texto, pasa el ratón por encima.</p>
+	</div>
+
+	<script type="text/javascript">
+		function divNuevo(){
+			//creamos un nuevo div
+			var nuevoDiv = document.createElement("div");
+			
+			//creamos un nuevo párrafo
+			var nuevoP = document.createElement("p");
+
+			//creamos el texto del párrafo                  
+			var t = document.createTextNode("Pasaste el ratón por encima");    
+			 
+			//colocamos el nuevo párrafo en el nuevo div
+			nuevoDiv.appendChild(nuevoP);
+
+			//colocamos el texto en el párrafo
+			nuevoP.appendChild(t);
+			
+			//colocar el div en el body
+			document.body.appendChild(nuevoDiv); 
+		}
+	</script>
+
+	<!--seria otra opción
+	<script type="text/javascript">
+		fucntion divNuevo(){
+			document.body.appendChild(document.createElement('div')).textContent="has pasado el ratón por encima";
+		}
+	</script>
+	-->
+</body>
+</html>

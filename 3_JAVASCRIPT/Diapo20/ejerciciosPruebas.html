@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicios - Haciendo Pruebas DOM</title>
+	<style type="text/css">
+		body{
+			margin: auto;
+			width: 80%;
+		}
+		#propaganda{
+			background-color: #B4B0B1;
+			width: 600px;
+			border-radius: 7px;
+			box-shadow: 10px 10px 17px -5px rgba(0,0,0,0.75);
+		}
+		h2, #blanco{
+			color: #FFF;
+			text-align: center;
+		}
+		b{
+			color: #F00;
+		} 
+		img{
+			margin: 40px;
+		}
+
+	</style>
+</head>
+<body>
+	
+	<h1>Método open()</h1>
+	<button onclick="abrirVentana();">Click-me</button>
+
+	<script type="text/javascript">
+		function abrirVentana(){
+			var myWindow = window.open('http://www.creacionesabm.com', '', 'width=300, height=300, resizable=no, status=no, scrollbars=no, menubar=no');
+		}
+	</script>
+
+
+	<h2>Propaganda con setTimeout()</h2>
+	<h3>Esta es una página web</h3>
+	<p>Verás una propaganda que se quitará a los 5 segundos</p>
+	<div id="propaganda">
+		<div>
+			<h2>Propaganda...</h2>
+			<p>Se quitará en 5 segundos o si haces clic
+			<b onclick="cierraPropaganda(); clearTimeOut(timer);">Aquí</b>.</p>
+			<img src="imgMercedes/mercedesAMG.png" width="500" height="300" alt="anuncio" />
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		//función que cierra la propaganda
+		function cierraPropaganda(){
+			propaganda.remove();
+		}
+
+		//programar el temporizador
+		var timer = setTimeout(cierraPropaganda, 5000);
+	</script>
+
+
+	<h2>Cambiar color de fondo con seInterval</h2>
+	<main style="transition: 0.5s">
+		<p>Esta es una página un poco colorida</p>
+	</main>
+
+	<script type="text/javascript">
+		var colores = ['pink', "red", "yellow", "blue", "orange"];
+		var i = 0;
+
+		function cambiar(){
+			document.body.style.backgroundColor = colores[i];
+			i = ++i%colores.length;
+		}
+		window.onload = setInterval(cambiar, 2000);
+	</script>
+</body>
+</html>

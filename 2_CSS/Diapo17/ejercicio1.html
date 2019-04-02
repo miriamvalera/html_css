@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio 1 - Transformaciones</title>
+	<style type="text/css">
+		body{
+			margin: auto;
+			width: 90%;
+		}
+		h1{
+			text-align: center;
+			padding: 3%;
+		}
+		figure{
+			display: inline-block;
+			border: 1px solid #000;
+		}
+		figure:nth-of-type(1) img{
+			transform: none;
+			width: 122%;
+		}
+		figure:nth-of-type(2){
+			transform: translate(50px, -20px);
+		}
+		figure:nth-of-type(3){
+			transform: rotate(45deg);
+		}
+		figure:nth-of-type(4){
+			transform: skewX(20deg);
+		}
+		figure:nth-of-type(5){
+			transform: skewY(20deg);
+		}
+		figure:nth-of-type(6){
+			transform: scale(1.2, 0.8);
+		}
+	</style>
+</head>
+<body>
+	<h1>Transformaciones 2D</h1>
+	<main>
+		<figure>
+			<img src="img/homer.png" alt="homer" />
+		</figure>
+
+		<figure>
+			<img src="img/marge.png" alt="marge" />
+		</figure>
+
+		<figure>
+			<img src="img/bart.png" alt="bart" />
+		</figure>
+
+		<figure>
+			<img src="img/lisa.png" alt="lisa" />
+		</figure>
+
+		<figure>
+			<img src="img/maggie.png" alt="maggie" />
+		</figure>
+
+		<figure>
+			<img src="img/abe.png" alt="abe" />
+		</figure>
+	</main>
+</body>
+</html>

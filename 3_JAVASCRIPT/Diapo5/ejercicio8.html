@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio 8 - Triángulo</title>
+	<style type="text/css"></style>
+</head>
+<body>
+	<h1>Tipo de triángulo</h1>
+		<label>Lado A:</label>
+		<input type="number" id="a">
+
+		<label>Lado B:</label>
+		<input type="number" id="b">
+
+		<label>Lado C:</label>
+		<input type="number" id="c">
+		<br />
+
+		<button onclick="calcular();">Calcular</button><br />
+		<span>Este triángulo es de tipo:<output id="resultado"></output></span>
+
+
+		<script type="text/javascript">
+			function calcular(){
+				var a = parseFloat(document.getElementById('a').value);
+				var b = parseFloat(document.getElementById('b').value);
+				var c = parseFloat(document.getElementById('c').value);
+
+				//para saber que tipo de triangulo es
+				if(a==b && a==c){
+					document.getElementById('resultado').innerHTML = " Equilátero";
+					//alert('EQUILÁTERO');
+				}else{
+					if(a==b || b==c || a==c){
+						document.getElementById('resultado').innerHTML = " Isósceles";
+					}else{
+						document.getElementById('resultado').innerHTML = " Escaleno";
+					}
+				//para saber si forman realmente un triángulo
+				}if(a+b>=c && a+c>=b && b+c>=a){
+					document.getElementById('resultado').innerHTML += ", triangulo viable. ";
+				}else{
+					document.getElementById('resultado').innerHTML += ", no se puede hacer un triangulo. ";
+				}
+			
+				//OTRA OPCIÓN
+				
+				// if(a+b>=c && a+c>=b && b+c>=a){
+				// 	if(a==b || b==c || a==c){
+				// 		alert('EQUILATERO');
+				// 	}else if(a==b || b==c || a==c){
+				// 		alert('ISOSCELES');
+				// 	}else{
+				// 		alert('ESCALENO');
+				// 	}
+				// }else{
+				// 	alert('NO ES UN TRIANGULO');
+				// }
+			}
+		</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		// var num1=5;
+		// num1++;
+		// document.write(num1);//6
+
+		function incdec(){
+		var n = 5;
+
+		var a1=n++; //6 -- n es 5 y le sumo 1 que serán 6
+		var a2=++n; //7 -- la n ahora es 6 y le sumo 1
+
+		document.write(a1+''+a2);
+		}
+	</script>
+</head>
+<body>
+	<h1>Incremento y decremento</h1>
+	<span>Primer número</span>
+	<input type="number" id="n"/>
+	<br />
+
+	<button onclick="incdec()">HAZLO</button>
+</body>
+</html>

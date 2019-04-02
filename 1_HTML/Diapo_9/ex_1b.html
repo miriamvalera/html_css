@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio 1a Diapo9</title>
+	<style type="text/css">
+		form{
+			width: 350px;
+		}
+		legend{
+			font-weight: bold;
+		}
+		input{
+			border-radius: 5px / 8px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Formulario estructurado</h1>
+	<form>
+		<fieldset>
+			<legend>Datos personales</legend>
+			<label>Nombre</label><br />
+			<input type="text" name="nom"><br />
+
+			<label>Apellidos</label><br />
+			<input type="text" name="ape"><br />
+			
+			<label>DNI</label><br />
+			<input type="text" maxlength="9" name="dni"><br />   
+		</fieldset>
+
+		<fieldset>
+			<legend>Datos de conexión</legend>
+			<label>Nombre de usuario</label><br />
+			<input type="text" name="usuario"><br />
+
+			<label>Contraseña</label><br />
+			<input type="password" name="pwd"><br />
+			<input type="hidden" name="login" value="1">
+
+			<label>Repite la contraseña</label><br />
+			<input type="password" name="pwd"><br />
+			<input type="hidden" name="login" value="2">
+		</fieldset>
+
+		<button type="submit" value="enviar">SEND</button>
+		<button type="reset" value="limpiar">CLEAR</button>
+	</form>
+</body>
+</html>

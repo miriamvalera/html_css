@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio 6</title>
+	<style type="text/css">
+		body{
+			margin: auto;
+			width: 80%;
+		}
+		label{
+			
+		}
+		button{
+			margin: 0 auto;
+			display: block;
+		}
+	</style>
+	
+</head>
+<body>
+	<h1>Programa que nos diga si un número es par o no, con true o false</h1>
+	<label>Introduce un número:</label>
+	<input type="number" id="num" />
+	<br />
+
+	<button onclick="isPar()">CALCULAR</button>
+	<h2>¿El número introducido es par? <span id="resultado"></span></h2>
+
+	<script type="text/javascript">
+		function isPar(){
+			//declaramos las variables de entrada
+			var num = document.getElementById('num').value;
+
+			//ejecutamos la operación y sacamos por pantalla
+			if (num%2==0) {
+				document.getElementById('resultado').innerHTML = '<h1>TRUE</h1>';
+			} else {
+				document.getElementById('resultado').innerHTML = '<h1>FALSE</h1>';
+			}
+		}	
+	</script>
+</body>
+</html>

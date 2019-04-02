@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Ejercicios</title>
+		<script>
+			function calcular(){
+				//tomar las tres notas
+				var n1=parseFloat(in1.value);
+				var n2=parseFloat(in2.value);
+				var n3=parseFloat(in3.value);
+
+				//calcular el promedio
+				var prom=(n1+n2+n3)/3;
+
+				//si el promedio>=5
+				if(prom>=5){
+					//estas aprobado
+					outcalificacion.innerHTML='APROBADO';
+				//sino
+				}else{
+					//estas suspendido
+					outcalificacion.innerHTML='SUSPENSO';
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<h1>Calculadora</h1>
+
+		<label>Nota 1</label>
+		<input type="number" id="in1">
+		<br>
+		<label>Nota 2</label>
+		<input type="number" id="in2">
+		<br>
+		<label>Nota 3</label>
+		<input type="number" id="in3">
+		<br>
+		<button onclick="calcular();">Calcular</button>
+
+		<h2>Resultado</h2>
+
+		<label>Calificación:</label>
+		<output id="outcalificacion"></output>
+		
+
+	</body>
+</html>

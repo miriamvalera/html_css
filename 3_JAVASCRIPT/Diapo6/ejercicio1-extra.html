@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio 1 EXTRA - Calcular el factorial de un número</title>
+</head>
+<body>
+	<h2>El factorial de un número</h2>
+	<label>Introduce un número:</label>
+	<input type="number" id="numero" /><br />
+
+	<button onclick="factorial();">FACTORIAL</button>
+	<span id="resultado"></span>
+
+	<script type="text/javascript">
+		function factorial(){
+			var numero = parseInt(document.getElementById('numero').value);
+			var resultado = 1;
+			for(var i=1; i<=numero; i++){
+				resultado *= i;
+			}
+			alert(resultado);
+		}
+	</script>
+</body>
+</html>

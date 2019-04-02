@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Formulario de contacto</title>
+	<style type="text/css">
+		form{
+			width: 500px;
+			border-radius: blue;
+			background-image: linear-gradient(#ffffff, #cce6ff);
+			font-family: arial;
+			font-size: 12px;	
+		}
+		legend{
+			font-size: 15px;
+			margin-top: 15px;
+		}
+		h1{
+			font-size: 18px;
+		}
+		fieldset{
+			border-color: #ff99cc;
+		}
+		label{
+			display: inline-block;
+			width: 150px;
+			/*text-align: right;*/
+			margin-right: 1px;
+			margin-top: 10px;
+			font-size: 14px;
+		}
+		input{
+			border-radius: 5px / 8px;
+			margin-left: 4px;
+			width: 200px;
+		}
+		textarea{
+			margin-left: 20px;
+		}
+		#email{
+			width: 50px;
+		}
+		button{
+			margin-left: 400px;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<fieldset>
+			<legend>Contacto</legend>
+			<h1>Formulario de contacto</h1>
+			<label>Nombre</label>
+			<input type="text" name="firstname"><br />
+
+			<label>Motivo de consulta</label>
+				<select>
+					<option selected="selected" value="horarios">Horarios</option>
+					<option value="viajes">Viaje</option>
+					<option value="precios">Precio</option>
+					<option value="facturacion">Facturación</option>
+					<option value="seguro">Seguro</option>
+					<option value="cancelacion">Cancelación</option>
+				</select>
+		</fieldset>
+
+		<fieldset>
+			<legend>Consulta</legend>
+			<textarea rows="10" cols="30">Escriba aquí su comentario...</textarea><br />
+
+			<label id="email">Email</label>
+			<input type="text" name="email"><br /><br />
+		
+			<button type="submit" value="enviar">Enviar</button>
+		</fieldset>
+	</form>
+</body>
+</html>

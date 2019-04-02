@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejemplo - Cubo desmontable</title>
+	<style type="text/css">
+		body{
+			margin: auto;
+			width: 90%;
+		}
+		div.cubo{
+			position: relative;
+			transform-style: preserve-3d;
+			margin: 50px;
+			width: 200px;
+			height: 200px;
+			transform: rotateX(40deg) rotateY(40deg);
+		}
+		div.cara{
+			position: absolute;
+			height: 200px;
+			width: 200px;
+			outline: 1px solid #000;
+			transition: 1s;
+		}
+		div.cubo:target .cara.front{
+			background-color: rgba(255,0,255,0.5);
+			transform: translateZ(-100px);
+		}
+		div.cubo:target .cara.back{
+			background-color: rgba(255,255,0,0.5);
+			transform: rotateY(180deg) translateZ(-100px);
+		}
+		div.cubo:target .cara.left{
+			background-color: rgba(0,255,0,0.5);
+			transform: rotateY(90deg) translateZ(-100px);
+		}
+		div.cubo:target .cara.right{
+			background-color: rgba(255,0,0,0.5);
+			transform: rotateY(-90deg) translateZ(-100px);
+		}
+		div.cubo:target .cara.top{
+			background-color: rgba(0,0,255,0.5);
+			transform: rotateX(-90deg) translateZ(-100px);
+		}
+		div.cubo:target .cara.bottom{
+			background-color: rgba(125,125,255,0.5);
+			transform: rotateX(90deg) translateZ(-100px);
+		}
+	</style>
+</head>
+<body>
+	<h1>The cube</h1>
+
+	<div class="cubo" id="montar">
+		<div class="cara front"></div>
+		<div class="cara back"></div>
+		<div class="cara left"></div>
+		<div class="cara right"></div>
+		<div class="cara top"></div>
+		<div class="cara bottom"></div>
+	</div>
+
+	<button type="button" onclick="location.href='#montar';">Montar</button>
+	<button type="button" onclick="location.href='#';">Desmontar</button>
+
+</body>
+</html>

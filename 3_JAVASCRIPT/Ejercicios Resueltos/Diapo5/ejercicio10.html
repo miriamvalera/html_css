@@ -1,0 +1,63 @@
+<!Doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Ejercicio 10
+</title>
+		<script>
+		var a=Math.floor(Math.random()*128)+1;
+		var contador=0;
+		
+		
+		function tirada(){
+			//tomar n
+			var n=parseInt(in1.value);
+			
+			contador++;
+			outcontador.innerHTML=contador;
+			
+			if(n==a){
+				outresultado.innerHTML='acertaste';
+				
+				if(contador<=7){
+					alert('MUY BIEN, eres bueno');
+				}else{
+					alert('MUY MAL, has tardado mucho');
+				}
+				
+				boton.setAttribute('disabled','disabled');
+			}else{
+				
+				if(n>a){
+					outresultado.innerHTML='buscamos un número menor';
+				}else{
+					outresultado.innerHTML='buscamos un número mayor';
+				}
+			
+			}
+		
+			
+		}
+		</script>
+	</head>
+	<body>
+
+	<h1>Adivina el número</h1>
+	<label>n1:</label>
+	<input type="number" id="in1">
+	
+	<button id="boton" onclick="tirada();">Click-me</button>
+	
+	<h2>Resultado</h2>
+	<label>resultado:</label>
+	<output id="outresultado"></output>
+	<br>
+	<label>contador:</label>
+	<output id="outcontador"></output>
+	
+	</body>
+</html>
+
+
+
+

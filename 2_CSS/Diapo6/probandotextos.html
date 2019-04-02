@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		h1{
+			text-transform: uppercase;
+			text-shadow: 2px 2px #ff0000;
+		}
+		p{
+			text-align: center;
+			line-height: 1.5em;
+			letter-spacing: 5px;
+			text-indent: 10%;
+			/*max-width: 200px;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;*/
+
+			/*max-width: 200px;
+			overflow: hidden;
+			white-space: pre;
+			text-overflow: clip;*/
+		}
+		p:first-letter{
+			font-size: 1.5em;
+			color: #F00;
+		}
+		p:nth-of-type(2){ /*en la segunda p que encuentres hazle lo que te describo a continuación*/
+			direction: rtl;
+			unicode-bidi: bidi-override;
+		}
+		p:first-line{
+			text-decoration: underline;
+			text-shadow: 0px 0px 4px #0F0;
+			word-spacing: 0.1em;
+		}
+		div{
+			text-align: center;
+		}
+		h2{
+			text-transform: uppercase;
+			text-decoration: underline;
+			color: #FAAC58;
+		}
+		h3{
+			text-transform: capitalize;
+			color: #B43104;
+		}
+		img{
+			height: 200px;
+			vertical-align: middle;
+		}
+		textarea{
+			height: 50px;
+			width: 200px;
+			resize: none;
+			vertical-align: text-top;
+		}
+		dl{
+			color: #fff;
+			font-size: 18px;
+			font-style italic;
+			font-weight: bold;
+			font-variant: small-caps;
+			text-shadow: 1px 1px 1px #000;
+		}
+		article{
+			max-width: 200px;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+		}
+		#segundoart{
+			white-space: pre;
+			text-overflow: clip; 
+		}
+		@font-face {
+			  font-family: "Mystery Quest";
+			  src: url("flashlight.ttf");
+			}
+
+		p~#tercerart {
+			  font-family: "Mystery Quest", cursive;
+			  font-size: 300%;
+			}
+	</style>
+</head>
+<body>
+	<h1>Formateando texto</h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	<br />
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+	<div>
+		<h2>Texto e Imagen</h2>
+		<span>Hola a todos
+			<img src="tmp.png">
+			los presentes.</span>
+
+		<h3>Etiqueta y textarea</h3>
+		<form>
+			<label>Descripción:</label>
+			<textarea>bla bla bla</textarea>
+			<br />
+			<input type="submit" value="OK">
+	</form>
+	</div>
+
+	<h2>Lista menú</h2>
+	<dl>
+		<dt class="active"><a href="">Menú principal</a></dt>
+			<dd>Inicio</dd>
+		<dt class="active"><a href="">Actividades</a></dt>
+			<dd>Juegos</dd>
+			<dd>Videos</dd>
+		<dt class="active"><a href="">Diversión</a></dt>
+			<dd>Adivinanzas</dd>
+			<dd>Chistes</dd>
+	</dl>
+
+	<article>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</article>
+	<article id="segundoart">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</article>
+
+	<p id="tercerart">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</article>
+	
+</body>
+</html>

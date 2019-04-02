@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Expresiones regulares</title>
+	<style type="text/css">
+		form{
+			border: solid 1px;
+			width: 500px;
+		}
+		label{
+			display: inline-block;
+			text-align: left;
+			margin-right: 1px;
+			margin-top: 12px;
+		}
+		input:invalid{
+			border: 1px solid red;
+		}
+		input:valid{
+			border: 1px solid green;
+		}
+	</style>
+</head>
+<body>
+		<form>
+			<label>DNI</label>
+			<input type="text"  required="required" name="dni1" pattern="^[0-9]{8}[A-Z]{1}$" maxlength="9" title="DNI válido"/><br />
+			<input type="submit" value="Comprobar">
+		</form>
+
+		<form>
+			<label>DNI</label>
+			<input type="text" required="required" name="dni2" pattern="^\d{8}[A-HJ-NP-TV-Z]{1}$" maxlength="9" title="DNI válido"/><br /> 
+			<input type="submit" value="Comprobar">
+		</form>
+
+		<form>
+			<label>DNI o NIE</label>
+			<input type="text" required="required" name="dni3" pattern="((^[XYZ]\d{7}[A-HJ-NP-TV-Z]{1})|(^[0-9]{8}[A-Z]{1}))$" maxlength="10"/><br />
+			<input type="submit" value="Comprobar"><br />
+		</form>
+
+		<form>	
+			<label>Hora hh:mm:ss</label>
+			<input type="text" required="required" pattern="^(([2][0-3])| ([0-1]\d)):[0-5]\d:[0-5]\d$"/><br />
+			<input type="submit" value="Comprobar">
+		</form>
+
+		<form>	
+			<label>B - Hora hh:mm:ss</label>
+			<input type="time" name="hora" step="1" />
+			<input type="submit" value="Comprobar">
+		</form>
+
+		<form>	
+			<label>Teléfono (+34)</label>
+			<input type="text" required="required" pattern="(\+34)^[ -]*(6|7)[ -]*([0-9][ -]*){8}" maxlength="9" title="telefono válido" /><br />
+			<input type="submit" value="Comprobar">
+		</form>
+
+		<form>	
+			<label>B - Teléfono</label>
+			<input type="text" required="required" pattern="^[+][1-9]\d{1,2}\s\d{3}\s\d{2}\s\d{2}\s\d{2}$" title="telefono válido" /><br />
+			<input type="submit" value="Comprobar">
+		</form>
+
+		<form>	
+			<label>fecha dd-mm-aaaa</label>
+			<input type="text" pattern="(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012])." title="fecha válido"/><br />
+			<input type="submit" value="Comprobar">
+		</form>
+
+		<form>	
+			<label>B - fecha dd-mm-aaaa</label>
+			<input type="date" name="fecha"/><br /> <!--pattern:"^\d{2}:\d{2}:\d{4}"-->
+			<input type="submit" value="Comprobar">
+		</form>
+
+		<form>	
+			<label>fecha dd(01-31)-mm(01-12)-aaaa(1900-2100) </label>
+			<input type="text" pattern="(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).['1900'-'2100']" name="fecha"><br />
+			<input type="submit" value="Comprobar">
+		</form>	
+
+		<form>	
+			<label>B - fecha dd(01-31)-mm(01-12)-aaaa(1900-2100) </label>
+			<input type="date" name="fecha" pattern="^(([0][1-9])|([12][0-9])|([3][01])):((0[1-9]|1[012])):(([1][9]\d\d)|([2][0]\d\d)|([2][1][0][0]))$"/><br />
+			<input type="submit" value="Comprobar">
+		</form>			
+</body>
+</html>
+
+<!--
+a) Un DNI de ocho números y una letra (cualquiera de A a Z).
+b) Un DNI de ocho números y una letra (solamente las válidas).
+c) Un DNI, incluidos los que comienzan por letra XYZ.
+d) Una hora en formato hh:mm:ss
+e) Un número de teléfono como: +34 666 66 66 66
+f) Una fecha en dd-mm-aaaa (cualquier número es válido)
+g) Una fecha dd-mm-aaaa donde el día va del 01 al 31, el mes del 01
+al 12 y el año de 1900 a 2100. No importa si aparecen días que no
+existan en el calendario.-->

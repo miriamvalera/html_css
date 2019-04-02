@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 1 y 2 - Funciones</title>
+</head>
+<body>
+	<h1>Ejercicio 1</h1>
+
+	<label>Número 1:</label>
+	<input type="number" id="num0"><br />
+
+	<label>Número 2:</label>
+	<input type="number" id="num1"><br />
+
+	<label>Número 3:</label>
+	<input type="number" id="num2"><br />
+
+	<label>Número 4:</label>
+	<input type="number" id="num3"><br />
+
+	<label>Número 5:</label>
+	<input type="number" id="num4"><br />
+
+	<button onclick="recogerValores(num0.value, num1.value, num2.value, num3.value, num4.value);">Recoger Valores</button><br /><br />
+	<div id="resultado"></div>
+
+	
+	<button onclick="sumar();">Sumar</button>
+	<button onclick="maximo();">Máximo</button>
+	<button onclick="promedio();">Promedio</button><br /><br />
+
+	<label>Introduce un número a escalar:</label>
+	<input type="number" id="float"><br />
+	<button onclick="escalar(float.value);">Escalar</button><br />
+
+	<label>Introduce un número a escalar:</label>
+	<input type="number" id="float2"><br />
+	<button onclick="escalar2(float2.value);">Escalar2</button><br /><br />
+	
+	<hr>
+
+	<h1>Ejercicio 2</h1>
+
+	<button onclick="positivos();">Positivo</button>
+	<button onclick="negativos();">Negativo</button>
+	<button onclick="pares();">Par</button>
+	<button onclick="impares();">Impar</button>
+
+	<div id="res"></div>
+	
+	<script type="text/javascript">
+		
+		var valores = [];
+
+		// function recogerValores(num0, num1, num2, num3, num4){
+		// 	valores = [num0, num1, num2, num3, num4];
+		// 	document.getElementById('resultado').innerHTML = "Los valores recogidos son: "+valores;
+		// }
+
+		function recogerValores(num0, num1, num2, num3, num4){
+			if (num0 != NaN && num1 != NaN && num2 != NaN && num3 != NaN && num4 != NaN) {
+				valores = [parseFloat(num0), parseFloat(num1), parseFloat(num2), parseFloat(num3), parseFloat(num4)];
+				document.getElementById('resultado').innerHTML = "Los valores recogidos son: "+valores;
+			}
+			// resultado.innerHTML = "Uno de los valores no es valido: "+valores;
+		}
+		function sumar(){
+			var suma = 0;
+			for (var i=0; i<valores.length; i++) {
+				suma+=valores[i];
+			}
+			resultado.innerHTML = suma;
+		}
+
+		function maximo(){
+			var maxi = 0;
+			for (var i=0; i<valores.length; i++) {
+				maxi = Math.max.apply(null, valores);			
+				
+				/* Otra forma de dar el máximo
+					if(maxi<valores[i]){
+						maxi = valores[i];
+				 	}*/
+			}
+			resultado.innerHTML = maxi;
+		}
+
+		function promedio(){
+			var prom = 0;
+			for (var i=0; i<valores.length; i++){
+				prom+=valores[i]/valores.length;
+			}
+			resultado.innerHTML = prom;
+		}
+
+		function escalar(float){
+			for(var i=0; i<valores.length; i++){
+				valores[i]=valores[i]*float;
+			}
+			resultado.innerHTML = valores;
+		}
+
+		/*------Otra opción para hacer el escalar, primero se le da al botón escalar y te saldrá una ventana para que el usuario ponga el número------*/ 
+		// function escalar(){
+		// 	var esc = prompt("Indique el valor a escalar");
+		// 	for(let i=0; i<valores.length; i++){
+		// 		valores[i]=valores[i]*esc;
+		// 	}
+		// 	document.getElementById('resultado').innerHTML = valores;
+		// }
+
+		function escalar2(float2){
+			var esc = [];
+			for(var i=0; i<valores.length; i++){
+				esc[i]=valores[i]*float2;
+			}
+			resultado.innerHTML = esc;
+		}
+
+
+		/*------Ejercicio 2------*/ 
+
+		function positivos(){
+			var positivo = 0; 
+			for(var i=0; i<valores.length; i++){
+				if(valores[i]>=0){ //si la posición i del array valores, su valor es mayor a 0 aumentamos el contador de positivo
+					positivo++;
+				}
+					res.innerHTML = 'Hay '+ positivo +' positivos.';
+			}
+		}
+
+		function negativos(){
+			var negativo = 0; 
+			for(var i=0; i<valores.length; i++){
+				if(valores[i]<0){ //si el valor de la posición i es menor a cero
+					negativo++;
+				}
+					res.innerHTML = 'Hay '+ negativo +' negativos.';
+			}
+		}
+
+		function pares(){
+			var par = 0; 
+			for(var i=0; i<valores.length; i++){
+				if(valores[i]%2 == 0){ 
+					par++;
+				}
+					res.innerHTML = 'Hay '+ par +' pares.';
+			}
+		}
+
+		function impares(){
+			var impar = 0; 
+			for(var i=0; i<valores.length; i++){
+				if(valores[i]%2 != 0){ 
+					impar++;
+				}
+					res.innerHTML = 'Hay '+ impar +' impares.';
+			}
+		}
+	</script>
+</body>
+</html>

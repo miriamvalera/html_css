@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 1 - Probar 6 métodos objetos DATE</title>
+</head>
+<body>
+	<button onclick="diaDelMes();">¿A qué día estamos hoy?</button>
+	<h2 id="diaMes"></h2>
+
+	<button onclick="retornaMes();">¿A qué mes estamos?</button>
+	<h2 id="mes"></h2>
+
+	<button onclick="retornaZonaHoraria();">Calcula la zona horaria UTC y Local</button>
+	<h2 id="zona"></h2>
+
+	<button onclick="retornaAñoUtc();">¿En qué año estamos?</button>
+	<h2 id="año"></h2>
+
+	<button onclick="retornaHora();">Establece la hora de un objeto fecha</button>
+	<h2 id="hora"></h2>
+
+	<button onclick="retornaMillisegundos();">Millisegundos</button>
+	<h2 id="milliseg"></h2>
+
+
+	<script type="text/javascript">
+		function diaDelMes(){
+			var dia = new Date();
+			var n = dia.getDate();
+			
+			document.getElementById('diaMes').innerHTML = ('Hoy es día '+n+ '.');
+		} 
+		
+		function retornaMes(){
+			var mes = new Date();
+			var n = mes.getMonth();
+			
+			document.getElementById('mes').innerHTML = ('Hoy es mes '+n+ '.'); //enero es 0, febrero 1, marzo 2, etc etc
+		}
+
+		function retornaZonaHoraria(){
+			var zonaHoraria = new Date();
+			var n = zonaHoraria.getTimezoneOffset();
+
+			document.getElementById('zona').innerHTML = n;
+		}
+
+		function retornaAñoUtc(){
+			var año = new Date();
+			var n = año.getUTCFullYear();
+
+			document.getElementById('año').innerHTML = n;
+		}
+
+		function retornaHora(){
+			var hora = new Date();
+			hora.setHours(17);
+
+			document.getElementById('hora').innerHTML = hora;
+		}
+
+		function retornaMillisegundos(){
+			var millisegundos = new Date();
+			var n = millisegundos.getMilliseconds();
+
+			document.getElementById('milliseg').innerHTML = n;
+		}
+	</script>
+
+</body>
+</html>

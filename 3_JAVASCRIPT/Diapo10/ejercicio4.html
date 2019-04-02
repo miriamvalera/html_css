@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 4 - Mejora del ejercicio anterior (encriptado)</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function encriptar(texto, numero){
+			var resultado = '';
+
+			for(let i=texto.length-1; i>=0;  i--){
+					resultado+= String.fromCharCode(texto.charCodeAt(i) +numero);
+				}
+			document.getElementById('texto').value = resultado;
+		}
+
+		function desencriptar(texto, numero){
+			var resultado = '';
+
+			for(let i=texto.length-1; i>=0;  i--){
+					resultado+= String.fromCharCode(texto.charCodeAt(i) -numero);
+				}
+			document.getElementById('texto').value = resultado;
+		}
+	</script>
+
+	<h2>Encriptar/Desencriptar</h2>
+
+	<label>Texto a encriptar:</label>
+	<input type="text" id="texto" /><br />
+
+	<label>Número para encriptar:</label>
+	<input type="number" id="numero"><br />
+	
+	<button onclick="encriptar(texto.value, parseInt(numero.value));">Encriptar</button>
+	<button onclick="desencriptar(texto.value, parseInt(numero.value));">Desencriptar</button>
+
+</body>
+</html>

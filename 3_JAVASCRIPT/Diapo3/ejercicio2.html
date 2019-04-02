@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio 2</title>
+	<style type="text/css"></style>
+	<script type="text/javascript">
+		function calcular(){
+			//recoger las variables de entrada
+			var b = parseFloat(document.getElementById('base').value);
+			var a = parseFloat(document.getElementById('altura').value);
+			
+			//ejecutamos la operación
+			var area = (b*a)/2;
+			
+			//mostramos en pantalla el resultado
+			document.getElementById('resultado').innerHTML = area;
+		}
+	</script>
+</head>
+<body>
+	<h1>Calcular el área de un triangulo rectángulo</h1>
+	<label>Dame una altura:</label>
+	<input type="number" id="altura" />
+	<br />
+
+	<label>Dame una base:</label>
+	<input type="number" id="base" />
+	<br />
+
+	<button onclick="calcular();">CALCULAR</button>
+
+	<hr>
+	<h4>El resultado es: <span id="resultado"></span></h4>
+
+	<figure>
+		<img src="imagenes/triangulo-rectangulo.png" alt="triangulo-rectangulo" />
+	</figure>
+</body>
+</html>

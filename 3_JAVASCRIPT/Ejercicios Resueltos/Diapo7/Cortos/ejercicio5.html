@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		figure{
+			border: 1px solid #000;
+			width: 200px;
+			height: 300px;
+			margin: 1px;
+			display: inline-block;
+		}
+		img{
+			width: 80%;
+		}
+	</style>
+	
+	<script type="text/javascript">
+		function aleatorio(){
+			return Math.floor(Math.random()*256);
+		}
+
+		function colorear(contenedor){
+			var alpha = Math.random();
+			
+			contenedor.style.backgroundColor = "rgba("+aleatorio()+","+aleatorio()+","+aleatorio()+","+alpha+")";
+		}
+
+		function agrandar(imagen){
+			imagen.style.transform = "scale(1.5)";
+			imagen.src= "goku2.png";
+		}
+		function disminuir(imagen){
+			imagen.style.transform = "scale(1)";
+			imagen.src= "goku1.png";
+		}
+	</script>
+</head>
+<body>
+	<script type="text/javascript">
+		for(var i=0; i<=9; i++){
+			document.write('<figure onmouseenter="colorear(this);"><img src="goku1.png" onmouseenter="agrandar(this)" onmouseleave="disminuir(this)"></figure>');
+		}
+	</script>
+</body>
+</html>

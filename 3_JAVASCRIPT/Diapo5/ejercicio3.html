@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio 3 - Calcular salario</title>
+	<style type="text/css"></style>
+</head>
+<body>
+	<h1>Calcular nuevo salario de los trabajadores</h1>
+	<label>Introduce el salario anterior:</label>
+	<input type="number" id="salario" /><span> euros.</span>
+	<br />
+
+	<label>Nivel:</label>
+	<select id="nivel">
+		<option value="1.30">Nivel 1</option>
+		<option value="1.05">Nivel 2</option>
+		<option value="0.93">Otros niveles</option>
+	</select>
+	<br />
+
+	<button onclick="calcular();">CALCULAR</button><br />
+
+	<span>Tu nuevo salario es: <output id="resultado"></output> euros.</span>
+
+	<script type="text/javascript">
+		function calcular(){
+		var salario = parseFloat(document.getElementById('salario').value);
+		var nivel = parseFloat(document.getElementById('nivel').value);
+
+		var salarioFinal = salario*nivel;
+
+		document.getElementById('resultado').innerHTML = salarioFinal;
+	}
+	</script>
+</body>
+</html>

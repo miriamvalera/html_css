@@ -1,0 +1,56 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+p{
+	margin-bottom: 10px;
+}
+
+html{
+	background-color: #cc0066; /*pink*/
+}
+
+body{
+	font-family: arial;
+	margin: 20px auto 20px auto;
+	padding: 20px;
+	width: 80%;
+	background-color: #FFF; /*white*/
+	border-radius: 20px;
+	box-shadow: 2px 2px 2px #8c8c8c; /*grey*/
+}
+
+h1, h2{
+	color: #F00;
+	text-shadow: 2px 2px 2px #ff00ff; /*purple*/
+}
+
+figure{
+	padding: 10px;
+	background-color: #00F; /*blue*/
+}
+
+figure img{
+	width: 100%;
+}
+
+/*Añadimos extra para ver que lo último que ponemos es el que se pone en el html*/
+h1{
+	color: #ff6600; /*orange*/
+	text-shadow: 2px 2px 2px #ccff33;
+
+}
+
+figure{
+	background-color: #009900; /*green*/
+}
+
+html{
+	background-color: #b3ffff; /*blue sky*/
+}
+
+ h2{
+ 	color: #FFF;
+	text-shadow: 2px 2px 2px #ff00ff; /*purple*/
+ }

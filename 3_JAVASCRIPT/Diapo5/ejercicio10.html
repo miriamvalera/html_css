@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio 10 - Juego de adivinar el número</title>
+	<style type="text/css"></style>
+</head>
+<body>
+
+	<h1>Adivina el número</h1>
+
+	<label>Número:</label><input type="number" id="num" min="0" max="128" />
+
+	<button onclick="adivinar();">OK</button>
+	<button onclick="reiniciar();">Reiniciar</button>
+	<hr>
+
+	<span>Resultado:<output id="resultado"></output></span><br />
+	<span>Intentos:<output id="intentos"></output></span>
+
+	<script type="text/javascript">
+		/* la lógica del juego se basa que cuando carga el html se genera un número random y se guarda en la variable esa, vamos todo lo que esta fuera de la función y luego cuando le das al botón lo que hace es llamar a las funciones */		
+			//Declaramos las variables que quieres mostrar y que necesitamos
+			
+			//Cantidad de intentos
+			//El número que ha pensado la máquina 
+			var nIntentos = 0;
+			var numOculto = Math.floor((Math.random()*128)+1);
+
+			//Ahora hacemos la función
+		function adivinar(){
+			//Para coger el valor que se ha introducido
+			var numIntroducido = parseFloat(document.getElementById('num').value);
+			//Comprobar si es igual el número que había pensado la máquina
+			if (numIntroducido==numOculto){
+				document.getElementById('resultado').innerHTML = ' Acertaste';
+			//para saber si el número introducido es 	
+			}else{
+				if(numIntroducido<numOculto){
+					document.getElementById('resultado').innerHTML = ' Es mayor al número introducido.';
+				}else{
+					document.getElementById('resultado').innerHTML = ' Es menor al número introducido.';
+				}
+				document.getElementById('intentos').innerHTML = ++nIntentos;
+			}
+			if(nIntentos>7){
+				alert('qué malo eres!');
+			}
+		}
+		function reiniciar(){
+			//lo pone a 0
+			nIntentos = 0;
+			numOculto = Math.floor((Math.random()*128)+1); //metemos un nuevo numero a numoculto
+			document.getElementById('resultado').innerHTML = '';
+            document.getElementById('intentos').innerHTML = nIntentos;
+		}
+	
+	</script>
+
+</body>
+</html>

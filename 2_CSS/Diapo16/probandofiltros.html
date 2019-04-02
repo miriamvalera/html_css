@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio 2 - Probando filtros (profe)</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<h1>Cambiamos el CSS por JavaScript</h1>
+	<figure>
+		<img src="thor.jpg" id="thor" alt="thor" title="martillo de Thor" />
+	</figure>
+	<label>Mueve el rango para desenfocar o enfocar</label>
+	<br />
+	0 <input type="range" id="desenfoque" min="0" max="20" step="1" onchange="desenfoque();"> 20 <br />
+
+	<label>Mueve el rango para dar brillo o no</label>
+	<br />
+	0 <input type="range" id="brillo" min="0" max="100" step="1" onchange="brillo();"> 100 <br />
+
+	<label>Mueve el rango para dar contraste o no</label>
+	<br />
+	0 <input type="range" id="contraste" min="0" max="100" step="1" onchange="contraste();"> 100 <br />
+
+	<label>Mueve el rango para dar sombra o no</label>
+	<br />
+	0 <input type="range" id="sombra" min="0" max="100" step="1" onchange="sombra();"> 100 <br />
+
+	<label>Mueve el rango para poner escala de grises o no</label>
+	<br />
+	0 <input type="range" id="escalaGrises" min="0" max="100" step="1" onchange="escalaGrises();"> 100 <br />
+
+	<label>Mueve el rango para ajustar el tono de color o no</label>
+	<br />
+	0 <input type="range" id="ajusteColor" min="0" max="100" step="1" onchange="ajusteColor();"> 100 <br />
+
+	<label>Mueve el rango para invertir los colores o no</label>
+	<br />
+	0 <input type="range" id="invertir" min="0" max="100" step="1" onchange="invertir();"> 100 <br />
+
+	<label>Mueve el rango para dar opacidad o no</label>
+	<br />
+	0 <input type="range" id="opacidad" min="0" max="100" step="1" onchange="opacidad();"> 100 <br />
+
+	<label>Mueve el rango para dar saturación o no</label>
+	<br />
+	0 <input type="range" id="saturacion" min="0" max="100" step="1" onchange="saturacion();"> 100 <br />
+
+	<label>Mueve el rango para dar efecto antiguo (sepia) o no</label>
+	<br />
+	0 <input type="range" id="sepia" min="0" max="100" step="1" onchange="sepia();"> 100 <br />
+
+	<script type="text/javascript">
+		function desenfoque(){
+			var desenfoque = document.getElementById('desenfoque').value;
+			// alert(desenfoque);
+
+			document.getElementById('thor').style.filter = 'blur('+desenfoque+'px)';
+
+			// alert('Hemos activado un blur de: '+desenfoque+'px');
+		}
+
+		function brillo(){
+			var brillo = document.getElementById('brillo').value;
+			// alert(opacidad);
+
+			document.getElementById('thor').style.filter = 'brightness('+brillo+'%)';
+
+			alert('Hemos activado un brillo de: '+brillo+'%');
+		}
+
+		function contraste(){
+			var contraste = document.getElementById('contraste').value;
+
+			document.getElementById('thor').style.filter = 'contrast('+contraste+'%)';
+
+			alert('Hemos activado un contraste de: '+contraste+'%');
+		}
+
+		function sombra(){
+			var sombra = document.getElementById('sombra').value;
+
+			document.getElementById('thor').style.filter = 'drop-shadow('+sombra+'px)';
+
+			alert('Hemos activado una sombra de: '+sombra+'px');
+		}
+
+		function escalaGrises(){
+			var escalaGrises = document.getElementById('escalaGrises').value;
+
+			document.getElementById('thor').style.filter = 'grayscale('+escalaGrises+'%)';
+
+			alert('Hemos activado una escala de grises de: '+escalaGrises+'%');
+		}
+
+		function ajusteColor(){
+			var ajusteColor = document.getElementById('ajusteColor').value;
+
+			document.getElementById('thor').style.filter = 'hue-rotate('+ajusteColor+'deg)';
+
+			alert('Hemos activado el ajuste de color de: '+ajusteColor+'deg');
+		}
+
+		function invertir(){
+			var invertir = document.getElementById('invertir').value;
+
+			document.getElementById('thor').style.filter = 'invert('+invertir+'%)';
+
+			alert('Hemos activado un invertir de colores de: '+invertir+'%');
+		}
+
+		function opacidad(){
+			var opacidad = document.getElementById('opacidad').value;
+			// alert(opacidad);
+
+			document.getElementById('thor').style.filter = 'opacity('+opacidad+'%)';
+
+			alert('Hemos activado un blur de: '+opacidad+'%');
+		}
+
+		function saturacion(){
+			var saturacion = document.getElementById('saturacion').value;
+
+			document.getElementById('thor').style.filter = 'saturate('+saturacion+'%)';
+
+			alert('Hemos activado una saturación de: '+saturacion+'%');
+		}
+
+		function sepia(){
+			var sepia = document.getElementById('sepia').value;
+
+			document.getElementById('thor').style.filter = 'sepia('+sepia+'%)';
+
+			alert('Hemos activado un sepia de: '+sepia+'%');
+		}
+	</script>
+		
+</body>
+</html>

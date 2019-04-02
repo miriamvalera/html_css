@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 2 - Piedra Papel Tijera</title>
+	<style type="text/css">
+		body{
+			margin: auto;
+			width: 80%;
+		}
+		main{
+			border: 1px solid #000;
+			grid-area: main;	
+		}
+		h1{
+			text-align: center;
+		}
+		#jugadores{
+			display: flex;
+			margin-left: 30px;
+			align-items: center; 
+			justify-content: center;
+		}
+		#jugadores figure{
+			display: inline-block;
+		}
+		figure img{
+			text-align: center;
+			flex: 1;
+			
+		}
+		#jugadas{
+
+		}
+		#jugadas figure{
+			display: inline-block;
+		}
+		#estadistica{
+			display: inline-block;
+			
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<h1>Juego de piedra papel tijera</h1>
+		<div id="jugadores">
+			<figure>
+				<figcaption>Jugador 1</figcaption>
+				<img id="firstPlayer" src="images/blanco.png" width="300" height="300"/>
+			</figure>
+			
+			
+			<figure>
+				<figcaption>Jugador 2</figcaption>
+				<img id="secondPlayer" src="images/blanco.png" width="300" height="300"/>
+			</figure>
+		</div>	
+		
+		<section id="jugadas">
+			<h2>Selecciona tirada</h2>
+				<figure>
+					<figcaption>Piedra</figcaption>
+					<img src="images/piedra.png" width="200" height="200" id="piedra" onclick="tirada('piedra')" />
+				</figure>
+				
+				<figure>
+					<figcaption>Papel</figcaption>
+					<img src="images/papel.png" width="200" height="200" id="papel" onclick="tirada('papel')" />
+				</figure>
+
+				<figure>
+					<figcaption>Tijera</figcaption>
+					<img src="images/tijeras.png" width="200" height="200" id="tijera" onclick="tirada('tijeras')" />
+				</figure>
+		</section>
+		
+		<aside id="estadistica">
+			<h2>Estadística</h2>
+			<p>Partidas:</p>
+			<p>Ganadas:</p>
+			<p>Perdidas:</p>
+			<p>Empatadas:</p>
+		</aside>
+		
+	</main>
+
+	<script type="text/javascript">
+        function compara(tiradaJugador, random){
+            if(tiradaJugador == random){
+                //empate
+                console.log("Empate");
+            }else{
+                //En caso de no ser empate cojo mis dos opciones que tengo de ganar que son piedra sobre su tijera o tijera sobre su papel
+                //si se cumple entro en el if y gano yo si no gana el:
+                if(tiradaJugador == "piedra" && random == "tijera" || tiradaJugador == "tijera" && random == "papel"){
+                    //yo gano 
+                    console.log("yo gano");
+                }else{
+                    //gana el
+                    console.log("El gana");
+                }
+            }
+        }
+        function tirada(tiradaJugador){
+			document.getElementById('firstPlayer').src = 'images/'+tiradaJugador+'.png';
+			var random = parseInt(Math.random()*3);
+		
+			switch(random){
+				case 0:
+					random = "piedra";
+                    compara(tiradaJugador, random);
+				break;
+
+				case 1:
+					random = "papel";
+                    compara(tiradaJugador, random);
+				break;
+
+				case 2:
+					random = "tijera";
+                    compara(tiradaJugador, random);
+				break;
+			}
+
+		}
+
+	</script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 2 - Piedra Papel Tijera</title>
+	<style type="text/css">
+		body{
+			margin: auto;
+			width: 80%;
+		}
+		main{
+			border: 1px solid #000;
+			grid-area: main;	
+		}
+		h1{
+			text-align: center;
+		}
+		#jugadores{
+			display: flex;
+			margin-left: 30px;
+			align-items: center; 
+			justify-content: center;
+		}
+		#jugadores figure{
+			display: inline-block;
+		}
+		figure img{
+			text-align: center;
+			flex: 1;
+			
+		}
+		#jugadas{
+
+		}
+		#jugadas figure{
+			display: inline-block;
+		}
+		#estadistica{
+			display: inline-block;
+			
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<h1>Juego de piedra papel tijera</h1>
+		<div id="jugadores">
+			<figure>
+				<figcaption>Jugador 1</figcaption>
+				<img id="firstPlayer" src="images/blanco.png" width="300" height="300"/>
+			</figure>
+			
+			
+			<figure>
+				<figcaption>Jugador 2</figcaption>
+				<img id="secondPlayer" src="images/blanco.png" width="300" height="300"/>
+			</figure>
+		</div>	
+		<div>(HAS GANADO)</div>
+		<section id="jugadas">
+			<h2>Selecciona tirada</h2>
+				<figure>
+					<figcaption>Piedra</figcaption>
+					<img src="images/piedra.png" width="200" height="200" id="piedra" onclick="tirada('piedra')" />
+				</figure>
+				
+				<figure>
+					<figcaption>Papel</figcaption>
+					<img src="images/papel.png" width="200" height="200" id="papel" onclick="tirada('papel')" />
+				</figure>
+
+				<figure>
+					<figcaption>Tijera</figcaption>
+					<img src="images/tijeras.png" width="200" height="200" id="tijera" onclick="tirada('tijeras')" />
+				</figure>
+		</section>
+		
+		<aside id="estadistica">
+			<h2>Estadística</h2>
+			<p>Partidas:</p>
+			<p>Ganadas:</p>
+			<p>Perdidas:</p>
+			<p>Empatadas:</p>
+		</aside>
+		
+	</main>
+
+	<script type="text/javascript">
+		var partidas = document.getElementById().value;
+		var ganadas = document.getElementById().value;
+		var perdidas = document.getElementById().value;
+		var empatadas = document.getElementById().value;
+
+
+		function tirada(tiradaJugador){
+			document.getElementById('firstPlayer').src = 'images/'+tiradaJugador+'.png';
+		
+			var random = parseInt(Math.random()*3);
+		
+			switch(random){
+				case 0:
+					random = "piedra";
+				break;
+
+				case 1:
+					random = "papel";
+				break;
+
+				case 2:
+					random = "tijera";
+				break;
+			}
+			document.getElementById('secondPlayer').src = 'images/'+random+'.png';
+			
+				if(tiradaJugador =='piedra' && random == 'tijera' || tiradaJugador =='tijera' && random =='papel' || tiradaJugador == 'papel' && random == 'piedra'){
+					alert('¡Tu ganas!');
+					ganadas++;
+
+				}else if(random =='piedra' && tiradaJugador == 'tijera' || random =='tijera' && tiradaJugador =='papel' ||random == 'papel' && tiradaJugador == 'piedra'){
+					alert('¡Gana el random!');
+					perdidas++;
+
+					}else{
+						alert("¡Es un empate!");
+						empatadas++;
+						}
+							partidas++;
+		}
+
+	</script>
+</body>
+</html>

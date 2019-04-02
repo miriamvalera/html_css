@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		img{
+			width: 300px;
+			height: 200px;
+			transition: 1s;
+		}
+	</style>
+	
+	<script type="text/javascript">
+		function aumentar(imagen){
+			imagen.style.transform = "scale(1.3)";
+		}
+		function disminuir(imagen){
+			imagen.style.transform = "scale(1)";
+		}
+	</script>
+</head>
+<body>
+<div>
+	<img src="zen.jpg" onmouseenter="aumentar(this);" onmouseleave="disminuir(this)" />
+	<img src="zen.jpg" onmouseenter="aumentar(this);" onmouseleave="disminuir(this)" />
+	<img src="zen.jpg" onmouseenter="aumentar(this);" onmouseleave="disminuir(this)" />
+</div>
+<div>
+	<img src="zen.jpg" onmouseenter="aumentar(this);" onmouseleave="disminuir(this)" />
+	<img src="zen.jpg" onmouseenter="aumentar(this);" onmouseleave="disminuir(this)" />
+	<img src="zen.jpg" onmouseenter="aumentar(this);" onmouseleave="disminuir(this)" />
+</div>
+<div>
+	<img src="zen.jpg" onmouseenter="aumentar(this);" onmouseleave="disminuir(this)" />
+	<img src="zen.jpg" onmouseenter="aumentar(this);" onmouseleave="disminuir(this)" />
+	<img src="zen.jpg" onmouseenter="aumentar(this);" onmouseleave="disminuir(this)" />
+</div>
+</body>
+</html>

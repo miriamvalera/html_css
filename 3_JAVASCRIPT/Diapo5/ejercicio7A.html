@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio 7A</title>
+	<script type="text/javascript">
+		function calcular(){
+			var p = parseFloat(document.getElementById('p').value);
+			var a = parseFloat(document.getElementById('a').value);
+			var d = parseFloat(document.getElementById('d').value);
+			var e = parseFloat(document.getElementById('e').value);
+
+			var nc = p-(a+e);
+			var nsd = (10/p)*a;
+			var ncd = nsd -((10/p*d)*e);
+
+			document.getElementById('as').innerHTML = a.toFixed(0);
+			document.getElementById('es').innerHTML = e.toFixed(0);
+			document.getElementById('nc').innerHTML = nc.toFixed(0);
+			document.getElementById('nsd').innerHTML = nsd.toFixed(0);
+			document.getElementById('ncd').innerHTML = ncd.toFixed(0);
+
+			if(ncd<5){
+				document.getElementById('notaFinal').innerHTML="SUSPENDIDO";	
+			}else{
+				(ncd<9){
+					document.getElementById('notaFinal').innerHTML="APROBADO";
+				}else{
+					document.getElementById('notaFinal').innerHTML="EXCELENTE";
+				}
+			}
+
+		}
+	</script>
+</head>
+<body>
+	<header>
+			<h1>Calculadora de notas</h1>
+			<h2>Para calcular el resultado de los test</h2>
+		</header>
+
+		<section id="calculadora">
+			<div id="entradaDatos">
+				<h2>Entrada de datos</h2>
+				<h3>Parámetros</h3>
+
+				<label>Preguntas:</label>
+				<input type="number" id="p" />
+				<br />
+
+				<label>Descuento por error:</label>
+				<select id="d">
+					<option value="0">0%</option>
+					<option value="0.25">25%</option>
+					<option value="0.33">33%</option>
+					<option value="0.50">50%</option>
+					<option value="0.66">66%</option>
+					<option value="0.75">75%</option>
+					<option value="1">100%</option>
+				</select><br />
+
+				<h3>Resultados</h3><br />
+
+				<label>Aciertos:</label>
+				<input type="number" id="aciertos" />
+				<br />
+
+				<label>Errores:</label>
+				<input type="number" id="errores" />
+				<br />
+				
+				<button type="button" value="calcula" onclick="calcular();">Calcula</button>
+				<br />
+				<label>Aciertos:</label><output id="as"></output><br />
+				<label>Errores:</label><output id="es"></output><br />
+				<label>No contestadas:</label><output id="nc"></output><br />
+				<label>Nota sin descuento:</label><output id="nsd"></output><br />
+				<label>Final sobre 10:</label><output id="ncd"></output><br />
+
+				<h2 id="notaFinal">Nota Final:</h2>
+			</div>
+
+</body>
+</html>

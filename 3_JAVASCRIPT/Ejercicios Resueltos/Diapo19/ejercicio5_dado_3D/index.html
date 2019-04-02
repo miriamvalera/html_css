@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html data-lt-installed="true"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Tirada de dados en 3D">
+		<meta name="keywords" content="HTML5, CSS3, JavaScript">
+	
+		<title>Tirada de dados en 3D</title>
+		<link rel="stylesheet" type="text/css" href="ejemplo.css">
+		<link rel="stylesheet" type="text/css" href="estilo.css">
+		
+		<script src="dados.js"></script>
+	</head>
+
+	<body>
+		<main>
+	    	<h1>Tirada de dado</h1>
+	    	<button id="boton" onclick="girar();">Realizar tirada</button>
+	      	<div class="tapete">
+	      		<div class="wrap">
+	                <div class="dado" id="dado" style="transition-duration: 3s; transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg);">
+	                    <img class="cara top" src="dado1.jpg" alt="1">
+	                    <img class="cara bottom" src="dado2.jpg" alt="2">
+	                    <img class="cara left" src="dado3.jpg" alt="3">
+	                    <img class="cara right" src="dado4.jpg" alt="4">
+	                    <img class="cara front" src="dado5.jpg" alt="5">
+	                    <img class="cara back" src="dado6.jpg" alt="6">
+	                </div>
+                </div>
+            </div>
+			
+	      <div>
+	      	<fieldset id="salida">
+		      	<output id="resultado">2</output>
+		      </fieldset>
+	      </div>
+	      
+      </main>
+   
+</body>
+</html>

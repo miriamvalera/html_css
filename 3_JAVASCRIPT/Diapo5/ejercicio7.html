@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio 7 - Calcular notas</title>
+	<style type="text/css">
+		.hide{
+			visibility: hidden;
+		}
+		.show{
+			visibility: visible;
+			color: red;
+		}
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		#wrapper{
+			padding-top: 10px;
+			width: 1000px;
+			margin: 0px auto 0px auto;
+			background-color: rgba(255,255,255,0.6);
+		}
+		#wrapper, #entradaDatos{
+			box-shadow: 5px 5px 5px #333;
+		}
+		body{
+			background-image: url(img/background.jpg);
+			background-attachment: fixed;
+			background-size: 100%;
+			font-family: Verdana, Arial;
+		}
+		header{
+			background-image: url(img/header.jpg);
+			background-size: 100%;
+			color: #FFF;
+			padding: 20px;
+			height: 100px;
+			text-shadow: 3px 3px 3px #000;
+		}
+		header h1{
+			font-size: 50px;
+		}
+		#calculadora{
+			padding: 40px;
+			min-height: 300px;
+			display: flex;
+		}
+		#entradaDatos{
+			background-color: #FFF;
+			padding: 20px;
+			width: 400px;
+			color: #000;
+			text-align: left;	
+			border: 1px solid #808080;
+			flex: 1;
+		}
+		#entradaDatos h2{
+			font-size: 20px;
+			margin: 10px;
+			text-align: left;
+		}
+		#entradaDatos h3{
+			font-size: 14px;
+			margin: 10px;
+			text-align: left;
+			font-style: italic;
+		}
+		#entradaDatos label{
+			display: inline-block;
+			margin: 10px;
+			text-align: left;
+			width: 200px;
+			font-variant: small-caps;
+		}
+		#entradaDatos input{
+			margin: 5px;
+			width: 150px;
+			height: 20px;
+			border-radius: 5px;
+			padding: 5px;	
+		}
+		#entradaDatos select{
+			width: 165px;
+			height: 35px;
+			margin: 0px;
+			border-radius: 5px;
+		}
+		#entradaDatos button{
+			padding: 5px;
+			margin: 20px 0px 0px 0px;
+			color: #000;
+			cursor: pointer;
+		}
+		#info{
+			border: 1px solid #808080;
+			width: 420px;
+			padding: 20px;	
+			overflow-y: auto;
+			flex: 1;
+			margin-left: 10px;
+		}
+		footer{
+			background-image: url(img/header.jpg);
+			background-size: 100%;
+			height: 40px;
+			padding: 20px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="wrapper">
+		<header>
+			<h1>Calculadora de notas</h1>
+			<h2>Para calcular el resultado de los test</h2>
+		</header>
+
+		<section id="calculadora">
+			<div id="entradaDatos">
+				<h2>Entrada de datos</h2>
+				<h3>Parámetros</h3>
+
+				<label>Preguntas:</label>
+				<input type="number" id="preguntas" />
+				<br />
+
+				<label>Descuento por error:</label>
+				<select id="selector">
+					<option value="0">0%</option>
+					<option value="25">25%</option>
+					<option value="33">33%</option>
+					<option value="50">50%</option>
+					<option value="66">66%</option>
+					<option value="75">75%</option>
+					<option value="100">100%</option>
+				</select><br />
+
+				<h3>Resultados</h3><br />
+
+				<label>Aciertos:</label>
+				<input type="number" id="aciertos" />
+				<br />
+
+				<label>Errores:</label>
+				<input type="number" id="errores" />
+				<p class="hide" id="msjE">La suma de aciertos y errores no cuadra</p>
+				<br />
+
+				<button type="button" value="calcula" onclick="calcular();">Calcula</button>
+			</div>
+
+			<div id="info"></div>
+
+		</section>
+
+		<footer>
+			<p>Miriam Valera</p>
+		</footer>
+	</div>
+	<script type="text/javascript">
+		function resetResult(){
+			document.getElementById('r').innerHTML = "";
+		}
+		function error(op){
+			var msjError = document.getElementById('msjE');
+			switch(op){
+				case "+":
+					msjError.classList.remove("hide");
+					msjError.classList.add("show");
+				break;
+				case "-":
+					msjError.classList.remove("show");
+					msjError.classList.add("hide");
+				break;
+			}
+		}
+		function calcular(){
+			error("-");
+			var nPreguntas = parseInt(document.getElementById('preguntas').value);
+			var porcentajeError = parseInt(document.getElementById('selector').value);
+			var aciertos = parseInt(document.getElementById('aciertos').value);
+			var errores = parseInt(document.getElementById('errores').value);
+			var valorCadaPregunta = 10 / nPreguntas;
+			var notafF;
+			var noContestadas;
+			/*	Comprobaciones y calculos 	*/
+			if (isNaN(errores)) {
+				//Si errores no esta escrito es que no hay por lo tanto no hay descuento
+				noContestadas = nPreguntas-aciertos;
+				errores = 0;
+				notaF = valorCadaPregunta*aciertos;
+			} else {
+				//En caso de que se indique cantidad de errores deducimos la no contestadas
+				noContestadas = nPreguntas-(aciertos+errores);
+				//si se indica algún error se pasa hacer el cálculo.
+				notaF = valorCadaPregunta*aciertos-valorCadaPregunta*porcentajeError/100*errores;
+			}
+			var sinContestar = valorCadaPregunta*aciertos;
+
+/*------------------------ Esto  y las funciones se puede quitar ------------------------*/
+
+			//Pequeña comprobación errores por hacer un detalle de error:
+			if ((aciertos+errores)>nPreguntas || isNaN(aciertos)) {
+				//1- Llamamos a la función error pasando por parametro el String "+" Para que entre en el case correspondiente a mostrar error
+				error("+");
+				//2- Borramos el resultado de la operación anterior, para dejar mas evidente que hay un error:
+				resetResult();
+				//3- Si usamos la calusula o palabra reservada return, obligamos a que la funcion Calcular() termine aquí sin realizar las siguientes lineas del programa. Es decir sin mostrar Output ya que cuando entramos aqui es por un error de que nos han indicado mal la cantidad de aciertos y errores o ni no han dicho cuantas han acertado sin eso no podemos calcular nada pues finalizamos
+				return;
+			}
+/*----------------------------------------------------------------------------------------*/	
+			/*	Resultados - Output  */
+			var res = document.getElementById('info');
+			res.innerHTML = "<p>Aciertos: " + aciertos + " </p>";
+			res.innerHTML += "<p>Errores: " + errores + " </p>";
+			res.innerHTML += "<p>No contestadas: " + noContestadas + " </p>";
+			res.innerHTML += "<p>Nota sin descontar: " + sinContestar + " </p>";
+			res.innerHTML += "<p>Final sobre diez: " + notaF + " </p>";
+			if(notaF<=10 && notaF>=9){
+				res.innerHTML += "<h2>EXCELENTE</h2>";
+			}else if(notaF<9 && notaF>=5){
+				res.innerHTML += "<h2>APROBADO</h2>";
+			}else{
+				res.innerHTML += "<h2>SUSPENSO</h2>";
+			}
+
+		}
+		
+	</script>
+</body>
+</html>

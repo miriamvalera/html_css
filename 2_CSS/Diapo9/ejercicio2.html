@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Tabla</title>
+	<style type="text/css">
+		th, td{
+			border: solid 1px #000F;
+			text-align: center;
+			padding: 20px;
+		}
+		table tr th:first-child{
+			background-image: linear-gradient(to right, #F4FA58, #91e842);
+			border-radius: 2em 0em 0em 2em;
+		}
+		th{
+			background-image: linear-gradient(#F4FA58, #91e842);
+			width: 15%;
+			color: #FFF;
+			text-shadow: 0px 0px 4px #000;
+			border-radius: 2em 2em 0em 0em;
+		}
+		td{
+			background: #ECF8E0;
+		}
+		th:nth-last-of-type{
+			color: #000;
+		}	
+		img{
+			width: 15%;
+		}
+		table>thead>tr>th:first-of-type{
+			background: #FFF;
+			border: none;
+		}
+		table>tfoot>tr>td, table>tfoot>tr>th{
+			border: 0;
+			background: #FFF !important;
+			color: #000;
+			text-shadow: none;
+		}
+		table>tfoot>tr>td{
+			color: #0B610B;
+			font-size: 2.5em;
+			text-shadow: 0px 0px 4px;
+		}
+		
+	</style>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th></th>
+				<th>Inicial</th>
+				<th>Media</th>
+				<th>Negocios</th>
+				<th>Deluxe</th>
+			</tr>
+		<thead>
+		<tbody>
+			<tr>
+				<th>Espacio</th>
+				<td>512 MB</td>
+				<td>1 GB</td>
+				<td>2 GB</td>
+				<td>4 GB</td>
+			</tr>
+			<tr>
+				<th>Ancho de banda</th>
+				<td>50 MB</td>
+				<td>100 GB</td>
+				<td>150 GB</td>
+				<td>Ilimitado</td>
+			</tr>
+			<tr>
+				<th>Bases de datos MariaDB</th>
+				<td>Ilimitado</td>
+				<td>Ilimitado</td>
+				<td>Ilimitado</td>
+				<td>Ilimitado</td>
+			</tr>
+			<tr>
+				<th>Bases de datos MySQL</th>
+				<td>512 MB</td>
+				<td>1 GB</td>
+				<td>2 GB</td>
+				<td>4 GB</td>
+			</tr>
+			<tr>
+				<th>PHP</th>
+				<td><img src="imagenes/visto.png"/></td>
+				<td><img src="imagenes/visto.png"/></td>
+				<td><img src="imagenes/visto.png"/></td>
+				<td><img src="imagenes/visto.png"/></td>
+				</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<th>Precio por mes</th>
+				<td>2,99€</td>
+				<td>4,99€</td>
+				<td>6,99€</td>
+				<td>19,99€</td>
+			</tr>
+		</tfoot>
+	</table>
+</body>
+</html>

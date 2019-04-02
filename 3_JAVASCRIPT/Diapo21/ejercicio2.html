@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 2 - Mostrar ventana con toda la información posible</title>
+</head>
+<body>
+	<!--nueva ventana información caract pantalla y navegador del usuario que la consulta-->
+	<button onclick="mostrar();">Click-me</button>
+
+	<script type="text/javascript">
+		function mostrar(){
+			var nuevaVentana = window.open('', '', 'width=500, height=500');
+			nuevaVentana.document.write("Hola " + navigator.userAgent);
+			nuevaVentana.document.write("<br />Plataforma que está compilada el navegador: " + navigator.platform);
+			nuevaVentana.document.write("<br /> El navegador está en línea: " + navigator.onLine);
+			nuevaVentana.document.write("<br />Lenguaje navegador: " + navigator.language);
+			nuevaVentana.document.write("<br />Nombre del motor del navegador: " + navigator.product);
+			nuevaVentana.document.write("<br />Java está habilitado o no en el navegador: " + navigator.javaEnabled());
+			
+
+			nuevaVentana.document.write("<br />Resolución: " + screen.width+'x'+screen.height+'<br />');
+			nuevaVentana.document.write("<br />Profundidad de color en bits: " + screen.pixelDepth+'<br />Profundidad de color para mostrar imágenes: '+screen.colorDepth+'<br />');
+			nuevaVentana.document.write("<br />Ancho de la pantalla (no barra Windows): " + screen.availWidth+'<br />Alto de la pantalla: '+screen.availHeight+'<br />');
+			}
+		
+	</script>
+
+	<script type="text/javascript">
+		function mostrar(){
+			var ventana = window.open('', '', 'width=500, height=500');
+			var info = navigator.userAgent+'<br />';
+			info+= navigator.appName+'<br />';
+			info+= navigator.cookieEnabled+'<br />';
+			info+= navigator.onLine+'<br />';
+			info+= navigator.platform+'<br />';
+			info+= screen.width+'<br />';
+			info+= screen.height+'<br />';
+			
+		}
+	</script>
+
+</body>
+</html>

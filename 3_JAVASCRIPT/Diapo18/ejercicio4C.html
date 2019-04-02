@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 4C</title>
+</head>
+<body>
+	<h2>El div aparece cuando pasas el ratón y desaparece al quitarlo</h2>
+	<div>
+		<p onmouseenter="divNuevo()" onmouseleave="this.nextElementSibling.remove();">Este es un texto, pasa el ratón por encima.</p>
+	</div>
+
+	<script type="text/javascript">
+		function divNuevo(){
+			//creamos un nuevo div
+			var nuevoDiv = document.createElement("div");
+			
+			//creamos un nuevo párrafo
+			var nuevoP = document.createElement("p");
+
+			//creamos el texto del párrafo                  
+			var t = document.createTextNode("Pasaste el ratón por encima");    
+			 
+			//colocamos el nuevo párrafo en el nuevo div
+			nuevoDiv.appendChild(nuevoP);
+
+			//colocamos el texto en el párrafo
+			nuevoP.appendChild(t);
+			
+			//colocar el div en el body
+			document.body.appendChild(nuevoDiv); 
+		}
+	</script>
+</body>
+</html>

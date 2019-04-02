@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 4 - Hipotenusa</title>
+</head>
+<body>
+	<h2>Calcular hipotenusa de un triángulo rectángulo</h2>
+	<label>Cateto 1:</label>
+	<input type="number" id="cateto1" />
+	<br />
+
+	<label>Cateto 2:</label>
+	<input type="number" id="cateto2" />
+	<br />
+
+	<p id="e" style="color: red;">Números vacíos</p>
+	
+	<button onclick="hipotenusa(cateto1.value, cateto2.value)">Calcular</button>
+
+	<script type="text/javascript">
+		e = document.getElementById('e');
+		e.style.visibility = "hidden";
+		
+		function hipotenusa(cat1, cat2){
+			e.style.visibility = "hidden";
+			if(cat1!= "" && cat2!= ""){
+				var hipotenusa = Math.sqrt(Math.pow(cat1,2)+Math.pow(cat2,2));
+				alert('La hipotenusa del triángulo rectángulo es: ' + hipotenusa.toFixed(2));
+			}else{
+				e.style.visibility = "initial";
+			}	
+		}
+	</script>
+</body>
+</html>

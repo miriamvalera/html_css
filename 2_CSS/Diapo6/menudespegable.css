@@ -1,0 +1,31 @@
+* {
+font-family:sans-serif;
+list-style:none;
+text-decoration:none;
+margin:0;
+padding:0;
+}
+ 
+.nav > li { /*En la linea 9, se especifica que solo los li que sean descendientes 
+			directos del primer ul tengan float: left, esto es para que solo el menu principal sea horizontal y los submenús se mantengan en vertical:*/
+float:left;
+}
+ 
+.nav li a {
+background:#0c9ba0;
+color:#FFF;
+display:block;
+border:1px solid;
+padding:10px 12px;
+} 
+.nav li a:hover {
+background:#0fbfc6;
+}
+
+.nav li ul { /*Por defecto todos los submenús no serán visibles, los ocultaremos usando display: none.*/
+display:none;
+position:absolute;
+min-width:140px;
+}
+.nav li:hover > ul {/*Proseguimos con la parte que hara que se muestre el submenu oculto:*/
+display:block

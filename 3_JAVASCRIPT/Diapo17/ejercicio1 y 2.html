@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio 1 y 2 - DOM</title>
+</head>
+<body>
+	<h1>CATS!</h1>
+	<img src="gato.jpg" alt="a cat" width="500" height="300" />
+	<p>So cute!</p>
+
+	<ul id="azul">
+		<li>Lizzie</li>
+		<li>Daemon</li>
+	</ul>
+
+	<button onclick="cambiar();">Cambiar</button>
+
+	<script>
+		function cambiar(){
+			//cambiar el contenido del primer hijo del body
+			document.body.firstElementChild.innerHTML = "DOGS!";
+
+			//cambiar la ruta de la imagen y su texto alternativo
+			document.images[0].src = "perro.jpg";
+			document.images[0].alt = "a dog";
+
+			//cambiar el color de los li en azul
+			var color = document.getElementsByTagName('li');
+			for(let li of color){
+				li.style.color ="blue";
+			}	
+		}
+	</script>
+</body>
+</html>

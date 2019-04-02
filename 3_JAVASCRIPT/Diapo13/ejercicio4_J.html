@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 4 - Calcular fecha y hora</title>
+</head>
+<body>
+	<h1>Fecha y Hora</h1>
+
+	<label>Fecha: </label><input type="datetime-local" id="fecha" min="1" max="31" step="1"><br /><br />
+
+	<button onclick="calcular(fecha.value);"> GO!! </button>
+	
+	<hr>
+
+	<h2 id="resultado"></h2>
+	
+	<script type="text/javascript">
+		window.onload = function(){
+			var today = new Date();
+			var yyyy = today.getFullYear();
+			var MM = today.getMonth() < 10 ? '0' + (today.getMonth()+1) :  (today.getMonth()+1);
+			var dd = today.getDate() < 10 ? '0' + today.getDate() :  today.getDate() ;
+			var hh = today.getHours()  < 10 ? '0' + today.getHours() :  today.getHours() ;
+			var mm = today.getMinutes() < 10 ? '0' + today.getMinutes() :  today.getMinutes() ;
+			var ss = today.getSeconds()  < 10 ? '0' + today.getSeconds() :  today.getSeconds() ;
+			var hoy = yyyy + "-" + MM + "-" + dd + "T" + hh + ":" + mm + ":" + ss;
+			console.log(typeof(hoy), hoy) ;  
+			document.getElementById('fecha').value = hoy; //The format is "yyyy-MM-ddThh:mm" followed by optional ":ss" or ":ss.SSS".
+		}
+		function calcular(fecha){
+			//console.log(typeof(fecha),fecha);
+			//Recogemos el día actual y resetamos a 0 Horas, minutos, segundos y milisegundos
+			var ahora = new Date()
+			//ahora.setHours(0,0,0,0);
+			
+			var fechaIntroducida = new Date(fecha);
+		
+			//console.log('Introducida->',fechaIntroducida,'\n','hoy->',ahora,'\n',fechaIntroducida.getTime()>ahora.getTime(), ahora-fechaIntroducida);
+			//console.log(fechaIntroducida.getTime(),'hoy:',ahora.getTime())
+			//console.log( (fechaIntroducida- hoy) / 3600000 );
+			if(fechaIntroducida.getTime() > ahora.getTime()){
+				//1º obtener las horas de diferencia entre la fecha introducida y hoy: 
+				var difMilisegundos = fechaIntroducida.getTime() - ahora.getTime();
+				var horas = Math.floor(difMilisegundos/3600000) ;
+				var minutos = Math.floor((difMilisegundos%3600000)/60000) ;
+				var segundos = Math.floor(((difMilisegundos%3600000)%60000)/600);
+
+				console.log(difMilisegundos,'horas:',horas,'min: ', minutos,'seg:',segundos);
+				/*var horas = (fechaIntroducida.getTime() - ahora.getTime()) / 3600000 ;
+                var dif = fechaIntroducida-ahora;
+                console.log(horas, dif , "min restantes = " ,((horas*3600000)-dif)/60000 ); */
+			}
+			
+		}	
+	</script>
+</body>
+</html>

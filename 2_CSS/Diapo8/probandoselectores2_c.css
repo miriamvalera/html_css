@@ -1,0 +1,12 @@
+/*primera línea de cada párrafo*/
+p::first-line{
+	text-decoration: underline;
+}
+/*primera letra de cada párrafo*/
+p::first-letter{
+	font-size: 5vw;
+}
+/*texto seleccionado (Chrome*/
+p::selection{
+	background-color: #FF8000;
+}

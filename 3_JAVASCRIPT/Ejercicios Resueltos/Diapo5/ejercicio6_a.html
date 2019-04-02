@@ -1,0 +1,60 @@
+<!Doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Ejercicio 6</title>
+		<script>
+		
+		function calcular(){
+			//tomar los tres numeros
+			var n1=parseFloat(in1.value);
+			var n2=parseFloat(in2.value);
+			var n3=parseFloat(in3.value);
+			
+			//si n1>n2
+			if(n1>n2){
+				//si n1>n3
+				if(n1>n3){
+					outresultado.innerHTML=n1;//n1
+				//sino
+				}else{
+					outresultado.innerHTML=n3;//n3
+				}
+			//sino
+			}else{
+				//si n2>n3
+				if(n2>n3){
+					outresultado.innerHTML=n2;//n2
+				//sino
+				}else{
+					outresultado.innerHTML=n3;//n3
+				}
+			}
+		}
+		</script>
+	</head>
+	<body>
+
+	<h1>calculadora</h1>
+	<label>n1:</label>
+	<input type="number" id="in1">
+	<br>
+	<label>n2:</label>
+	<input type="number" id="in2">
+	<br>
+	<label>n3:</label>
+	<input type="number" id="in3">
+	<br>
+	
+	<button onclick="calcular();">Click-me</button>
+	
+	<h2>Resultado</h2>
+	<label>El mayor es: </label>
+	<output id="outresultado"></output>
+	
+	</body>
+</html>
+
+
+
+

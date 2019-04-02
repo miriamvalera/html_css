@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 3 - Colorear</title>
+	<style type="text/css">
+		main{
+			display: flex;
+		}
+		div{
+			border: 1px solid #000;
+			width: 200px;
+			height: 200px;
+			margin: 2%;
+			flex: 1;
+		}
+	</style>
+</head>
+<body>
+	<h2>Función para colorear</h2>
+	<p>Selecciona un color y a colorear</p>
+
+	<span>Color:</span>
+	<input type="color" id="incolor" value="#FF0000" />
+	
+	<main>
+		<div onclick="colorear(this, incolor.value);"></div>
+		<div onclick="colorear(this, incolor.value);"></div>
+		<div onclick="colorear(this, incolor.value);"></div>
+		<div onclick="colorear(this, incolor.value);"></div>
+		<div onclick="colorear(this, incolor.value);"></div>
+	</main>
+
+	<button onclick="colorear(document.body, incolor.value);">Colorear</button>
+
+	<script type="text/javascript">
+		function colorear(objeto, color){
+			objeto.style.backgroundColor = color;
+		}
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 3 - Más funciones</title>
+</head>
+<body>
+	<label>Número 1:</label>
+	<input type="number" id="num0"><br />
+
+	<label>Número 2:</label>
+	<input type="number" id="num1"><br />
+
+	<label>Número 3:</label>
+	<input type="number" id="num2"><br />
+
+	<label>Número 4:</label>
+	<input type="number" id="num3"><br />
+
+	<label>Número 5:</label>
+	<input type="number" id="num4"><br /><br />
+
+	<button onclick="recogerValores(num0.value, num1.value, num2.value, num3.value, num4.value);">Recoger Valores</button><br /><br />
+	<h3 id="resultado"></h3>
+	
+	<hr>
+	<h2>Primera posición en que está ubicado el carácter</h2>
+	<label>Carácter a buscar:</label>
+	<input type="number" id="valor">
+
+	<button onclick="indiceDe(parseInt(valor.value));">Indice</button>
+	<span id="resulindiceDe"></span>
+
+	<hr>
+	<h2>Última posición en que está ubicado el carácter</h2>
+	<label>Carácter a buscar:</label>
+	<input type="number" id="valor1">
+	<button onclick="ultimoIndiceDe(parseInt(valor1.value));">Último Indice</button>
+	<span id="resulindiceLastDe"></span>
+	<br />
+	<hr>
+	
+	<!--Recibe el segundo vector
+	<label>Número a agregar: </label><input type="number" id="numero" />
+	<button onclick="recoger(parseInt(numero.value));">RECOGER NÚMERO</button>
+	<h3 id="recogida"></h3>
+	-->
+	
+	<h2>Concatenar dos vectores</h2>
+	<label>Numero 1</label> <input type="text" id="vector2_1" /><br />
+	<label>Numero 2</label> <input type="text" id="vector2_2" /><br />
+	<label>Numero 3</label> <input type="text" id="vector2_3" /><br />
+	<label>Numero 4</label> <input type="text" id="vector2_4" /><br />
+	<label>Numero 5</label> <input type="text" id="vector2_5" /><br />
+
+	<button onclick="recoger();">Recoger valores</button><br />
+	<h3 id="resul2vector"></h3><br />
+
+	<button onclick="concatenar();">Concatenar</button>
+	<h3 id="resultadoConcatenar"></h3>
+	<hr>
+	<h2>Invertir</h2>
+	<button onclick="invertir();">Invertir</button>
+	<h3 id="resultadoInvertir"></h3>
+	
+
+	<script type="text/javascript">
+		
+		var vector = [];
+		var vector2 = [];
+
+		function recogerValores(num0, num1, num2, num3, num4){
+			if (num0 != NaN && num1 != NaN && num2 != NaN && num3 != NaN && num4 != NaN) {
+				vector = [parseFloat(num0), parseFloat(num1), parseFloat(num2), parseFloat(num3), parseFloat(num4)];
+				document.getElementById('resultado').innerHTML = "Los valores recogidos son: "+vector;
+			}
+		}
+
+		function indiceDe(valorBuscado){
+			console.log("indeice",valorBuscado);
+			for(var i=0; i<vector.length; i++){
+				if(vector[i] == valorBuscado){
+					console.log("dentro if valor",resulindiceDe);
+					resulindiceDe.innerHTML ='La posición del elemento buscado es: '+i;
+					break;
+				}	
+			}	
+		}
+
+		function ultimoIndiceDe(valorBuscado){
+			for(var i=vector.length-1; i>=0; i--){
+				if(vector[i] == valorBuscado){
+					resulindiceLastDe.innerHTML ='La última posición del elemento buscado es: '+i;
+					break;
+				}	
+			}	
+		}
+
+		// function recoger(n){
+		// 	valores.push(n);
+		// 	document.getElementById('res1').innerHTML = valores;
+		// 	document.getElementById('numero').value='';
+		// }
+
+		function recoger(){
+			vector2 [0] = document.getElementById('vector2_1').value;
+			vector2 [1] = document.getElementById('vector2_2').value;
+			vector2 [2] = document.getElementById('vector2_3').value;
+			vector2 [3] = document.getElementById('vector2_4').value;
+			vector2 [4] = document.getElementById('vector2_5').value;
+
+			document.getElementById('resul2vector').innerHTML = 'Los números escogidos para trabajar con el segundo vector son: '+vector2;
+		}
+
+		function concatenar(){
+			for(i in vector2){
+				vector.push(vector2[i]);
+			}
+			
+			resultadoConcatenar.innerHTML = vector;
+		}
+
+		function invertir(){
+			var vectorInvertido = [];
+
+			for(let i=vector.length-1; i>=0; i--){
+				vectorInvertido.push(vector[i]);
+			}
+			document.getElementById('resultadoInvertir').innerHTML = vectorInvertido;
+		}
+	</script>
+</body>
+</html>

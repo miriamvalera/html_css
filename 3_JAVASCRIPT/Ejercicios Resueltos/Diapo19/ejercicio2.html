@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio 1</title>
+	<style type="text/css">
+		figure{
+			display: inline-block;
+			width: 40%;
+		}
+		img{
+			width: 80%;
+		}
+		.grande{
+			position: fixed;
+			width: 80%;
+			top: 10%;
+			left: 15%;
+		}
+
+	</style>
+	<script>
+		function agrandar(elemento){
+			//Generar un nuevo elemento Figure, que es el que se va agrandar
+			var fotoNueva = document.createElement('figure');
+
+			//Metemos un nuevo elemento img, como hij@ del figure
+			fotoNueva.appendChild(document.createElement('img'));
+
+			//Seguimos, insertando como src de la img, la src, recogida de la foto clicada
+			fotoNueva.firstElementChild.src=elemento;
+
+			//Añadimos la class="grande"
+			fotoNueva.setAttribute('class','grande');
+
+			//Le añadimos el atributo para ser borrado cuando le clicas
+			fotoNueva.setAttribute('onclick','this.remove()');
+
+			//Añadimos el nuevo objeto figure, como hij@ del Body
+			document.body.appendChild(fotoNueva);
+		}
+	</script>
+</head>
+<body>
+	<h1>Galeria de imagenes que se hagan grandes</h1>
+	<figure>
+		<img src="foto1.jpg"  title="Foto1" alt="Foto1 alternativo" onclick="agrandar(this.src)" />
+	</figure>
+	<figure>
+		<img src="foto2.jpg" title="Foto2" alt="Foto2 alternativo" onclick="agrandar(this.src)" />
+	</figure>
+
+	
+</body>
+</html>

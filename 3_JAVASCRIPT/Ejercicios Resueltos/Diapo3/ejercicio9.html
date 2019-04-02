@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 8 Diapo 3</title>
+	<script>
+		function calcular(){
+			//Recojo las variables de entrada
+			var ccarretera = document.getElementById('ccarretera').value;
+			var cciudad = document.getElementById('cciudad').value;
+			var pgasoil= document.getElementById('precioCombustible').value;
+
+			var kmciudad = document.getElementById('kmciudad').value;
+			var kmcarretera = document.getElementById('kmcarretera').value;
+
+			//Calculamos cuanto nos sale el recorrido
+			var  precio=0;
+
+			var precioFinalCarretera = ((ccarretera/100)*kmcarretera)*pgasoil;
+			var precioFinalCiudad = ((cciudad/100)*kmciudad)*pgasoil;
+
+			precio= precioFinalCiudad+precioFinalCarretera;
+
+			alert('Te has gastado por Carretera: '+(precioFinalCarretera).toFixed(2)+'€');
+			alert('Te has gastado por Ciudad: '+(precioFinalCiudad).toFixed(2)+'€');
+			alert('En total te has gastado: '+(precio).toFixed(2)+'€');
+		}
+
+		
+	</script>
+</head>
+<body>
+	<h1>Calculadora de Gasolina</h1>
+	<h3>Datos del trayecto Realizado</h3>
+	<label>Km realizados por Ciudad: </label><input type="number" id="kmciudad" /><br />
+	<label>Km realizados por Carretera: </label><input type="number" id="kmcarretera" /><br />
+
+	<h3>Datos del vehículo Utilizado</h3>
+	<label>Consumo en Carretera en KM/100: </label><input type="number" id="ccarretera" /><br />
+	<label>Consumo en Ciudad en KM/100: </label><input type="number" id="cciudad" /><br />
+	<label>Precio del combustible: </label><input type="number" id="precioCombustible" /><br />
+	<button onclick="calcular()">CALCULAR EL PRICE</button>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 4 - Sucesión Fibonacci</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function fibo(){
+			var arrayFibo = [1, 1];
+			var res;
+
+			for(i=2; arrayFibo.length<20; i++){
+				res = arrayFibo[i-1]+arrayFibo[i-2];
+				arrayFibo.push(res);
+			}
+			document.write(arrayFibo);
+		}		
+	</script>
+
+	<button onclick="fibo();">Sucesión Fibonacci</button>
+	
+	<script type="text/javascript">
+		function fibo(){
+			var nacci = [1,1];
+
+			for(var i=2; i<20; i++){
+				nacci[i] = nacci[i-2] + nacci[i-1];
+			}
+			document.write(nacci);
+		}
+	</script>
+
+</body>
+</html>

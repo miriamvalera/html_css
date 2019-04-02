@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio 8</title>
+	<style type="text/css"></style>
+</head>
+<body>
+	<h1>Calcular trayecto</h1>
+	<label>¿Cuántos Km harás por carretera?</label>	
+	<input type="number" id="carretera" required /><span>  Km</span>
+
+	<br />
+
+	<label>¿Cuántos Km harás por ciudad?</label>
+	<input type="number" id="ciudad" required /><span>  Km</span>
+	<br />
+
+	<button onclick="coste()">CALCULAR</button>
+
+	<h2>Coste trayecto: <span id="resultado"></span> €</h2>
+
+	<script type="text/javascript">
+		function coste(){
+			var carretera = document.getElementById('carretera').value;
+			var ciudad = document.getElementById('ciudad').value;
+			var resultado = document.getElementById('resultado');
+
+			const litrosciudad = 9.8;
+			const litroscarretera = 5.5;
+			const precioLitro = 1.10;
+
+			var consumoUrbano = litrosciudad*ciudad/100;
+			var consumoCarretera = litroscarretera*carretera/100;
+
+			resultado.innerHTML = ((consumoUrbano+consumoCarretera)*precioLitro).toFixed(2);
+		}
+	</script>
+</body>
+</html>

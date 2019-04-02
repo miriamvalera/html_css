@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Formulario de Registro</title>
+	<style type="text/css">
+		fieldset{
+			width: 630px;
+			border-color: #ff99cc;
+		}
+		label{
+			display: inline-block;
+			text-align: left;
+			margin-right: 1px;
+			margin-top: 12px;
+		}
+		#numero{
+			width: 60px; 
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<fieldset>
+			<h3>Formulario de Registro</h3>
+			<label>Nombre de Usuario</label>
+			<input type="text" name="name" placeholder="Ingrese su nombre">
+			<label>Correo</label>
+			<input type="email" name="email" placeholder="Ingrese su correo"><br />
+
+			<label>Contraseña</label>
+			<input type="password" name="pwd" placeholder="Ingrese su contraseña">
+			<label>Sexo</label>
+				<select>
+					<option selected="selected" value="Noespecificar">No especificar</option>
+					<option value="mujer">Mujer</option>
+					<option value="hombre">Hombre</option>
+				</select><br />
+
+			<label>País</label>
+			<input type="text" name="pais" placeholder="Ingrese su país"><br />
+
+			<label>Subir tu foto</label>
+			<input type="file" value="Seleccionar archivo"><br />
+
+			<label>Cuentanos más sobre ti</label><br />
+			<textarea rows="6" cols="40">Cuentanos algo sobre ti</textarea><br />
+
+			<label>Cuanto sabes de HTML5?</label>
+			<input type="range" name="points" min="0" max="10" step="1" value="5"><br />
+
+			<label>Desea suscribirse a nuestro boletin?</label>
+				<input type="radio" name="si" value="si"/>
+				<label>Si</label>
+				<input type="radio" name="no" value="no"/>
+				<label>No</label>
+
+			<label>Cada cuantos días desea recibirlo?</label>
+			<input id="numero" type="number" name="number" min="0" maxlength="10"><br />
+
+			<input type="checkbox" name="acceptar" value="acceptar">
+			<label>He leído los terminos de condiciones y uso</label><br />
+
+			<button type="submit" value="enviar">Enviar</button>
+			<button type="reset" value="reset">Cancelar</button>
+		</fieldset>
+	</form>
+
+</body>
+</html>

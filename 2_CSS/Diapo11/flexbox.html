@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>FlexBox</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		body{
+			width: 90%;
+			margin: auto;
+		}
+		main{
+			border: 1px dashed #F00;
+			display: flex; /*al padre le damos...*/
+		}
+		div{
+			border: 1px solid #000;
+			flex: 1;
+			font-size: 70px;
+		}
+		div+div+div+div{
+			/*al cuarto hijo tendrá el doble que sus hermanos*/
+			flex: 2;
+		}
+		/*.flex-container{
+			display: flex;
+			flex-wrap: wrap-reverse;
+		}
+		.flex-container>div{
+			flex: 1;
+		}*/
+		/* Cuando utilizo la imagen del Bart y Lisa, align-items: strectch, flex-start, flex-end, center, baseline*/
+		.flex-container{
+			display: flex;
+			height: 200px;
+			align-items: flex-end; 
+		}
+		.flex-container>div{
+			flex: 1;
+		}
+		img{
+			height: 150px;
+		}
+
+	</style>
+</head>
+<body>
+	<main class="flex-container"/>
+		<div><img src="bart.png"></div>
+		<div>Hijo2</div>
+		<div><img src="lisa.png"></div>
+		<div>Hijo4</div>
+	</main>
+</body>
+</html>
+

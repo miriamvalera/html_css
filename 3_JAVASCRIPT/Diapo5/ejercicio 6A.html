@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 6 - Programa que pide 3 números y diga cuál es el mayor</title>
+    <style type="text/css"></style>
+</head>
+<body>
+    <h1>Comparador de números - Sin usar operadores lógicos</h1>
+    <label>Introduce el primer número:</label>
+    <input type="number" id="num1" />
+    <br />
+
+    <label>Introduce el segundo número:</label>
+    <input type="number" id="num2" />
+    <br />
+
+    <label>Introduce el tercer número:</label>
+    <input type="number" id="num3" />
+    <br />
+
+    <button onclick="comparar();">Comparar</button><br />
+    <span>El número más grande es:<output id="resultado"></output></span>
+
+    <script type="text/javascript">
+        function comparar(){
+            var n1 = parseFloat(document.getElementById('num1').value);
+            var n2 = parseFloat(document.getElementById('num2').value);
+            var n3 = parseFloat(document.getElementById('num3').value);
+            //Sin operadores lógicos (*papi = mayor ) :
+            var res;
+            //console.log(typeof(n1),n1,n2,n3);
+            //console.log(n1>n2);
+            if(n1>n2){
+                //Si entra aquí n1 es papi, entonces comparamos a n2 con n3 para ver quien de ellos es papi:
+                if(n2>n3){
+                    //Si entramos aqui quiere decir que n3 es el más pequeño ya que n1 es mas grande que n2 y n2 es mas grande que n3 por lo tanto: 
+                    res = n1 + ">" + n2 + ">" + n3;
+                }else{
+                    //Si no entro en su if queda else, por lo tanto n3 es papi que n2, entonces n2 sabemos que es el mas peque, pero nos queda comparar n1 y n3
+                    if(n1>n3){
+                        res = n1 + ">" + n3 + ">" + n2;
+                    }else{
+                        //si n1 no es mayor que n3 pues resulta que n3 es mas grande que todos:
+                        res = n3 + ">" + n1 + ">" + n2;
+                    }
+                }
+            //hasta aqui la rama izq o derecha no recuerdo pero una
+            }else{
+                //El caso que si estamos aqui es que n2 es papi que n1, entonces nos queda comparar si n1 es mayor o menor que n3:
+                if(n1>n3){
+                    //Bueno si entramos aqui quedará n1 en segundo puesto: 
+                    res = n2 + ">" + n1 + ">" + n3;
+                }else{
+                    //Nos queda comprobar si n3 es mas grande que n2 porque ya sabemos n1 es el más pequeño:
+                    if(n2>n3){
+                        //si entramos aqui es que n2 se queda su primera plaza y n3 el segundo 
+                        res = n2 + ">" + n3 + ">" + n1;
+                    }else{
+                        //si no es que n3 es más grande que n2 y se queda el primer puesto:
+                        res = n3 + ">" + n2 + ">" + n1;
+                    }
+                }
+            }
+            //Despues de la mandanga insertar el resultado en html: 
+            document.getElementById('resultado').innerHTML = res;
+            //Si te sale esta linea está actualizado a las 15:55
+        }
+        
+    </script>
+</body>
+</html>

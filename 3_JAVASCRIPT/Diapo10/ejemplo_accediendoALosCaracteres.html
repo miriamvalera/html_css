@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejemplo - STRINGS: Accediendo a los Caracteres</title>
+</head>
+<body>
+	<!-- Te lo muestra directamente lo que le pongas en la variable -->
+	<script type="text/javascript">
+		var texto = 'Hola mundo';
+
+		for(var i=0; i<texto.length; i++){
+			document.write(texto[i]+'<br />');
+		}
+	</script>
+	
+	<!-- Te lo muestra lo que tu le escribas en el input -->
+	<script type="text/javascript">
+		function imprimir(){
+		
+			var texto = document.getElementById('text').value;
+
+			for(var i=0; i<texto.length; i++){
+				document.write(texto[i]+'<br />');
+			}
+		}
+	</script>
+	
+	<label>Escribe tu texto:</label>
+	<input type="text" id="text"><br />
+	<button onclick="imprimir();">REALIZAR ACCIÓN</button>
+</body>
+</html>

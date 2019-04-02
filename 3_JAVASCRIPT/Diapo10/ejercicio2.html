@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 2 - 3 cadenas de texto </title>
+</head>
+<body>
+<!-- 	<script type="text/javascript">
+		var nombre = "marcos";
+		var apellido1 = "rico";
+		var apellido2 = "molina";
+
+		document.write(apellido1.toUpperCase()+' '+apellido2.toUpperCase()+', '+nombre.charAt(0).toUpperCase() +nombre.slice(1));
+
+	</script> -->
+
+
+	<script type="text/javascript">
+		function imprimir(){
+			var nombre = document.getElementById('name').value;
+			var apellido1 = document.getElementById('lastName1').value; 
+			var apellido2 = document.getElementById('lastName2').value;
+
+			document.write(apellido1.toUpperCase()+' '+apellido2.toUpperCase()+', '+nombre.charAt(0).toUpperCase() +nombre.slice(1));
+	}
+	</script>
+	
+	<h2>Escribe tu nombre y apellidos</h2>
+	<label>Nombre:</label>
+	<input type="text" id="name" /><br />
+
+	<label>Primer apellido:</label>
+	<input type="text" id="lastName1" /><br />
+
+	<label>Segundo apellido:</label>
+	<input type="text" id="lastName2" /><br />
+
+	<button onclick="imprimir();">Imprimir Nombre Completo</button>
+</body>
+</html>

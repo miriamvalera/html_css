@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<label>Filas</label>
+	<input type="number" id="f">
+	<label>Columnas</label>
+	<input type="number" id="c">
+	<button onclick="crear()">Crear</button>
+	<div id="res"></div>
+
+	<script>
+		function crear(){
+			//obtenemos los valores:
+			var filas = parseInt(document.getElementById('f').value);
+			var columnas = parseInt(document.getElementById('c').value);
+			var html = document.getElementById('res');
+			//Creamos la variable dónde crearemos la tabla y que despues insertaremos en el div #res:
+			var resultado ;
+
+			//Ahora bien lo primero para una tabla es abrir las etiquetas <table> y <tbody> : 
+			resultado = "<table><tbody>";
+
+			//Ahora que resultado ya tiene abierta las etiquetas faltara añadir los diferente td y tr en funcion de las variables para eso haremos dos bucles:
+			console.log(resultado); //Se hace un console log para ver que vale la variable resultado antes de emepzar el bucle y ayudarnos a ver como fucniona
+
+			//Primer bucle para crear cada fila:
+			for (var i = 1; i <= filas; i++) {
+				//Cuando entramos en el bucle queremos añadir un tag <tr> a la variable para crear una fila:
+				resultado += "<tr>"; //Lo hacemos con += para añadir y no machacar
+				console.log("El valor de resultado:",resultado," la interacion: ",i); //Lo mismo que antes hago un console. para que me ayude visualizar que esta pasando 
+				//Ahora hacemos otro bucle que se repetira en funcion de columnas nos hayan pedido:
+				for (var j = 1; j <= columnas; j++) {
+					//Cuando entramos aquí recorremos este bucle entero hasta que se hayan creado todos los tag <td> como nos hayan pedido 
+					resultado += "<td>Celda" + (i+j) + "</td>"; //Añadimos la suma de las variables dentro de cada celda para darle algún contexto
+				}
+
+				//Cuando acaba el bucle de arriba es decir el de las columnas tenemos que cerrar la fila:
+				resultado += "</tr>";
+
+			}
+
+			//Cuando estamos aquí se habrá repetido por cada interaccion del primer bucle es decir por cada fila se habra completado un bucle de crear columnas.
+			//Entonces queda cerrar la tabla:
+			resultado += "</table></tbody>";
+			//Entonces ahora queda devolver el resultado al div del html #res:
+			html.innerHTML = resultado;
+		}
+	</script>
+</body>
+</html>

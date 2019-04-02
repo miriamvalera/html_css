@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio 5</title>
+	<style type="text/css"></style>
+	
+</head>
+<body>
+	<h1>Convertir pesetas a euros y viceversa</h1>
+	<label>Cantidad a convertir:</label>
+	<input type="number" id="money" />
+	<br />
+
+	<button onclick="convertirEP()">Convertir € a pesetas</button>
+	<button onclick="convertirPE()">Convertir pesetas a €</button>
+
+	<h4>La conversión de <span id="monedaO"></span> a <span id="monedaD"></span> es: <span id="resultado"></span></h4>
+	
+
+	<figure>
+		<img src="imagenes/europeseta.png" alt="europeseta" />
+	</figure>
+	
+	<script type="text/javascript">
+		//de euros a pesetas: multiplicar los euros por 166.386 ESP 
+		//de pesetas a euros dividir las pesetas por 0.00601012 EUR
+		var monedaO = document.getElementById('monedaO');
+		var monedaD = document.getElementById('monedaD');
+		var inputMoney = document.getElementById('money');
+		var salidaMoney = document.getElementById('resultado');
+		//console.log(monedaO,monedaD,inputMoney);
+
+		function convertirEP(){
+			monedaO.innerHTML = 'euros';
+			monedaD.innerHTML = 'pesetas';
+			salidaMoney.innerHTML = inputMoney.value*166.386;
+		}
+
+		function convertirPE(){
+			monedaO.innerHTML = 'pesetas';
+			monedaD.innerHTML = 'euros';
+			salidaMoney.innerHTML = inputMoney.value/166.386;
+			//console.log(inputMoney.value*0.00601012);
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio 6A - Programa que pide 3 números y diga cuál es el mayor</title>
+	<style type="text/css"></style>
+</head>
+<body>
+	<h1>Comparador de números - Sin usar operadores lógicos</h1>
+	<label>Introduce el primer número:</label>
+	<input type="number" id="num1" />
+	<br />
+
+	<label>Introduce el segundo número:</label>
+	<input type="number" id="num2" />
+	<br />
+
+	<label>Introduce el tercer número:</label>
+	<input type="number" id="num3" />
+	<br />
+
+	<button onclick="comparar();">Comparar</button><br />
+	<span>El número más grande es:<output id="resultado"></output></span>
+
+	<script type="text/javascript">
+		function comparar(){
+			var n1 = parseFloat(document.getElementById('num1').value);
+			var n2 = parseFloat(document.getElementById('num2').value);
+			var n3 = parseFloat(document.getElementById('num3').value);
+
+			if(n1>n2){
+
+				if(n1>n3){
+					document.getElementById('resultado').innerHTML = " es el primer número.";
+				}
+			}else{
+				if(n2>n3){
+					document.getElementById('resultado').innerHTML = " es el segundo número.";
+				}else{
+					document.getElementById('resultado').innerHTML = " es el tercer  número.";
+				}
+			}
+		}
+		
+	</script>
+</body>
+</html>

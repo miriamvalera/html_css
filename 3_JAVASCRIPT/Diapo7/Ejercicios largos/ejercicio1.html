@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 1 - Agranda imágenes HTML al doble de su tamaño inicial</title>
+</head>
+<body>
+	<h2>Agrandar imágenes HTML al doble</h2>
+		<figure>
+			<img src="images/bart.png" onclick="doblar(this);" height="100" width="50" id="foto">
+		</figure>
+
+		<button onclick="doblar(foto.value);">Click-me</button>
+
+		<script type="text/javascript">
+			function doblar(imagen){
+				imagen.height*=2;
+				imagen.width*=2;
+			}
+		</script>
+</body>
+</html>

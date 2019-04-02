@@ -1,0 +1,41 @@
+/*primer elemento hijo de cada padre*/
+:first-child{
+	text-decoration: underline;
+}
+/*h2 que sean el único hijo*/
+h2:only-child{
+	text-decoration: line-through;
+}
+/*párrafos que sean segundo hijo*/
+p:nth-child(2){
+	text-transform: uppercase;
+}
+/*párrafos que sean penúltimo hijo*/
+p:nth-last-child(2){
+	color: #F00;
+}
+/*párrafos que sean último hijo*/
+p:last-child{
+	color: #00F;
+}
+
+form{
+	border: solid 1px #000F;
+	width: 50%
+}
+label{
+	display: inline-block;
+	min-height: 0.5%;
+}
+input{
+	padding: 2% 2%;
+	margin: 1%;
+}
+input[type="submit"]{
+	display: block;
+	margin: 1%;
+}
+/*inputs que no sean de tipo submit*/
+input:not([type="submit"]){
+	width: 10%;
+}

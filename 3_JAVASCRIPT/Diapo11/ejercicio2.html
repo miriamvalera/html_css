@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 2 - Array 1000 posiciones, multiples de 7</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function multiple(valor, multiple){
+			resto = valor % multiple;
+			if(resto==0){
+				return true;
+			}else{
+				return false;
+			}
+		}
+		var multiples_7 = [];
+		var numeroDeMultiplos=0;
+		var i=0;
+
+		while(numeroDeMultiplos<=1000){
+			if(multiple(i,7)){
+				multiples_7.push(i);
+				numeroDeMultiplos++;
+			}
+			i++;
+		}
+		document.write("Los multiplos de 7 son: ", multiples_7);
+
+		/*		-	-	-	-	-	-	*/
+
+		var multiple_7 = [];
+		var i = 0;
+		const numero = 7;
+
+		while(multiple_7.length<=1000){
+			var resto = i % numero;
+			if(resto==0){
+				multiple_7.push(i);
+			}
+			i++;
+		}
+		document.write("<br /><br /> Los multiplos de 7 son: ", multiple_7);
+	</script>
+
+	<script type="text/javascript">
+		function multiplos(){
+			var multiples = new Array(1000);
+			for(let i=0; i<1000; i++){
+				multiples[i] = (i+1)*7;
+			}
+			document.getElementById('resultado').innerHTML = multiples;
+		}
+	</script>
+	
+	<button onclick="multiplos();">Click aquí</button>
+	<span id="resultado"></span>
+</body>
+</html>

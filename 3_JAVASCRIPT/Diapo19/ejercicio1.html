@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 1 - Estructura HTML (cursiva, negrita)</title>
+	<style type="text/css">
+		div{
+			width: 300px;
+			border: 1px solid #FB7ED0;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	<center>
+		<div onmouseenter="cursiva();" onmouseleave="original();">
+			<h1>La canción del pirata</h1>
+			<p onmouseenter="negrita(this);" onmouseleave="normal(this);">Con diez cañones por banda</p>
+			<p onmouseenter="negrita(this);" onmouseleave="normal(this);">viento en popa a toda vela</p>
+			<p onmouseenter="negrita(this);" onmouseleave="normal(this);">no corta el mar, sino vuela</p>
+			<p onmouseenter="negrita(this);" onmouseleave="normal(this);">un velero Bergatín.</p>
+		</div>
+	</center>
+
+	<script type="text/javascript">
+		function cursiva(){
+			var pCursiva = document.getElementsByTagName('p');
+			for(let p of pCursiva){
+				p.style.fontStyle="italic";	
+			}
+		}
+
+		function original(){
+			var pOriginal = document.getElementsByTagName('p');
+			for(let p of pOriginal){
+				p.style.fontStyle="normal";	
+			}
+		}
+
+		function negrita(elemento){
+			var negrita = document.getElementsByTagName('elemento');
+			elemento.style.fontWeight="bold";
+		}
+
+		function normal(elemento){
+			var normal = document.getElementsByTagName('elemento');
+			elemento.style.fontWeight='normal';
+		}
+
+	</script>
+</body>
+</html>

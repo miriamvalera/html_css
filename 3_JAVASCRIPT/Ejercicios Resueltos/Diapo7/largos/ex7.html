@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercici 7, Diapo 7</title>
+	<script type="text/javascript">
+		//FUNCION listarPrimos
+		//recibo: número
+		//devuelve: cadena de texto con el listado de primos desde el 1 hasta n
+
+		function listarPrimos(numero){
+			var lista = '';
+			for(var i=1; i<=numero; i++){
+				if(esPrimo(i)){
+					lista += i+', ';
+				}
+
+			}
+			return lista;
+		}
+
+		//FUNCIÓN esPrimo(numero)
+		//recibe: iActual
+		//devuelve: boolean
+		//esPrimer, indica si un número es primo o no
+
+		function esPrimo(iActual){
+			for(var j=2; j<=Math.sqrt(iActual); j++)
+				if(iActual%j==0) return false;
+			return true;
+		}
+	</script>
+</head>
+<body>
+	Muestra los números primos hasta: <input type="text" id="numero" />
+	<button onclick="document.getElementById('primos').innerHTML = listarPrimos(parseInt(document.getElementById('numero').value));">Comprobar</button>
+	<span id="primos"></span>
+</body>
+</html>

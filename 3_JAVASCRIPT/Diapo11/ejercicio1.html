@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 1 - Probando Arrays</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//toString()
+		var fruits = ["Banana", " Orange", " Apple", " Mango"];
+		document.write(fruits.toString()+'<br />' + '<hr>');
+	</script>
+
+	<script type="text/javascript">
+		//join()
+		var fruits = ["Banana", "Orange", "Apple", "Mango"];
+		document.write(fruits.join(" * ")+'<br />' + '<hr>');
+	</script>
+
+	<script type="text/javascript">
+		//pop()
+		var musica = ["Pop", "Rock", "Balada", "Jazz"];
+		var m = musica.pop();
+		document.write(m+'<br />' + '<hr>');  // o utilizamos el alert o el document.
+		// alert(m);
+		document.write(musica+'<br />' + '<hr>');
+		// alert(musica);
+	</script>
+
+	<script type="text/javascript">
+		//push()
+		var bailes = ["Clasico", " Hip-Hop", " Danza Contemporanea", " Reggae"];
+		bailes.push("Techno");
+		document.write(bailes+'<br />' + '<hr>');
+	</script>
+
+	<script type="text/javascript">
+		//shift()
+		var marvel = ["Thor", " Iron-Man", " Capitan America", " Hulk"];
+		var heroes = marvel.shift();
+		document.write(heroes+'<br />' + '<hr>');
+	</script>
+
+	<script type="text/javascript">
+		//unshift()
+		var marvel = ["Thor", " Iron-Man", " Capitan America", " Hulk"];
+		marvel.unshift("Spiderman");
+		document.write(marvel+'<br />' + '<hr>');
+	</script>
+
+	<script type="text/javascript">
+		//splice()
+		var dc = ["Batman", " Superman", " Wonder Woman", " Aquaman"];
+		dc.splice(3, 2, " Flash", " Linterna Verde" );
+		document.write(dc+'<br />' + '<hr>');
+	</script>
+
+	<script type="text/javascript">
+		//concat()
+		var primas = ["Noemi", " Eva", " Arantxa", " Ainhoa"];
+		var primos = [" Armando", " Luis", " Juan", " Kevin"];
+		var cousins = primas.concat(primos);
+		document.write(cousins +'<br />' + '<hr>');
+	</script>
+
+	<script type="text/javascript">
+		//slice()
+		var deportes = ["Futbol", " Baloncesto", " Gimnasia Artística", " Patinaje"];
+		// var dep = deportes.slice(2);
+		var dep = deportes.slice(1, 3);
+		document.write(dep +'<br />' + '<hr>');
+	</script>
+
+	<script type="text/javascript">
+		//sort()
+		var ciudades = [" Paris", " California", " Hawaii", " Escocia"];
+		ciudades.sort();
+		document.write(ciudades +'<br />' + '<hr>');
+	</script>
+
+	<script type="text/javascript">
+		//valueOf()
+		var ciudades = [" Paris", " California", " Hawaii", " Escocia"];
+		var c = ciudades.valueOf();
+		document.write(c +'<br />' + '<hr>');
+	</script>
+
+	<script type="text/javascript">
+		//indexOf()
+		var ciudades = ["Paris", "California", "Hawaii", "Escocia"];
+		var ciudad = ciudades.indexOf("California");
+		document.write(ciudad +'<br />' + '<hr>');
+	</script>
+
+	<script type="text/javascript">
+		//lastIndexOf()
+		var ciudades = ["Paris", "California", "Hawaii", "Escocia"];
+		var ciudad = ciudades.lastIndexOf("Escocia");
+		document.write(ciudad +'<br />' + '<hr>');
+	</script>
+
+	<script type="text/javascript">
+		//reverse()
+		var ciudades = ["Paris", "California", "Hawaii", "Escocia"];
+		ciudades.reverse("");
+		document.write(ciudades +'<br />' + '<hr>');
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 5A - Calcular perímetro, área y diámetro de una circunferencia</title>
+    <style type="text/css"></style>
+</head>
+<body>
+    <h1>Calcular perímetro, área y diámetro circunferencia</h1>
+
+    <label>Radio:</label>
+    <input type="number" id="radio" />
+    <label>¿Que quieres calcular?</label>
+    <input type="checkbox" name="calculo" value="P" id="p">Perímetro<br>
+    <input type="checkbox" name="calculo" value="A" id="a">Area<br>
+    <input type="checkbox" name="calculo" value="D" id="d">Diámetro<br>
+    <button onclick="calcular();">Calcular</button>
+
+    <h3 id="resultado"></h3>
+
+    <script type="text/javascript">
+        const PI = 3.14159;
+        //Funcion para checkbox
+        function calcular(){
+            //obtenemos si han checkeado los checkbox: 
+            var perimetro = document.getElementById('p').checked;
+            var area = document.getElementById('a').checked;
+            var diametro = document.getElementById('d').checked;
+
+            //Obtenemos el valor de radio: 
+            var r = document.getElementById('radio').value;
+
+            //un console log para que vea como funciona, sólo muestra por consola lo que le pases en la funcion en este caso un String y el valor de los checkbox:
+            console.log("Perimetro vale: ", perimetro) ;
+            console.log("Area vale: ", area) ;
+            //Tambien le puedes pasar que muestre solo la variable sin string:
+            console.log(diametro) ;
+
+            //creamos la variable que apunta al resultado: 
+            var res = document.getElementById('resultado');
+            res.innerHTML = ""; // hacemos esto para borrar lo que habia antes en el cajón de resultado;
+
+            if (perimetro) {//si ponemos esto así el if se cumplirá si el valor de perímetro es true, si es true es que nos han chekeado la casilla cuando han pulsado la tecla de la funcion, es decir cuando han pulsado el boton
+                var calculo = 2*PI*r
+                res.innerHTML = "El perímetro es igual = " + calculo; //por lo tanto habra que devolver el perímetro
+            }
+            if (area) {
+                var calculo = PI*r*r;
+                res.innerHTML += "<br>El Area es igual = " + calculo; //por lo tanto habra que devolver el perímetro
+            }
+            if (diametro) {
+                var calculo = 2*r;
+                res.innerHTML += "<br>El Diámetro es igual = " + calculo; //por lo tanto habra que devolver el perímetro
+            }
+        }
+
+    </script>
+</body>
+</html>

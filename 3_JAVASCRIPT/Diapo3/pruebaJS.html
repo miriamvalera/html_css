@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Prueba en JS</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			width: 90%;
+			margin: auto;
+			font-weight: bold;
+			font-family: helvetica;
+			padding-top: 2%;
+		}
+		input, button{
+			margin-top: 1%;
+
+		}
+	</style>
+	<script type="text/javascript">
+		function sumar(){
+			var numero1 = parseFloat(document.getElementById('valor1').value); /*con el parseFloat lo que hago es obligar a que sea un número en decimales*/
+			var numero2 = parseFloat(document.getElementById('valor2').value);
+			var numero3 = parseFloat(document.getElementById('valor3').value);
+			var numero4 = parseFloat(document.getElementById('valor4').value);
+
+			var resultado = numero1+numero2+numero3+numero4;
+
+			document.getElementById('resultado').innerHTML = resultado; /*del documento cogeme el elemento id que es resultado e imprimelo por pantalla (innerHTML) y quiero que salga el resultado*/
+		}
+
+		function restar(){
+			var numero1 = parseFloat(document.getElementById('valor1').value); 
+			var numero2 = parseFloat(document.getElementById('valor2').value);
+			var numero3 = parseFloat(document.getElementById('valor3').value);
+			var numero4 = parseFloat(document.getElementById('valor4').value);
+
+			var resultado = numero1-numero2-numero3-numero4;
+
+			document.getElementById('resultado').innerHTML = resultado; 
+		}
+
+		function multiplicar(){
+			var numero1 = parseFloat(document.getElementById('valor1').value); 
+			var numero2 = parseFloat(document.getElementById('valor2').value);
+			var numero3 = parseFloat(document.getElementById('valor3').value);
+			var numero4 = parseFloat(document.getElementById('valor4').value);
+
+			var resultado = numero1*numero2*numero3*numero4;
+
+			document.getElementById('resultado').innerHTML = resultado; 
+		}
+
+		function dividir(){
+			var numero1 = parseFloat(document.getElementById('valor1').value); 
+			var numero2 = parseFloat(document.getElementById('valor2').value);
+			var numero3 = parseFloat(document.getElementById('valor3').value);
+			var numero4 = parseFloat(document.getElementById('valor4').value);
+
+			var resultado = numero1/numero2/numero3/numero4;
+
+			document.getElementById('resultado').innerHTML = resultado; 
+		}
+	</script>
+</head>
+<body>
+	<h1>Cálculo matemático</h1>
+	<h3>Inserta cuatro valores y realizaremos el cálculo</h3>
+
+	<label>Primer número</label>
+	<input type="number" id="valor1" />
+	<br />	
+	
+	<label>Segundo número</label>
+	<input type="number" id="valor2" />
+	<br />
+
+	<label>Tercer número</label>
+	<input type="number" id="valor3" />
+	<br />
+
+	<label>Cuarto número</label>
+	<input type="number" id="valor4" />
+	<br />
+
+	<button onclick="sumar()">SUMAR</button> <!--cuando haga clic en el boton sumar que se active la funcion sumar-->
+	<button onclick="restar()">RESTAR</button>
+	<button onclick="multiplicar()">MULTIPLICAR</button>
+	<button onclick="dividir()">DIVIDIR</button>
+
+	<hr>
+	<h4>El resultado de la operación es: <span id="resultado"></span></h4>
+</body>
+</html>

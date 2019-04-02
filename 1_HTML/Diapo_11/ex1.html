@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ejemplos-Expresiones regulares</title>
+</head>
+<body>
+	<form>
+		<fieldset>
+			<label>Cadena de texto "jose"</label>
+			<input type="text" required="required" pattern="jose"/><br />
+
+			<label>Cadena de texto "jose" o "juan"</label>
+			<input type="text" required="required" pattern="jose|juan"/><br />
+
+			<label>A, B o C mayúsculas o minúsculas</label>
+			<input type="text" required="required" pattern="[abcABC]"/><br />
+
+			<label>A, B o C mayúsculas o minúsculas</label>
+			<input type="text" reqired="required" pattern="[a-cA-C]"/><br />
+
+			<label>Cualquier cosa que no sea A, B o C</label>
+			<input type="text" required="required" pattern="[^a-cA-C]"><br />
+		</fieldset>
+	</form>
+</body>
+</html>

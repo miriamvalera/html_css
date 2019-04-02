@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		function calculo(){
+			var base = parseInt(document.getElementById('base').value);
+			var exponente = parseInt(document.getElementById('exponente').value);
+			var resultado = 1;
+
+			
+			if(exponente<0){
+				resultado="Error en el Exponente";
+			}else{
+				for(let i=1;i<=exponente;i++){
+				resultado *= base;
+				}
+			}
+
+			alert(resultado);
+		}
+	</script>
+</head>
+<body>
+	<h1>Número elevado a otro</h1>
+	<label>Base: </label><input type="number" id="base" />
+	<br />
+	<label>Exponente: </label><input type="number" id="exponente" />
+	<br />
+	<button onclick="calculo();">CALCULAR</button>
+</body>
+</html>

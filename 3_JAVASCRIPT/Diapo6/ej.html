@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio 2 - Introducir números mediante inputs de formulario</title>
+</head>
+<body>
+	<h1>Imprime números de n a m, orden ascendente</h1>
+
+	<label>Introduce número n:</label>
+	<input type="number" id="n" /><br />
+
+	<label>Introduce número m:</label>
+	<input type="number" id="m" /><br />
+
+	<button onclick="imprimir();">Imprimir</button>
+    <p id="r"></p>
+    <p id="r2"></p>
+    <p id="r3"></p>
+	<script type="text/javascript">
+		function imprimir(){
+			//Lo de siempre declarar la variable con los input de entrada:
+            //Estas variables se obtienen cuando hacen clic en el botón que llama esta función.
+            var n = document.getElementById('n').value; //Por lo tanto la variable n valdrá lo que nos han escrito en el input con la id n
+            var m = document.getElementById('m').value; //Por lo tanto la variable m valdrá lo que nos han escrito en el input con la id m
+            var r = document.getElementById('r'); //asignamos a la variable r el html o DOM (Document object) es decir el objeto dónde haremos innerHTML
+            var r2 = document.getElementById('r2'); // igual que con n pero con el resultado 2 para ver lo mismo en while.
+            var r3 = document.getElementById('r3');
+            r.innerHTML = "";
+            /*---------------------------------------------------------------------------*/
+            //Usando las variables de antes que son las mismas vamos a hacer la forma sencilla : 
+            //Primero vemos qué número es el mayor con un if:
+            if(n>m){ //Si n es mayor que m entrará y hará lo que toque si no se ira al else:
+                //Que toca hacer? un bucle pero antes resetear el <p> que puede tener el resultado anterior:
+                r3.innerHTML = ""; //Esto lo que haces es el div con id r3 sera igual a un string vacio.(limpiar)
+                while(n>=m){ //Mientras n sea mas pequeño haz algo : 
+                    //Que hacemos? Pues mostramos en el DOM o HTML que es lo mismo el valor en este caso un tag <p> con la id r3: 
+                    r3.innerHTML += n + ","; //Lo que hacemos es añadir el valor de n al tag p más una coma;
+                    //Una vez imprimido esto en el HTML hace falta incrementar el valor de n para no quedarnos en un bucle infinito:
+                    n++;//Una vez incrementado volvera a la condición del while si se cumple volverá a entrar y repetir. 
+                }
+            }else {
+                //Aqui va lo mismo de arriba pero con la condicion del while al reves y aumentando el valor de m:
+                r3.innerHTML = ""; //Esto lo que haces es el div con id r3 sera igual a un string vacio.(limpiar)
+                while(m>=n){ //Mientras n sea mas pequeño haz algo : 
+                    //Que hacemos? Pues mostramos en el DOM o HTML que es lo mismo el valor en este caso un tag <p> con la id r3: 
+                    r3.innerHTML += m + ","; //Lo que hacemos es añadir el valor de n al tag p más una coma;
+                    //Una vez imprimido esto en el HTML hace falta incrementar el valor de n para no quedarnos en un bucle infinito:
+                    m++;//Una vez incrementado volvera a la condición del while si se cumple volverá a entrar y repetir. 
+            }
+            /*---------------------------------------------------------------------------*/
+			for(x = n ; x <= m ; x++){ //Los bucle for tienen 3 condicionales o tres partes:
+            // ((DeclaracionVariable=inicializacion ; CondicionParaRepetir ; EncasodeRepetirAcción))
+            // Esto quiere decir que 
+                console.log('for');
+                r.innerHTML += x + ",";
+            }
+
+            while(n<=m){
+                 console.log('while');
+                 r2.innerHTML += n + ",";
+                 n++;
+            }
+		}
+	</script>
+
+</body>
+</html>

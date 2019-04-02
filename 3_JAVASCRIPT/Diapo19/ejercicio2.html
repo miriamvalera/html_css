@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 2 - Hacer una imagen grande de una pequeña</title>
+	<style type="text/css">
+		body{
+			width: 80%;
+		}
+		h1{
+			text-align: center;
+		}
+		figure{
+			display: inline-block;
+			width: 40%;
+		}
+		img{
+			border: 3px solid #720707;
+			border-radius: 5px;
+			width: 80%;
+			
+		}
+		.grande{
+			position: fixed;
+			width: 80%;
+			top: 20%;
+			left: 15%;
+		}
+	</style>
+</head>
+<body>
+	<section id="galeria">
+		<h1>Galería de Fotos</h1>
+		<figure>
+			<img src="imgP/paisaje1.jpg" alt="Foto1 alternativo" title="Paisaje playa" onclick="agrandar(this.src);" />
+		</figure>
+
+		<figure>
+			<img src="imgP/paisaje2.jpg" alt="Foto2 alternativo" title="Paisaje rocas" onclick="agrandar(this.src);" />
+		</figure>
+	</section>	
+	<script type="text/javascript">
+	
+		function agrandar(elemento){
+			
+			var nuevaIMG = document.createElement('figure');
+			nuevaIMG.appendChild(document.createElement('img'));
+			nuevaIMG.firstElementChild.src = elemento;
+			
+			nuevaIMG.setAttribute('class','grande');
+			
+			nuevaIMG.setAttribute('onclick','this.remove()');
+			
+			document.body.appendChild(nuevaIMG);	
+		}
+
+	</script>
+</body>
+</html>

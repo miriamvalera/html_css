@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Carta - Backface-visibility</title>
+	<style type="text/css">
+		#tapete{
+			position: fixed;
+			width: 50%; height: 50%;
+			top: 15%; left: 25%;
+			background-color: #696;
+			padding: 30px;
+		}
+		#tapete:hover .carta{
+			transform: rotateY(180deg) rotate(20deg);
+		}
+		.carta{
+			position: relative;
+			margin: auto;
+			width: 200px; height: 280px;
+			transform-style: preserve-3d;
+			border-radius: 10px;
+			transition: 2s;
+		}
+		.carta .cara{
+			position: absolute;
+			width: 200px; height: 280px;
+			backface-visibility: hidden;
+			/*backface-visibility: visible;*/
+		}
+		.carta .cara.trasera{
+			transform: rotateY(180deg);
+		}
+	</style>
+</head>
+<body>
+	<div id="tapete">
+		<div class="carta">
+			<img class="cara frontal" src="imagenes/frontal.png" />
+			<img class="cara trasera" src="imagenes/trasera.png" />
+		</div>	
+	</div>
+</body>
+</html>

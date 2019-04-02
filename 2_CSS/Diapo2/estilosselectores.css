@@ -1,0 +1,28 @@
+h1{
+	color: #F00;
+}
+
+h2{
+	text-decoration: underline;
+}
+
+p{
+	font-style: italic;	
+}
+/*El primer párrafo tras cada h2 tiene que estar en negrita*/
+h2+p{
+	font-weight: bold;
+}
+
+img{
+	height: 100px;
+	width: 100px;
+}
+
+#azul:target{
+	color: #00F;
+}
+
+h2~p{
+	color: #0F0;
+}

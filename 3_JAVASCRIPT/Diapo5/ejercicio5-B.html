@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 4 - Calcular perímetro, área y diámetro de una circunferencia</title>
+    <style type="text/css"></style>
+</head>
+<body>
+    <h1>Calcular perímetro, área y diámetro circunferencia</h1>
+
+    <label>Radio:</label>
+    <input type="number" id="radio" />
+    <label>¿Que quieres calcular?</label>
+    <input type="checkbox" name="calculo" value="P" id="p">Perímetro<br>
+    <input type="checkbox" name="calculo" value="A" id="a">Area<br>
+    <input type="checkbox" name="calculo" value="D" id="d">Diámetro<br>
+    <button onclick="calcular2();">Calcular</button>
+
+    <h3 id="resultado"></h3>
+
+    <hr>
+
+    <h2>Otra opción</h2>
+    <p>Probamos dentro de una etiqueta form con el uso de array</p>
+    
+    <label>Radio:</label>
+    <input type="number" id="radio2" />
+    <label>¿Que quieres calcular?</label>
+    <form id="formulario">
+        <input type="checkbox" name="calculo" value="P" id="p">Perímetro<br>
+        <input type="checkbox" name="calculo" value="A" id="a">Area<br>
+        <input type="checkbox" name="calculo" value="D" id="d">Diámetro<br>
+    </form>
+    <!-- Cuando hacemos un botton dentro de un formulario nos hace automáticamente un submit, es decir enviar, por lo tanto se pierde el javascript porque es 
+        equivalente a recargar la web, por es lo mejor es poner fuera -->
+    <button onclick="calcular3();">Calcular</button>
+    <h3 id="resultado2"></h3>
+    <script type="text/javascript">
+        const PI = 3.14159;
+        //Funcion para checkbox
+        function calcular2(){
+            //obtenemos si han checkeado los checkbox: 
+            var perimetro = document.getElementById('p').checked;
+            var area = document.getElementById('a').checked;
+            var diametro = document.getElementById('d').checked;
+
+            //Obtenemos el valor de radio: 
+            var r = document.getElementById('radio').value;
+
+            //Te hago un console log para que veas como fucniona, sólo muestra por consola lo que le pases en la funcion en este caso un String y el valor de los checkbox:
+            console.log("Perimetro vale: ", perimetro) ;
+            console.log("Area vale: ", area) ;
+            //Tambien le puedes pasar que muestre solo la variable sin string:
+            console.log(diametro) ;
+
+            //creamos la variable que apunta al resultado: 
+            var res = document.getElementById('resultado');
+            res.innerHTML = ""; // hacemos esto para borrar lo que habia antes en el cajón de resultado;
+
+            if (perimetro) {//si ponemos esto así el if se cumplirá si el valor de perímetro es true, si es true es que nos han chekeado la casilla cuando han pulsado la tecla de la funcion, es decir cuando han pulsado el boton
+                var calculo = 2*PI*r
+                res.innerHTML = "El perímetro es igual = " + calculo; //por lo tanto habra que devolver el perímetro
+            }
+            if (area) {
+                var calculo = PI*r*r;
+                res.innerHTML += "<br>El Area es igual = " + calculo; //por lo tanto habra que devolver el perímetro
+            }
+            if (diametro) {
+                var calculo = 2*r;
+                res.innerHTML += "<br>El Diámetro es igual = " + calculo; //por lo tanto habra que devolver el perímetro
+            }
+        }
+        function calcular3(){
+            var formu = document.forms.namedItem("formulario"); //Cuando usamos esto hacemos que la variable "formu" contendra todo el html del DOM que sea un formulario con el id "formulario", veremos mas claro observando la consola:
+            console.log("var formu-->", formu);
+
+            //Declaramos una variable de tipo Array para meter dentro los valores checkeados, esto es lo mismo que ir uno a uno de la función calcular2 pero con un bucle para recorrer los elementos que contiene la etiqueta formu que en este caso son 3 checkbox y hemos añadido un if dentro que lo que hará que por cada chekbox que al preguntarle si esta "checked" nos devuelva true, cogeremos su valor (el value indicado en html) y lo meteremos en este nuevo array.
+            var arrayValoresChecked = new Array();
+            for (var i = 0; i < formu.length; i++) {
+                if (formu[i].checked){
+                    arrayValoresChecked.push(formu[i].value);
+                }
+            }
+
+            //Cuando acabamos el bucle tenemos un arra que contiene los value de los checkbox que estaban marcados, lo podemos ver en console.log pero a parte lo que haremos es recorrerlo para que en función de su valor calcule una cosa, esto es como el menu de java que usabamos un do while pero esta vez con un for:
+            console.log("Array-->", arrayValoresChecked);
+            //Declaramos la variable que apunta al div o elemento del html donde insertaremos el resultado:
+            var divOutPut = document.getElementById('resultado2');
+
+            //La ponemos en blanco por si contenia algo borrarlo : 
+            divOutPut.innerHTML = "";
+
+            //Obtenemos el valor del radio: 
+            var radi = document.getElementById('radio2').value;
+
+            for (var i = 0; i < arrayValoresChecked.length; i++) {
+                console.log("dentro blucle")
+                switch(arrayValoresChecked[i]){
+                    case "P":
+                        var calculo = 2*PI*radi;
+                        divOutPut.innerHTML+= "<br />El perímetro es = " + calculo;
+                    break;
+
+                    case "A":
+                        var calculo = PI*radi*radi;
+                        divOutPut.innerHTML+= "<br />El Area es = " + calculo;
+                    break;
+
+                    case "D":
+                        var calculo = 2*radi;
+                        divOutPut.innerHTML+= "<br />El Diámetro es = " + calculo;
+                    break;
+                }
+
+            }
+            //Fin del bucle y de añadir calculos, la razón por la que nombro diferente a las id del html y a las variables de js es para que quede claro que da igual como las llamas cuando declaras variable a como se llaman por su ID lo importante es apuntar bien cada variable a la ID del html que quieres apuntar, y en mi caso me equivocaba mucho cuando usaba el mismo nombre para la id que la variable, pero esto ya cada uno como quiera;
+        }
+
+    </script>
+</body>
+</html>

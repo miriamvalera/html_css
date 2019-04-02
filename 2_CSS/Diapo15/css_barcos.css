@@ -1,0 +1,100 @@
+header, nav div, main, footer{
+	padding: 10px;
+}
+body{
+	width: 90%;
+	margin: auto;
+	font-family: 'Roboto Mono', monospace;
+}
+header{
+	background-color: #296B73;
+	grid-area: he;
+	background-image: url(../imgbarcos/name.svg);
+	background-repeat: no-repeat;
+	background-position: 50%;
+}
+header img{
+	width: 10%;
+}
+nav{
+	background-color: #98E1ED;
+	grid-area: na;
+}
+nav a{
+	text-decoration: none;
+	color: #194759;
+}
+nav p{
+	padding-left: 10%;
+}
+nav div{
+	
+}
+nav div:a{
+	color: #194759;
+}
+nav div:first-child{
+	padding-top: 20%;
+}
+main{
+	grid-area: ma;
+}
+main h1{
+	grid-area: ti;
+	font-family: 'Roboto Mono', monospace;
+	text-transform: uppercase;
+}
+main figure:nth-of-type(1){
+	grid-area: fi;
+}
+main figure:nth-of-type(2){
+	grid-area: fi2;
+}
+main figure:nth-of-type(3){
+	grid-area: fi3;
+}
+main article:nth-of-type(1){
+	grid-area: art;
+	font-family: 'Roboto Mono', monospace;
+	margin-left: 10%;
+}
+main article:nth-of-type(2){
+	grid-area: art2;
+}
+main article:nth-of-type(3){
+	grid-area: art3;
+}
+main figure img:nth-of-type(1){
+	width: 170%;
+}
+main figure img:nth-of-type(2){
+	width: 50%;
+}
+main figure img:nth-of-type(3){
+	width: 50%;
+}
+footer{
+	background-color: #296B73;
+	grid-area: fo;
+}
+.grid-container{
+	display: grid;
+	grid-template-columns: 20% auto 20%;
+	grid-template-areas:
+		'he he he'
+		'na ma ma'
+		'na ma ma'
+		'na ma ma'
+		'fo fo fo';
+	grid-gap: 5px;
+}
+/*.grid-main{
+	display: grid;
+	grid-template-columns: 20% auto;
+	grid-template-areas:
+		'ti ti'
+		'fi art'
+		'art2 fi2'
+		'fi3 art3';
+	grid-gap: 5px;
+}*/
